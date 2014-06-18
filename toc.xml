@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Addon Author="Zhevron" APIVersion="8" Name="LootIndex" Description="">
+    <Script Name="LootIndex.lua"/>
+    <Form Name="LootIndex.xml"/>
+</Addon>
