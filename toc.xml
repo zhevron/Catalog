@@ -23,6 +23,6 @@
   <Script Name="Database/Dungeons/SanctuaryOfTheSwordmaiden.lua"/>
 
   <!-- Raids -->
-  <Script Name="Database/Raids/GeneticArchives.lua"/>
-  <Script Name="Database/Raids/Datascape.lua"/>
+  <!--<Script Name="Database/Raids/GeneticArchives.lua"/>
+  <Script Name="Database/Raids/Datascape.lua"/>-->
 </Addon>
