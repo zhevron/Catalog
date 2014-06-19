@@ -1,4 +1,4 @@
-Catalog - A WildStar dungeon and raid loot catalog
+Catalog - Dungeon and raid loot catalog
 ====================================================
 
 ## What is Catalog?
@@ -28,4 +28,4 @@ After making the contributions in your forked repository, please submit a [pull 
 ## Who maintains this addon?
 
 The addon is currently maintained by the following:
-* Zhevron @ Lightspire EU
+* [Zhevron @ Lightspire EU](https://www.curse.com/users/Zhevron)
