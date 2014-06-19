@@ -1,7 +1,7 @@
 require "Window"
 
 -- Initialize the addon module
-local LootIndex = {}
+LootIndex = {}
 
 -- Define the database table (Loaded from the 'Database' subfolder)
 LootIndex_DB = {}

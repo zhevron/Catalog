@@ -1,0 +1,3 @@
+require "Window"
+
+LootIndex.Browser = {}

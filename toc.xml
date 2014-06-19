@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Addon Author="Zhevron" APIVersion="8" Name="LootIndex" Description="">
   <Script Name="LootIndex.lua"/>
+  <Script Name="Browser.lua"/>
+  <Script Name="Settings.lua"/>
+
+  <!-- Forms -->
+  <Form Name="Forms/Browser.xml"/>
+  <Form Name="Forms/Settings.xml"/>
 
   <!-- Adventures -->
   <Script Name="Database/Adventures/RiotInTheVoid.lua"/>
