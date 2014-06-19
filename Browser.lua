@@ -1,18 +1,18 @@
 require "Window"
 
-LootIndex.Browser = {}
+Catalog.Browser = {}
 
 -- Sets up the browser frame
-function LootIndex.Browser.Init()
+function Catalog.Browser:Init()
   --
 end
 
 -- Opens the browser window
-function LootIndex.Browser.Open()
+function Catalog.Browser:Open()
   --
 end
 
 -- Builds the location browser menu
-function LootIndex.Browser.BuildLocationMenu()
+function Catalog.Browser:BuildLocationMenu()
   --
 end

@@ -1,5 +1,5 @@
 -- [Dungeon] Ruins of Kel Voreth
-LootIndex_DB['zoneId'] = {
+Catalog_DB['zoneId'] = {
   ['type'] = 'dungeon',
   ['bosses'] = {
     -- [Boss] Grond the Corpsemaker

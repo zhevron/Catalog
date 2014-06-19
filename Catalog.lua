@@ -1,13 +1,13 @@
 require "Window"
 
 -- Initialize the addon module
-LootIndex = {}
+Catalog = {}
 
 -- Define the database table (Loaded from the 'Database' subfolder)
-LootIndex_DB = {}
+Catalog_DB = {}
 
 -- Initialize a new instance of the addon
-function LootIndex:new(o)
+function Catalog:new(o)
   o = o or {}
   setmetatable(o, self)
   self.__index = self
@@ -15,16 +15,16 @@ function LootIndex:new(o)
 end
 
 -- Initialize the addon
-function LootIndex:Init()
+function Catalog:Init()
   Apollo.RegisterAddon(self)
   Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
 end
 
 -- Called when the addon has loaded
-function LootIndex:OnLoad()
+function Catalog:OnLoad()
   --
 end
 
 -- Create a new instance and initialize it
-local LootIndexInst = LootIndex:new()
-LootIndexInst:Init()
+local CatalogInst = Catalog:new()
+CatalogInst:Init()

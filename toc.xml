@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Addon Author="Zhevron" APIVersion="8" Name="LootIndex" Description="">
-  <Script Name="LootIndex.lua"/>
+<Addon Author="Zhevron" APIVersion="8" Name="Catalog" Description="Dungeon and raid loot catalog">
+  <Script Name="Catalog.lua"/>
   <Script Name="Browser.lua"/>
   <Script Name="Settings.lua"/>
 

@@ -1,5 +1,5 @@
 -- [Adventure] Riot in the Void
-LootIndex_DB['zoneId'] = {
+Catalog_DB['zoneId'] = {
   ['type'] = 'adventure',
   ['bosses'] = {
   }

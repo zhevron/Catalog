@@ -1,3 +1,3 @@
 require "Window"
 
-LootIndex.Settings = {}
+Catalog.Settings = {}

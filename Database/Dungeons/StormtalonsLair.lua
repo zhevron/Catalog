@@ -1,5 +1,5 @@
 -- [Dungeon] Stormtalon's Lair
-LootIndex_DB['zoneId'] = {
+Catalog_DB['zoneId'] = {
   ['type'] = 'dungeon',
   ['bosses'] = {
     -- [Boss] Blade-Wind the Invoker

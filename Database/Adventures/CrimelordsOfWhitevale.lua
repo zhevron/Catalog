@@ -1,5 +1,5 @@
 -- [Adventure] Crimelords of Whitevale
-LootIndex_DB['zoneId'] = {
+Catalog_DB['zoneId'] = {
   ['type'] = 'adventure',
   ['bosses'] = {
   }

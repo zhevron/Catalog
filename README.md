@@ -1,9 +1,9 @@
-LootIndex - A WildStar loot catalogue
-=====================================
+Catalog - A WildStar dungeon and raid loot catalog
+====================================================
 
-## What is LootIndex?
+## What is Catalog?
 
-LootIndex is a WildStar addon that catalogs loot from bosses in all types of group content.
+Catalog is a WildStar addon that catalogs loot from bosses in all types of group content.
 The browser lets you look through the loot to see where you can get upgrades.
 
 ## How do I use it?
@@ -13,17 +13,17 @@ After the addon has been installed, you can open the browser by typing '/loot' i
 
 ## I found a error in the loot tables. Now what?
 
-Please report any errors in the loot tables as a Github issue [here](https://github.com/zhevron/LootIndex/issues).
+Please report any errors in the loot tables as a Github issue [here](https://github.com/zhevron/Catalog/issues).
 
 ## I found a bug. How do I report it?
 
-Please report any bugs as a Github issue [here](https://github.com/zhevron/LootIndex/issues).
+Please report any bugs as a Github issue [here](https://github.com/zhevron/Catalog/issues).
 
 ## I want to contribute to the addon. How do I start?
 
-If you want to contribute to the development of the addon, start by [forking](https://github.com/zhevron/LootIndex/fork) the main repository.
+If you want to contribute to the development of the addon, start by [forking](https://github.com/zhevron/Catalog/fork) the main repository.
 
-After making the contributions in your forked repository, please submit a [pull request](https://github.com/zhevron/LootIndex/pulls) back to the main project.
+After making the contributions in your forked repository, please submit a [pull request](https://github.com/zhevron/Catalog/pulls) back to the main project.
 
 ## Who maintains this addon?
 

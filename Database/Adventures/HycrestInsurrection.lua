@@ -1,5 +1,5 @@
 -- [Adventure] Hycrest Insurrection
-LootIndex_DB['zoneId'] = {
+Catalog_DB['zoneId'] = {
   ['type'] = 'adventure',
   ['bosses'] = {
   }

@@ -1,5 +1,5 @@
 -- [Dungeon] Sanctuary of the Swordmaiden
-LootIndex_DB['zoneId'] = {
+Catalog_DB['zoneId'] = {
   ['type'] = 'dungeon',
   ['bosses'] = {
     -- [Boss] Blade-Wind the Invoker

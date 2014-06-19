@@ -1,5 +1,5 @@
 -- [Adventure] War of the Wilds
-LootIndex_DB['zoneId'] = {
+Catalog_DB['zoneId'] = {
   ['type'] = 'adventure',
   ['bosses'] = {
   }
