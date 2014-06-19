@@ -14,6 +14,7 @@ function Catalog.Browser:OnDocumentReady()
   end
   self.Window = Apollo.LoadForm(self.Xml, "CatalogBrowser", nil, self)
   self:Close()
+  self:BuildLocationList()
 end
 
 function Catalog.Browser:Open()
@@ -26,4 +27,20 @@ function Catalog.Browser:Close()
   if self.Window and self.Window:IsValid() then
     self.Window:Show(false)
   end
+end
+
+function Catalog.Browser:BuildLocationTypeList()
+  --
+end
+
+function Catalog.Browser:BuildLocationList(type)
+  --
+end
+
+function Catalog.Browser:BuildBossList(location)
+  --
+end
+
+function Catalog.Browser:BuildLootList(boss)
+  --
 end
