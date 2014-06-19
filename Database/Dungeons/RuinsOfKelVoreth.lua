@@ -1,32 +1,21 @@
 -- [Dungeon] Ruins of Kel Voreth
-Catalog_DB['zoneId'] = {
-  ['type'] = 'dungeon',
-  ['bosses'] = {
-    -- [Boss] Grond the Corpsemaker
-    ['npcId'] = {
-      ['normal'] = {
-        1,2,3,4,5,6,7,8,9
+Catalog_DB["RuinsOfKelVoreth"] = {
+  ["name"] = {
+    ["en"] = "Ruins of Kel Voreth",
+    ["de"] = "",
+    ["fr"] = ""
+  },
+  ["type"] = "dungeon",
+  ["bosses"] = {
+    {
+      ["name"] = {
+        ["en"] = "",
+        ["de"] = "",
+        ["fr"] = ""
       },
-      ['veteran'] = {
-        1,2,3,4,5,6,7,8,9
-      }
-    },
-    -- [Boss] Slavemaster Drokk
-    ['npcId'] = {
-      ['normal'] = {
-        1,2,3,4,5,6,7,8,9
+      ["normal"] = {
       },
-      ['veteran'] = {
-        1,2,3,4,5,6,7,8,9
-      }
-    },
-    -- [Boss] Forgemaster Trogun
-    ['npcId'] = {
-      ['normal'] = {
-        1,2,3,4,5,6,7,8,9
-      },
-      ['veteran'] = {
-        1,2,3,4,5,6,7,8,9
+      ["veteran"] = {
       }
     }
   }

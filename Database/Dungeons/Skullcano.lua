@@ -1,32 +1,21 @@
 -- [Dungeon] Skullcano
-Catalog_DB['zoneId'] = {
-  ['type'] = 'dungeon',
-  ['bosses'] = {
-    -- [Boss] Blade-Wind the Invoker
-    ['npcId'] = {
-      ['normal'] = {
-        1,2,3,4,5,6,7,8,9
+Catalog_DB["Skullcano"] = {
+  ["name"] = {
+    ["en"] = "Skullcano",
+    ["de"] = "",
+    ["fr"] = ""
+  },
+  ["type"] = "dungeon",
+  ["bosses"] = {
+    {
+      ["name"] = {
+        ["en"] = "",
+        ["de"] = "",
+        ["fr"] = ""
       },
-      ['veteran'] = {
-        1,2,3,4,5,6,7,8,9
-      }
-    },
-    -- [Boss] Aethros
-    ['npcId'] = {
-      ['normal'] = {
-        1,2,3,4,5,6,7,8,9
+      ["normal"] = {
       },
-      ['veteran'] = {
-        1,2,3,4,5,6,7,8,9
-      }
-    },
-    -- [Boss] Stormtalon
-    ['npcId'] = {
-      ['normal'] = {
-        1,2,3,4,5,6,7,8,9
-      },
-      ['veteran'] = {
-        1,2,3,4,5,6,7,8,9
+      ["veteran"] = {
       }
     }
   }
