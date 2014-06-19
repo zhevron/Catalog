@@ -17,6 +17,7 @@ end
 -- Initialize the addon
 function LootIndex:Init()
   Apollo.RegisterAddon(self)
+  Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
 end
 
 -- Called when the addon has loaded
