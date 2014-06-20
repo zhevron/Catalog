@@ -48,7 +48,7 @@
   <Form Name="Location" Class="Window" Template="Default"
         LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
         RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="1">
-    <Control Name="LocationItemButton" Class="Button" Base="CRB_Basekit:kitBtn_List_MetalBorder"
+    <Control Name="LocationButton" Class="Button" Base="CRB_Basekit:kitBtn_List_MetalBorder"
              LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
              RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="Check">
       <Event Name="ButtonCheck" Function=""/>
@@ -66,7 +66,7 @@
         RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="1">
     <Control Name="BossButton" Class="Button" Base="BK3:btnHolo_ListView_Simple"
              LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
-             RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="Check">
+             RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="Check" GlobalRadioGroup="CatalogBoss">
       <Event Name="ButtonCheck" Function=""/>
       <Event Name="ButtonUncheck" Function=""/>
     </Control>
