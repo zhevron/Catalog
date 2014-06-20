@@ -14,6 +14,7 @@ function Catalog.Browser:OnDocumentReady()
     return
   end
   self.Window = Apollo.LoadForm(self.Xml, "CatalogBrowser", nil, self)
+  self.Window:FindChild("HeaderText"):SetText("Catalog v"..Catalog.Version)
   self:Close()
   self:Localize()
   self:BuildLocationTypeList()
