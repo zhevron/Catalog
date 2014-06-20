@@ -25,7 +25,7 @@
   <!-- Dungeons -->
   <Script Name="Database/Dungeons/StormtalonsLair.lua"/>
   <Script Name="Database/Dungeons/RuinsOfKelVoreth.lua"/>
-  <Script Name="Database/Dungeons/Skullcano.lua"/>
+  <Script Name="Database/Dungeons/SkullcanoIsland.lua"/>
   <Script Name="Database/Dungeons/SanctuaryOfTheSwordmaiden.lua"/>
 
   <!-- Raids -->
