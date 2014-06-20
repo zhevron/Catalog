@@ -4,6 +4,11 @@
   <Script Name="Browser.lua"/>
   <Script Name="Settings.lua"/>
 
+  <!-- Locales -->
+  <Script Name="Locales/English.lua"/>
+  <Script Name="Locales/German.lua"/>
+  <Script Name="Locales/French.lua"/>
+
   <!-- Forms -->
   <Form Name="Forms/Browser.xml"/>
   <Form Name="Forms/Settings.xml"/>
