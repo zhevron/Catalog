@@ -28,6 +28,7 @@ end
 
 function Catalog:OnLoad()
   self.Browser:Init()
+  self.Settings:Init()
   Apollo.RegisterSlashCommand("catalog", "Open", self.Browser)
   Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
 end
@@ -52,7 +53,7 @@ function Catalog:OnRestore(level, options)
 end
 
 function Catalog:OnConfigure()
-  --
+  self.Settings:Open()
 end
 
 function Catalog:GetLocale()
