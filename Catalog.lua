@@ -5,6 +5,7 @@ Catalog.Version = "0.0.1"
 
 local Defaults = {
   ["Locale"] = "en",
+  ["Locked"] = false,
   ["Position"] = {
     ["X"] = 100,
     ["Y"] = 100
