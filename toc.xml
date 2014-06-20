@@ -3,6 +3,7 @@
   <Script Name="Catalog.lua"/>
   <Script Name="Browser.lua"/>
   <Script Name="Settings.lua"/>
+  <Script Name="Utility.lua"/>
 
   <!-- Locales -->
   <Script Name="Locales/English.lua"/>
