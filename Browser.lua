@@ -1,3 +1,4 @@
+require "Item"
 require "Window"
 
 Catalog.Browser = {}
@@ -14,7 +15,8 @@ function Catalog.Browser:OnDocumentReady()
   end
   self.Window = Apollo.LoadForm(self.Xml, "CatalogBrowser", nil, self)
   self:Close()
-  self:BuildLocationList()
+  self:Localize()
+  self:BuildLocationTypeList()
 end
 
 function Catalog.Browser:Open()
@@ -29,18 +31,69 @@ function Catalog.Browser:Close()
   end
 end
 
+function Catalog.Browser:Localize()
+  local locale = Catalog:GetLocale()
+  self.Window:FindChild("VeteranText"):SetText(locale["veteran"])
+end
+
 function Catalog.Browser:BuildLocationTypeList()
-  --
+  local locale = Catalog:GetLocale()
+  local types = { "adventure", "dungeon", "raid" }
+  local list = self.Window:FindChild("LocationTypeList")
+  list:DestroyChildren()
+  for _, type in ipairs(types) do
+    local name = Catalog.Utility:Capitalize(locale[type][2])
+    local form = Apollo.LoadForm(self.Xml, "LocationType", list, self)
+    form:SetData(type)
+    form:FindChild("LocationTypeText"):SetText(name)
+    --self:BuildLocationList(type, form)
+  end
+  list:ArrangeChildrenVert()
 end
 
-function Catalog.Browser:BuildLocationList(type)
-  --
+function Catalog.Browser:BuildLocationList(type, parent)
+  local list = parent:FindChild("LocationList")
+  list:DestroyChildren()
+  local locations = {}
+  for _, location in pairs(Catalog_DB) do
+    if location.type == type then
+      table.insert(locations, location)
+    end
+  end
+  for name, location in Catalog.Utility:TableSortPairs(locations, "name") do
+    local form = Apollo.LoadForm(self.Xml, "Location", list, self)
+    form:SetData(location)
+    form:FindChild("LocationText"):SetText(name)
+    self:BuildBossList(location, form)
+  end
+  list:ArrangeChildrenVert()
 end
 
-function Catalog.Browser:BuildBossList(location)
-  --
+function Catalog.Browser:BuildBossList(location, parent)
+  local list = parent:FindChild("BossList")
+  list:DestroyChildren()
+  for _, boss in ipairs(location.bosses) do
+    local form = Apollo.LoadForm(self.Xml, "Boss", list, self)
+    form:SetData(boss)
+    form:FindChild("BossText"):SetText(boss.name[Catalog.Options.Locale])
+  end
+  list:ArrangeChildrenVert()
 end
 
 function Catalog.Browser:BuildLootList(boss)
-  --
+  local list = self.Window:FindChild("ItemList")
+  list:DestroyChildren()
+  local mode = "normal"
+  if self.Window:FindChild("VeteranButton"):IsChecked() then
+    mode = "veteran"
+  end
+  for _, id in ipairs(boss[mode]) do
+    local item = Item.GetDataFromId(id)
+    if item ~= nil then
+      local form = Apollo.LoadForm(self.Xml, "Item", list, self)
+      form:SetData(item)
+      form:FindChild("ItemText"):SetText(item:GetName())
+    end
+  end
+  list:ArrangeChildrenVert()
 end
