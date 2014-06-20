@@ -5,7 +5,7 @@ Catalog_DB["StormtalonsLair"] = {
     ["de"] = "Stormtalon's Lair",
     ["fr"] = "Stormtalon's Lair"
   },
-  ["type"] = "adventure",
+  ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {

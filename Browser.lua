@@ -28,7 +28,7 @@ function Catalog.Browser:Open()
     local _, _, right, bottom = form:GetAnchorOffsets()
     form:Destroy()
     self.Window:SetAnchorOffsets(left, top, left + right, top + bottom)
-    if Catalog.Options.Locked then
+    if not Catalog.Options.Locked then
       self.Window:AddStyle("Moveable")
     else
       self.Window:RemoveStyle("Moveable")
@@ -61,7 +61,9 @@ function Catalog.Browser:BuildLocationTypeList()
     local form = Apollo.LoadForm(self.Xml, "LocationType", list, self)
     form:SetData(type)
     form:FindChild("LocationTypeText"):SetText(name)
-    --self:BuildLocationList(type, form)
+    self:BuildLocationList(type, form)
+    local left, top, right, bottom = form:GetAnchorOffsets()
+    form:SetAnchorOffsets(left, top, right, bottom + 2)
   end
   list:ArrangeChildrenVert()
 end
@@ -72,7 +74,9 @@ function Catalog.Browser:BuildLocationList(type, parent)
   local locations = {}
   for _, location in pairs(Catalog_DB) do
     if location.type == type then
-      table.insert(locations, location)
+      local tbl = Catalog.Utility:TableCopyRecursive(location)
+      tbl.name = location.name[Catalog.Options.Locale]
+      table.insert(locations, tbl)
     end
   end
   for name, location in Catalog.Utility:TableSortPairs(locations, "name") do
@@ -80,7 +84,13 @@ function Catalog.Browser:BuildLocationList(type, parent)
     form:SetData(location)
     form:FindChild("LocationText"):SetText(name)
     self:BuildBossList(location, form)
+    local _, _, _, height = form:GetAnchorOffsets()
+    local left, top, right, bottom = list:GetAnchorOffsets()
+    list:SetAnchorOffsets(left, top, right, bottom + height + 2)
   end
+  local _, _, _, height = list:GetAnchorOffsets()
+  local left, top, right, bottom = parent:GetAnchorOffsets()
+  parent:SetAnchorOffsets(left, top, right, bottom + height)
   list:ArrangeChildrenVert()
 end
 
@@ -91,7 +101,13 @@ function Catalog.Browser:BuildBossList(location, parent)
     local form = Apollo.LoadForm(self.Xml, "Boss", list, self)
     form:SetData(boss)
     form:FindChild("BossText"):SetText(boss.name[Catalog.Options.Locale])
+    local _, _, _, height = form:GetAnchorOffsets()
+    local left, top, right, bottom = list:GetAnchorOffsets()
+    list:SetAnchorOffsets(left, top, right, bottom + height + 3)
   end
+  local _, _, _, height = list:GetAnchorOffsets()
+  local left, top, right, bottom = parent:GetAnchorOffsets()
+  parent:SetAnchorOffsets(left, top, right, bottom + height)
   list:ArrangeChildrenVert()
 end
 

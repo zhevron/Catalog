@@ -2,7 +2,7 @@
 <Forms>
   <Form Name="CatalogBrowser" Class="Window" Template="Default"
         LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="0" RAnchorOffset="900" BAnchorPoint="0" BAnchorOffset="550"
-        RelativeToClient="1" Font="Thick" TooltipType="OnCursor" Picture="1" SwallowMouseClicks="1" Escapable="1" Overlapped="1" IgnoreMouse="1">
+        RelativeToClient="1" Font="Thick" TooltipType="OnCursor" Picture="1" SwallowMouseClicks="1" Escapable="1" Overlapped="1">
     <Control Name="Background" Class="Window" Template="Default"
              LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="0"
              RelativeToClient="1" TooltipType="OnCursor" IgnoreMouse="1" Picture="1" Sprite="CRB_Basekit:kitBase_HoloBlue_Tiny"/>
@@ -12,7 +12,7 @@
       <Event Name="ButtonSignal" Function="Close"/>
     </Control>
     <Control Name="HeaderText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="0" BAnchorOffset="45"
+             LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="0" BAnchorOffset="45"
              RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1"/>
     <Control Name="LocationTypeList" Class="Window" Template="Holo_ScrollList"
              LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="50" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="1" BAnchorOffset="-40"
@@ -38,62 +38,41 @@
       <Event Name="ButtonCheck" Function=""/>
       <Event Name="ButtonUncheck" Function=""/>
     </Control>
-    <Control Name="LocationItemIcon" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="5" TAnchorPoint="0" TAnchorOffset="5" RAnchorPoint="0" RAnchorOffset="39" BAnchorPoint="0" BAnchorOffset="39"
-             RelativeToClient="1"TooltipType="OnCursor" Sprite="CRB_Basekit:kitIcon_Holo_Exclamation" Picture="1" IgnoreMouse="1"TooltipFont="CRB_InterfaceSmall_O"/>
-    <Control Name="LocationItemText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="44" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42"
+    <Control Name="LocationTypeText" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42"
              RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_WORDBREAK="1"/>
-    <Control Name="LocationItemList" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="47" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="1" BAnchorOffset="0"
+    <Control Name="LocationList" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="42" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="0"
              RelativeToClient="1" TooltipType="OnCursor"/>
-    <Control Name="LocationItemFrame" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="0"
-             RelativeToClient="1" TooltipType="OnCursor" Sprite="BK3:sprMetal_ExpandMenu_MedSmall_Framing" Picture="1" IgnoreMouse="1"/>
   </Form>
   <Form Name="Location" Class="Window" Template="Default"
-        LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="42"
+        LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
         RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="1">
-    <Control Name="LocationItemButton" Class="Button" Base="BK3:btnMetal_ExpandMenu_Med"
+    <Control Name="LocationItemButton" Class="Button" Base="CRB_Basekit:kitBtn_List_MetalBorder"
              LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
              RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="Check">
       <Event Name="ButtonCheck" Function=""/>
       <Event Name="ButtonUncheck" Function=""/>
     </Control>
-    <Control Name="LocationItemIcon" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="5" TAnchorPoint="0" TAnchorOffset="5" RAnchorPoint="0" RAnchorOffset="39" BAnchorPoint="0" BAnchorOffset="39"
-             RelativeToClient="1"TooltipType="OnCursor" Sprite="CRB_Basekit:kitIcon_Holo_Exclamation" Picture="1" IgnoreMouse="1"TooltipFont="CRB_InterfaceSmall_O"/>
-    <Control Name="LocationItemText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="44" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42"
+    <Control Name="LocationText" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42"
              RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_WORDBREAK="1"/>
-    <Control Name="LocationItemList" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="47" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="1" BAnchorOffset="0"
+    <Control Name="BossList" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="42" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="0"
              RelativeToClient="1" TooltipType="OnCursor"/>
-    <Control Name="LocationItemFrame" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="0"
-             RelativeToClient="1" TooltipType="OnCursor" Sprite="BK3:sprMetal_ExpandMenu_MedSmall_Framing" Picture="1" IgnoreMouse="1"/>
   </Form>
   <Form Name="Boss" Class="Window" Template="Default"
-        LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="42"
+        LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
         RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="1">
-    <Control Name="LocationItemButton" Class="Button" Base="BK3:btnMetal_ExpandMenu_Med"
+    <Control Name="BossButton" Class="Button" Base="BK3:btnHolo_ListView_Simple"
              LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
              RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="Check">
       <Event Name="ButtonCheck" Function=""/>
       <Event Name="ButtonUncheck" Function=""/>
     </Control>
-    <Control Name="LocationItemIcon" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="5" TAnchorPoint="0" TAnchorOffset="5" RAnchorPoint="0" RAnchorOffset="39" BAnchorPoint="0" BAnchorOffset="39"
-             RelativeToClient="1"TooltipType="OnCursor" Sprite="CRB_Basekit:kitIcon_Holo_Exclamation" Picture="1" IgnoreMouse="1"TooltipFont="CRB_InterfaceSmall_O"/>
-    <Control Name="LocationItemText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="44" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42"
+    <Control Name="BossText" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42"
              RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_WORDBREAK="1"/>
-    <Control Name="LocationItemList" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="47" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="1" BAnchorOffset="0"
-             RelativeToClient="1" TooltipType="OnCursor"/>
-    <Control Name="LocationItemFrame" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="0"
-             RelativeToClient="1" TooltipType="OnCursor" Sprite="BK3:sprMetal_ExpandMenu_MedSmall_Framing" Picture="1" IgnoreMouse="1"/>
   </Form>
   <Form Name="Item" Class="Window" Template="Default"
         LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="42"

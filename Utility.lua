@@ -1,7 +1,7 @@
 Catalog.Utility = {}
 
 function Catalog.Utility:Capitalize(str)
-  return string.gsub(tostring(str), "^%1", string.upper)
+  return string.gsub(tostring(str), "^%l", string.upper)
 end
 
 function Catalog.Utility:TableSortPairs(tbl, key)
