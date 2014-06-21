@@ -129,16 +129,18 @@ function Catalog.Browser:BuildLootList(boss)
   if self.Window:FindChild("VeteranButton"):IsChecked() then
     mode = "veteran"
   end
-  for _, id in ipairs(boss[mode]) do
-    local item = Item.GetDataFromId(id)
-    if item ~= nil then
-      local form = Apollo.LoadForm(self.Xml, "Item", list, self)
-      form:SetData(item)
-      form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
-      form:FindChild("ItemText"):SetText(item:GetName())
-      form:FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
-      form:FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
-      form:FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
+  for i = Item.CodeEnumItemQuality.Legendary, Item.CodeEnumItemQuality.Inferior, -1 do
+    for _, id in ipairs(boss[mode]) do
+      local item = Item.GetDataFromId(id)
+      if item ~= nil and item:GetItemQuality() == i then
+        local form = Apollo.LoadForm(self.Xml, "Item", list, self)
+        form:SetData(item)
+        form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
+        form:FindChild("ItemText"):SetText(item:GetName())
+        form:FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
+        form:FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
+        form:FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
+      end
     end
   end
   list:ArrangeChildrenVert()
