@@ -121,7 +121,7 @@ function Catalog.Browser:BuildBossList(location, parent)
   list:ArrangeChildrenVert()
 end
 
-function Catalog.Browser:BuildLootList(boss)
+function Catalog.Browser:BuildItemList(boss)
   local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
