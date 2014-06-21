@@ -86,6 +86,7 @@
              LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="60"
              RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="PushButton">
       <Event Name="ButtonSignal" Function="OnItemSelect"/>
+      <Event Name="GenerateTooltip" Function="OnGenerateTooltip"/>
     </Control>
     <Control Name="ItemIcon" Class="Window" Template="Default"
              LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="0" RAnchorOffset="50" BAnchorPoint="0" BAnchorOffset="50"

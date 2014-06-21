@@ -203,3 +203,12 @@ end
 function Catalog.Browser:OnModeChange(handler, control)
   self:BuildItemList(self.Window:FindChild("ItemList"):GetData())
 end
+
+function Catalog.Browser:OnGenerateTooltip(handler, control)
+  local equipped = control:GetParent():GetData():GetEquippedItemForItemType()
+  Tooltip.GetItemTooltipForm(self, control, control:GetParent():GetData(), {
+    bPrimary = true,
+    bSelling = false,
+    itemCompare = equipped
+  })
+end
