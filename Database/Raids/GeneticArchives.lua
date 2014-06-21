@@ -7,16 +7,5 @@ Catalog.Database["GalacticArchives"] = {
   },
   ["type"] = "raid",
   ["bosses"] = {
-    {
-      ["name"] = {
-        ["en"] = "",
-        ["de"] = "",
-        ["fr"] = ""
-      },
-      ["normal"] = {
-      },
-      ["veteran"] = {
-      }
-    }
   }
 }

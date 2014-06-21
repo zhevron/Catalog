@@ -7,16 +7,5 @@ Catalog.Database["Datascape"] = {
   },
   ["type"] = "raid",
   ["bosses"] = {
-    {
-      ["name"] = {
-        ["en"] = "",
-        ["de"] = "",
-        ["fr"] = ""
-      },
-      ["normal"] = {
-      },
-      ["veteran"] = {
-      }
-    }
   }
 }
