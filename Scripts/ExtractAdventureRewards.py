@@ -23,10 +23,12 @@ def parse_normal():
   global browser
   if not browser.is_text_present("Normal rewards"):
     return
+  link_id = "ui-id-4"
   table_id = "DataTables_Table_3"
   if not browser.is_text_present("Quests"):
+    link_id = "ui-id-3"
     table_id = "DataTables_Table_2"
-  browser.find_by_id("ui-id-4")[0].click()
+  browser.find_by_id(link_id)[0].click()
   while not browser.is_element_present_by_id(table_id):
     continue
   parse_drops_normal(table_id)
@@ -39,10 +41,12 @@ def parse_veteran():
   global browser
   if not browser.is_text_present("Veteran rewards"):
     return
+  link_id = "ui-id-5"
   table_id = "DataTables_Table_4"
   if not browser.is_text_present("Quests"):
+    link_id = "ui-id-4"
     table_id = "DataTables_Table_3"
-  browser.find_by_id("ui-id-5")[0].click()
+  browser.find_by_id(link_id)[0].click()
   while not browser.is_element_present_by_id(table_id):
     continue
   parse_drops_veteran(table_id)
