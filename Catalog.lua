@@ -1,7 +1,7 @@
 require "GameLib"
 
 Catalog = {}
-Catalog.Version = "0.0.1"
+Catalog.Version = "0.0.3"
 
 local Defaults = {
   ["Locale"] = "en",
