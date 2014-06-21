@@ -1,5 +1,5 @@
 -- [Adventure] The Siege of Tempest Refuge
-Catalog_DB["SiegeOfTempestRefuge"] = {
+Catalog.Database["SiegeOfTempestRefuge"] = {
   ["name"] = {
     ["en"] = "The Siege of Tempest Refuge",
     ["de"] = "",

@@ -1,5 +1,5 @@
 -- [Adventure] Riot in the Void
-Catalog_DB["RiotInTheVoid"] = {
+Catalog.Database["RiotInTheVoid"] = {
   ["name"] = {
     ["en"] = "Riot in the Void",
     ["de"] = "",

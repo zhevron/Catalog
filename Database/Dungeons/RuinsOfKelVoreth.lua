@@ -1,5 +1,5 @@
 -- [Dungeon] Ruins of Kel Voreth
-Catalog_DB["RuinsOfKelVoreth"] = {
+Catalog.Database["RuinsOfKelVoreth"] = {
   ["name"] = {
     ["en"] = "Ruins of Kel Voreth",
     ["de"] = "Ruins of Kel Voreth",

@@ -82,7 +82,7 @@ function Catalog.Browser:BuildLocationList(type, parent)
   local list = parent:FindChild("LocationList")
   list:DestroyChildren()
   local locations = {}
-  for _, location in pairs(Catalog_DB) do
+  for _, location in pairs(Catalog.Database) do
     if location.type == type then
       local tbl = Catalog.Utility:TableCopyRecursive(location)
       tbl.name = location.name[Catalog.Options.Locale]

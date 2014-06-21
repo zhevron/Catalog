@@ -1,5 +1,5 @@
 -- [Raid] Genetic Archives
-Catalog_DB["GalacticArchives"] = {
+Catalog.Database["GalacticArchives"] = {
   ["name"] = {
     ["en"] = "Galactic Archives",
     ["de"] = "",

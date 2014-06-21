@@ -1,5 +1,5 @@
 -- [Dungeon] Stormtalon's Lair
-Catalog_DB["StormtalonsLair"] = {
+Catalog.Database["StormtalonsLair"] = {
   ["name"] = {
     ["en"] = "Stormtalon's Lair",
     ["de"] = "Stormtalon's Lair",

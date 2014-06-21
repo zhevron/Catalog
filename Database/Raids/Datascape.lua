@@ -1,5 +1,5 @@
 -- [Raid] Datascape
-Catalog_DB["Datascape"] = {
+Catalog.Database["Datascape"] = {
   ["name"] = {
     ["en"] = "Datascape",
     ["de"] = "",

@@ -1,5 +1,5 @@
 -- [Adventure] Hycrest Insurrection
-Catalog_DB["HycrestInsurrection"] = {
+Catalog.Database["HycrestInsurrection"] = {
   ["name"] = {
     ["en"] = "Hycrest Insurrection",
     ["de"] = "",

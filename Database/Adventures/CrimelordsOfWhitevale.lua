@@ -1,5 +1,5 @@
 -- [Adventure] Crimelords of Whitevale
-Catalog_DB["CrimelordsOfWhitevale"] = {
+Catalog.Database["CrimelordsOfWhitevale"] = {
   ["name"] = {
     ["en"] = "Crimelords of Whitevale",
     ["de"] = "",

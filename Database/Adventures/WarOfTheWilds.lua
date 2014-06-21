@@ -1,5 +1,5 @@
 -- [Adventure] War of the Wilds
-Catalog_DB["WarOfTheWilds"] = {
+Catalog.Database["WarOfTheWilds"] = {
   ["name"] = {
     ["en"] = "War of the Wilds",
     ["de"] = "",

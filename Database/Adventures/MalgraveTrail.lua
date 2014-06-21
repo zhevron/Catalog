@@ -1,5 +1,5 @@
 -- [Adventure] The Malgrave Trail
-Catalog_DB["MalgraveTrail"] = {
+Catalog.Database["MalgraveTrail"] = {
   ["name"] = {
     ["en"] = "The Malgrave Trail",
     ["de"] = "",

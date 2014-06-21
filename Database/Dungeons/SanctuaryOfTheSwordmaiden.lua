@@ -1,5 +1,5 @@
 -- [Dungeon] Sanctuary of the Swordmaiden
-Catalog_DB["SanctuaryOfTheSwordmaiden"] = {
+Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
   ["name"] = {
     ["en"] = "Sanctuary of the Swordmaiden",
     ["de"] = "Sanctuary of the Swordmaiden",

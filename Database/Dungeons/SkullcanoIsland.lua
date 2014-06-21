@@ -1,5 +1,5 @@
 -- [Dungeon] Skullcano Island
-Catalog_DB["SkullcanoIsland"] = {
+Catalog.Database["SkullcanoIsland"] = {
   ["name"] = {
     ["en"] = "Skullcano Island",
     ["de"] = "Skullcano Island",
