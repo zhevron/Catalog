@@ -187,6 +187,7 @@ function Catalog.Browser:OnLocationClose(handler, control)
 end
 
 function Catalog.Browser:OnBossSelect(handler, control)
+  self.Window:FindChild("ItemListHeaderText"):SetText(control:GetParent():GetData().name[Catalog.Options.Locale])
   self:BuildItemList(control:GetParent():GetData())
 end
 

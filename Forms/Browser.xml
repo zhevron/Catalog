@@ -12,12 +12,15 @@
       <Event Name="ButtonSignal" Function="Close"/>
     </Control>
     <Control Name="HeaderText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="0" BAnchorOffset="45"
+             LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="0" BAnchorOffset="45"
              RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1"/>
     <Control Name="LocationTypeList" Class="Window" Template="Holo_ScrollList"
              LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="50" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="1" BAnchorOffset="-40"
              RelativeToClient="1" TooltipType="OnCursor" VScroll="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
     </Control>
+    <Control Name="ItemListHeaderText" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="340" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="0" BAnchorOffset="45"
+             RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1"/>
     <Control Name="ItemList" Class="Window" Template="Holo_ScrollList"
              LAnchorPoint="0" LAnchorOffset="335" TAnchorPoint="0" TAnchorOffset="50" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="1" BAnchorOffset="-40"
              RelativeToClient="1" TooltipType="OnCursor" VScroll="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
@@ -84,13 +87,13 @@
     <Control Name="ItemIcon" Class="Window" Template="Default"
              LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="0" RAnchorOffset="50" BAnchorPoint="0" BAnchorOffset="50"
              RelativeToClient="1"TooltipType="OnCursor" Picture="1" IgnoreMouse="1" TooltipFont="CRB_InterfaceSmall_O"/>
-    <Control Name="ItemText" Class="Window" Template="Default" Text="Item Name of Awesomeness"
+    <Control Name="ItemText" Class="Window" Template="Default"
              LAnchorPoint="0" LAnchorOffset="55" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-200" BAnchorPoint="0" BAnchorOffset="50"
              RelativeToClient="1" Font="CRB_InterfaceLarge_BB" TooltipType="OnCursor" TextColor="ffffffff" DT_VCENTER="1"/>
-    <Control Name="ItemLevelText" Class="Window" Template="Default" Text="Level 50"
+    <Control Name="ItemLevelText" Class="Window" Template="Default"
              LAnchorPoint="1" LAnchorOffset="-205" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="30"
              RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_RIGHT="1"/>
-    <Control Name="ItemTypeText" Class="Window" Template="Default" Text="Heavy Armor"
+    <Control Name="ItemTypeText" Class="Window" Template="Default"
              LAnchorPoint="1" LAnchorOffset="-205" TAnchorPoint="0" TAnchorOffset="30" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="50"
              RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_RIGHT="1"/>
   </Form>
