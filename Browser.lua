@@ -3,6 +3,16 @@ require "Window"
 
 Catalog.Browser = {}
 
+Catalog.Browser.ItemColor = {
+  [Item.CodeEnumItemQuality.Inferior] = ApolloColor.new("ItemQuality_Inferior"),
+  [Item.CodeEnumItemQuality.Average] = ApolloColor.new("ItemQuality_Average"),
+  [Item.CodeEnumItemQuality.Good] = ApolloColor.new("ItemQuality_Good"),
+  [Item.CodeEnumItemQuality.Excellent] = ApolloColor.new("ItemQuality_Excellent"),
+  [Item.CodeEnumItemQuality.Superb] = ApolloColor.new("ItemQuality_Superb"),
+  [Item.CodeEnumItemQuality.Legendary] = ApolloColor.new("ItemQuality_Legedary"),
+  [Item.CodeEnumItemQuality.Artifact] = ApolloColor.new("ItemQuality_Artifact")
+}
+
 function Catalog.Browser:Init()
   self.Xml = XmlDoc.CreateFromFile("Forms/Browser.xml")
   self.Xml:RegisterCallback("OnDocumentReady", self)
@@ -112,6 +122,7 @@ function Catalog.Browser:BuildBossList(location, parent)
 end
 
 function Catalog.Browser:BuildLootList(boss)
+  local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
   local mode = "normal"
@@ -123,8 +134,36 @@ function Catalog.Browser:BuildLootList(boss)
     if item ~= nil then
       local form = Apollo.LoadForm(self.Xml, "Item", list, self)
       form:SetData(item)
+      form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
       form:FindChild("ItemText"):SetText(item:GetName())
+      form:FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
+      form:FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
+      form:FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
     end
   end
   list:ArrangeChildrenVert()
+end
+
+function Catalog.Browser:OnLocationTypeOpen()
+  --
+end
+
+function Catalog.Browser:OnLocationTypeClose()
+  --
+end
+
+function Catalog.Browser:OnLocationOpen()
+  --
+end
+
+function Catalog.Browser:OnLocationClose()
+  --
+end
+
+function Catalog.Browser:OnBossSelect()
+  --
+end
+
+function Catalog.Browser:OnItemSelect()
+  --
 end
