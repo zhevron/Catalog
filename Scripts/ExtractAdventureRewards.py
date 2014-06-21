@@ -20,6 +20,9 @@ def parse_adventure(id):
   parse_veteran()
 
 def parse_normal():
+  global browser
+  if not browser.is_text_present("Normal rewards"):
+    return
   browser.find_by_id("ui-id-4")[0].click()
   while not browser.is_element_present_by_id("DataTables_Table_3"):
     continue
@@ -30,6 +33,9 @@ def parse_normal():
     parse_drops_normal("DataTables_Table_3")
 
 def parse_veteran():
+  global browser
+  if not browser.is_text_present("Veteran rewards"):
+    return
   browser.find_by_id("ui-id-5")[0].click()
   while not browser.is_element_present_by_id("DataTables_Table_4"):
     continue
@@ -89,11 +95,11 @@ else:
     item_ids = items_normal.keys()
     item_ids.sort()
     for item_id in item_ids:
-      file.write(str(item_id) + ", -- " + items[item_id].name + "\n")
+      file.write(str(item_id) + ", -- " + items_normal[item_id].name + "\n")
   with open(sys.argv[1] + "-veteran.txt", "w") as file:
     item_ids = items_veteran.keys()
     item_ids.sort()
     for item_id in item_ids:
-      file.write(str(item_id) + ", -- " + items[item_id].name + "\n")
+      file.write(str(item_id) + ", -- " + items_veteran[item_id].name + "\n")
   print "[Normal] Total items found: %d" % len(items_normal)
   print "[Veteran] Total items found: %d" % len(items_veteran)
