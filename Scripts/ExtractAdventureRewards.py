@@ -23,27 +23,33 @@ def parse_normal():
   global browser
   if not browser.is_text_present("Normal rewards"):
     return
+  table_id = "DataTables_Table_3"
+  if not browser.is_text_present("Quests"):
+    table_id = "DataTables_Table_2"
   browser.find_by_id("ui-id-4")[0].click()
-  while not browser.is_element_present_by_id("DataTables_Table_3"):
+  while not browser.is_element_present_by_id(table_id):
     continue
-  parse_drops_normal("DataTables_Table_3")
-  pages = num_pages("DataTables_Table_3")
+  parse_drops_normal(table_id)
+  pages = num_pages(table_id)
   for i in range(1, pages):
-    go_to_page("DataTables_Table_3", i)
-    parse_drops_normal("DataTables_Table_3")
+    go_to_page(table_id, i)
+    parse_drops_normal(table_id)
 
 def parse_veteran():
   global browser
   if not browser.is_text_present("Veteran rewards"):
     return
+  table_id = "DataTables_Table_4"
+  if not browser.is_text_present("Quests"):
+    table_id = "DataTables_Table_3"
   browser.find_by_id("ui-id-5")[0].click()
-  while not browser.is_element_present_by_id("DataTables_Table_4"):
+  while not browser.is_element_present_by_id(table_id):
     continue
-  parse_drops_veteran("DataTables_Table_4")
-  pages = num_pages("DataTables_Table_4")
+  parse_drops_veteran(table_id)
+  pages = num_pages(table_id)
   for i in range(1, pages):
-    go_to_page("DataTables_Table_4", i)
-    parse_drops_veteran("DataTables_Table_4")
+    go_to_page(table_id, i)
+    parse_drops_veteran(table_id)
 
 def num_pages(table_id):
   global browser
