@@ -9,7 +9,7 @@ The browser lets you look through the loot to see where you can get upgrades.
 ## How do I use it?
 
 You can install the addon from Curse using either the website or the Curse client.
-After the addon has been installed, you can open the browser by typing '/loot' in the chat.
+After the addon has been installed, you can open the browser by typing '/loot' or '/catalog' in the chat.
 
 ## I found a error in the loot tables. Now what?
 
