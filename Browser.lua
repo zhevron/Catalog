@@ -1,3 +1,4 @@
+require "GameLib"
 require "Item"
 require "Window"
 
@@ -192,8 +193,11 @@ function Catalog.Browser:OnBossSelect(handler, control)
   self:BuildItemList(control:GetParent():GetData())
 end
 
-function Catalog.Browser:OnItemSelect(handler, control)
-  if Apollo.IsAltKeyDown() then
+function Catalog.Browser:OnMouseButtonDown(handler, control, button)
+  if button ~= GameLib.CodeEnumInputMouse.Right then
+    return
+  end
+  if Apollo.IsControlKeyDown() then
     Event_FireGenericEvent("ShowItemInDressingRoom", control:GetParent():GetData())
   elseif Apollo.IsShiftKeyDown() then
     Event_FireGenericEvent("ItemLink", control:GetParent():GetData())
