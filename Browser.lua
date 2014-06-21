@@ -94,13 +94,8 @@ function Catalog.Browser:BuildLocationList(type, parent)
     form:SetData(location)
     form:FindChild("LocationText"):SetText(name)
     self:BuildBossList(location, form)
-    local _, _, _, height = form:GetAnchorOffsets()
-    local left, top, right, bottom = list:GetAnchorOffsets()
-    list:SetAnchorOffsets(left, top, right, bottom + height + 2)
   end
-  local _, _, _, height = list:GetAnchorOffsets()
-  local left, top, right, bottom = parent:GetAnchorOffsets()
-  parent:SetAnchorOffsets(left, top, right, bottom + height)
+  self:SizeToFit(list)
   list:ArrangeChildrenVert()
 end
 
@@ -111,13 +106,8 @@ function Catalog.Browser:BuildBossList(location, parent)
     local form = Apollo.LoadForm(self.Xml, "Boss", list, self)
     form:SetData(boss)
     form:FindChild("BossText"):SetText(boss.name[Catalog.Options.Locale])
-    local _, _, _, height = form:GetAnchorOffsets()
-    local left, top, right, bottom = list:GetAnchorOffsets()
-    list:SetAnchorOffsets(left, top, right, bottom + height + 3)
   end
-  local _, _, _, height = list:GetAnchorOffsets()
-  local left, top, right, bottom = parent:GetAnchorOffsets()
-  parent:SetAnchorOffsets(left, top, right, bottom + height)
+  self:SizeToFit(list)
   list:ArrangeChildrenVert()
 end
 
@@ -146,20 +136,54 @@ function Catalog.Browser:BuildItemList(boss)
   list:ArrangeChildrenVert()
 end
 
-function Catalog.Browser:OnLocationTypeOpen()
-  --
+function Catalog.Browser:SizeToFit(list)
+  if #list:GetChildren() > 0 then
+    local height = 0
+    for _, child in pairs(list:GetChildren()) do
+      local _, _, _, bottom = child:GetAnchorOffsets()
+      height = height + bottom
+    end
+    local left, top, right, bottom = list:GetAnchorOffsets()
+    list:SetAnchorOffsets(left, top, right, bottom + height)
+  end
 end
 
-function Catalog.Browser:OnLocationTypeClose()
-  --
+function Catalog.Browser:Expand(list, sublist)
+  local left, top, right, bottom = list:GetAnchorOffsets()
+  local _, _, _, height = sublist:GetAnchorOffsets()
+  list:SetAnchorOffsets(left, top, right, bottom + height)
 end
 
-function Catalog.Browser:OnLocationOpen()
-  --
+function Catalog.Browser:Collapse(list, sublist)
+  local left, top, right, bottom = list:GetAnchorOffsets()
+  local _, _, _, height = sublist:GetAnchorOffsets()
+  list:SetAnchorOffsets(left, top, right, bottom - height)
 end
 
-function Catalog.Browser:OnLocationClose()
-  --
+function Catalog.Browser:OnLocationTypeOpen(handler, control)
+  self:Expand(control:GetParent(), control:GetParent():FindChild("LocationList"))
+  self.Window:FindChild("LocationTypeList"):ArrangeChildrenVert()
+end
+
+function Catalog.Browser:OnLocationTypeClose(handler, control)
+  self:Collapse(control:GetParent(), control:GetParent():FindChild("LocationList"))
+  self.Window:FindChild("LocationTypeList"):ArrangeChildrenVert()
+end
+
+function Catalog.Browser:OnLocationOpen(handler, control)
+  self:Expand(control:GetParent(), control:GetParent():FindChild("BossList"))
+  self:Expand(control:GetParent():GetParent(), control:GetParent():FindChild("BossList"))
+  self:Expand(control:GetParent():GetParent():GetParent(), control:GetParent():FindChild("BossList"))
+  control:GetParent():GetParent():ArrangeChildrenVert()
+  self.Window:FindChild("LocationTypeList"):ArrangeChildrenVert()
+end
+
+function Catalog.Browser:OnLocationClose(handler, control)
+  self:Collapse(control:GetParent(), control:GetParent():FindChild("BossList"))
+  self:Collapse(control:GetParent():GetParent(), control:GetParent():FindChild("BossList"))
+  self:Collapse(control:GetParent():GetParent():GetParent(), control:GetParent():FindChild("BossList"))
+  control:GetParent():GetParent():ArrangeChildrenVert()
+  self.Window:FindChild("LocationTypeList"):ArrangeChildrenVert()
 end
 
 function Catalog.Browser:OnBossSelect(handler, control)
@@ -167,5 +191,9 @@ function Catalog.Browser:OnBossSelect(handler, control)
 end
 
 function Catalog.Browser:OnItemSelect(handler, control)
-  Event_FireGenericEvent("ShowItemInDressingRoom", control:GetParent():GetData())
+  if Apollo.IsAltKeyDown() then
+    Event_FireGenericEvent("ShowItemInDressingRoom", control:GetParent():GetData())
+  elseif Apollo.IsShiftKeyDown() then
+    Event_FireGenericEvent("ItemLink", control:GetParent():GetData())
+  end
 end
