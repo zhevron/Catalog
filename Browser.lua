@@ -198,7 +198,11 @@ function Catalog.Browser:OnMouseButtonDown(handler, control, button)
     return
   end
   if Apollo.IsControlKeyDown() then
-    Event_FireGenericEvent("ShowItemInDressingRoom", control:GetParent():GetData())
+    if control:GetParent():GetData():GetHousingDecorInfoId() ~= nil then
+      Event_FireGenericEvent("DecorPreviewOpen", control:GetParent():GetData():GetHousingDecorInfoId())
+    else
+      Event_FireGenericEvent("ShowItemInDressingRoom", control:GetParent():GetData())
+    end
   elseif Apollo.IsShiftKeyDown() then
     Event_FireGenericEvent("ItemLink", control:GetParent():GetData())
   end
