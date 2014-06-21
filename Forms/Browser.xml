@@ -30,7 +30,10 @@
              RelativeToClient="1" Font="CRB_InterfaceTiny_BB" Text="Veteran difficulty" TooltipType="OnCursor" DT_RIGHT="1" DT_VCENTER="1"/>
     <Control Name="VeteranButton" Class="Button" Base="CRB_UIKitSprites:btn_radioSMALL"
              LAnchorPoint="0" LAnchorOffset="863" TAnchorPoint="0" TAnchorOffset="515" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="-15"
-             RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check"/>
+             RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
+      <Event Name="ButtonCheck" Function="OnModeChange"/>
+      <Event Name="ButtonUncheck" Function="OnModeChange"/>
+    </Control>
   </Form>
   <Form Name="LocationType" Class="Window" Template="Default"
         LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="42"

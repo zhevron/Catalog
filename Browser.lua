@@ -115,6 +115,7 @@ function Catalog.Browser:BuildItemList(boss)
   local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
+  list:SetData(boss)
   local mode = "normal"
   if self.Window:FindChild("VeteranButton"):IsChecked() then
     mode = "veteran"
@@ -197,4 +198,8 @@ function Catalog.Browser:OnItemSelect(handler, control)
   elseif Apollo.IsShiftKeyDown() then
     Event_FireGenericEvent("ItemLink", control:GetParent():GetData())
   end
+end
+
+function Catalog.Browser:OnModeChange(handler, control)
+  self:BuildItemList(self.Window:FindChild("ItemList"):GetData())
 end
