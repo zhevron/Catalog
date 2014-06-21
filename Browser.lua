@@ -162,10 +162,10 @@ function Catalog.Browser:OnLocationClose()
   --
 end
 
-function Catalog.Browser:OnBossSelect()
-  --
+function Catalog.Browser:OnBossSelect(handler, control)
+  self:BuildItemList(control:GetParent():GetData())
 end
 
-function Catalog.Browser:OnItemSelect()
-  --
+function Catalog.Browser:OnItemSelect(handler, control)
+  Event_FireGenericEvent("ShowItemInDressingRoom", control:GetParent():GetData())
 end
