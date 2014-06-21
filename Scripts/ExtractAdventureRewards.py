@@ -23,37 +23,43 @@ def parse_normal():
   global browser
   if not browser.is_text_present("Normal rewards"):
     return
-  link_id = "ui-id-4"
-  table_id = "DataTables_Table_3"
-  if not browser.is_text_present("Quests"):
-    link_id = "ui-id-3"
-    table_id = "DataTables_Table_2"
-  browser.find_by_id(link_id)[0].click()
-  while not browser.is_element_present_by_id(table_id):
+  link_id = 3
+  table_id = 2
+  if browser.is_text_present("Quests"):
+    link_id = link_id + 1
+    table_id = table_id + 1
+  if browser.is_text_present("Veteran NPCs"):
+    link_id = link_id + 1
+    table_id = table_id + 1
+  browser.find_by_id("ui-id-" + str(link_id))[0].click()
+  while not browser.is_element_present_by_id("DataTables_Table_" + str(table_id)):
     continue
-  parse_drops_normal(table_id)
-  pages = num_pages(table_id)
+  parse_drops_normal("DataTables_Table_" + str(table_id))
+  pages = num_pages("DataTables_Table_" + str(table_id))
   for i in range(1, pages):
-    go_to_page(table_id, i)
-    parse_drops_normal(table_id)
+    go_to_page("DataTables_Table_" + str(table_id), i)
+    parse_drops_normal("DataTables_Table_" + str(table_id))
 
 def parse_veteran():
   global browser
   if not browser.is_text_present("Veteran rewards"):
     return
-  link_id = "ui-id-5"
-  table_id = "DataTables_Table_4"
-  if not browser.is_text_present("Quests"):
-    link_id = "ui-id-4"
-    table_id = "DataTables_Table_3"
-  browser.find_by_id(link_id)[0].click()
-  while not browser.is_element_present_by_id(table_id):
+  link_id = 4
+  table_id = 3
+  if browser.is_text_present("Quests"):
+    link_id = link_id + 1
+    table_id = table_id + 1
+  if browser.is_text_present("Veteran NPCs"):
+    link_id = link_id + 1
+    table_id = table_id + 1
+  browser.find_by_id("ui-id-" + str(link_id))[0].click()
+  while not browser.is_element_present_by_id("DataTables_Table_" + str(table_id)):
     continue
-  parse_drops_veteran(table_id)
-  pages = num_pages(table_id)
+  parse_drops_veteran("DataTables_Table_" + str(table_id))
+  pages = num_pages("DataTables_Table_" + str(table_id))
   for i in range(1, pages):
-    go_to_page(table_id, i)
-    parse_drops_veteran(table_id)
+    go_to_page("DataTables_Table_" + str(table_id), i)
+    parse_drops_veteran("DataTables_Table_" + str(table_id))
 
 def num_pages(table_id):
   global browser
