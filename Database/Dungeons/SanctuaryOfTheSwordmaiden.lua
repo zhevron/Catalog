@@ -3,7 +3,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
   ["name"] = {
     ["en"] = "Sanctuary of the Swordmaiden",
     ["de"] = "Sanctuary of the Swordmaiden",
-    ["fr"] = "Sanctuary of the Swordmaiden"
+    ["fr"] = "Sanctuaire de la Valkyrie"
   },
   ["type"] = "dungeon",
   ["bosses"] = {

@@ -3,7 +3,7 @@ Catalog.Database["RuinsOfKelVoreth"] = {
   ["name"] = {
     ["en"] = "Ruins of Kel Voreth",
     ["de"] = "Ruins of Kel Voreth",
-    ["fr"] = "Ruins of Kel Voreth"
+    ["fr"] = "Ruines de Kel Voreth"
   },
   ["type"] = "dungeon",
   ["bosses"] = {

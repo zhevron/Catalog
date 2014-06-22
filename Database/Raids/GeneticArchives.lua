@@ -2,8 +2,8 @@
 Catalog.Database["GeneticArchives"] = {
   ["name"] = {
     ["en"] = "Genetic Archives",
-    ["de"] = "",
-    ["fr"] = ""
+    ["de"] = "Genetic Archives",
+    ["fr"] = "Les Archives Génétiques"
   },
   ["type"] = "raid",
   ["bosses"] = {

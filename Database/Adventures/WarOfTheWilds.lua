@@ -3,7 +3,7 @@ Catalog.Database["WarOfTheWilds"] = {
   ["name"] = {
     ["en"] = "War of the Wilds",
     ["de"] = "War of the Wilds",
-    ["fr"] = "War of the Wilds"
+    ["fr"] = "Guerre sauvage"
   },
   ["type"] = "adventure",
   ["bosses"] = {
@@ -11,7 +11,7 @@ Catalog.Database["WarOfTheWilds"] = {
       ["name"] = {
         ["en"] = "Rewards",
         ["de"] = "Rewards",
-        ["fr"] = "Rewards"
+        ["fr"] = "Récompenses"
       },
       ["normal"] = {
         15813, -- Crittle Stick

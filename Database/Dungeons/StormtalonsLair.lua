@@ -3,7 +3,7 @@ Catalog.Database["StormtalonsLair"] = {
   ["name"] = {
     ["en"] = "Stormtalon's Lair",
     ["de"] = "Stormtalon's Lair",
-    ["fr"] = "Stormtalon's Lair"
+    ["fr"] = "Antre d'Ouragriffe"
   },
   ["type"] = "dungeon",
   ["bosses"] = {

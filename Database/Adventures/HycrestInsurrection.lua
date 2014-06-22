@@ -3,7 +3,7 @@ Catalog.Database["HycrestInsurrection"] = {
   ["name"] = {
     ["en"] = "Hycrest Insurrection",
     ["de"] = "Hycrest Insurrection",
-    ["fr"] = "Hycrest Insurrection"
+    ["fr"] = "L'Insurrection de Hautecrête"
   },
   ["type"] = "adventure",
   ["bosses"] = {
@@ -11,7 +11,7 @@ Catalog.Database["HycrestInsurrection"] = {
       ["name"] = {
         ["en"] = "Rewards",
         ["de"] = "Rewards",
-        ["fr"] = "Rewards"
+        ["fr"] = "Récompenses"
       },
       ["normal"] = {
         21742, -- Shiny Lighter

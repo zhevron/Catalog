@@ -25,6 +25,11 @@ If you want to contribute to the development of the addon, start by [forking](ht
 
 After making the contributions in your forked repository, please submit a [pull request](https://github.com/zhevron/Catalog/pulls) back to the main project.
 
+## Contributions
+
+Special thanks to:
+* [Tchao](http://www.curse.com/users/Tchao) for the French localization.
+
 ## Who maintains this addon?
 
 The addon is currently maintained by the following:

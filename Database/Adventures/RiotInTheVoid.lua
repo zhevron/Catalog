@@ -3,7 +3,7 @@ Catalog.Database["RiotInTheVoid"] = {
   ["name"] = {
     ["en"] = "Riot in the Void",
     ["de"] = "Riot in the Void",
-    ["fr"] = "Riot in the Void"
+    ["fr"] = "L'Émeute sidérale"
   },
   ["type"] = "adventure",
   ["bosses"] = {
@@ -11,7 +11,7 @@ Catalog.Database["RiotInTheVoid"] = {
       ["name"] = {
         ["en"] = "Rewards",
         ["de"] = "Rewards",
-        ["fr"] = "Rewards"
+        ["fr"] = "Récompenses"
       },
       ["normal"] = {
         15303, -- Bushberry (Tall)

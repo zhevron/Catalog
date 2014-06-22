@@ -3,7 +3,7 @@ Catalog.Database["MalgraveTrail"] = {
   ["name"] = {
     ["en"] = "The Malgrave Trail",
     ["de"] = "The Malgrave Trail",
-    ["fr"] = "The Malgrave Trail"
+    ["fr"] = "La Piste de Maltombe"
   },
   ["type"] = "adventure",
   ["bosses"] = {
@@ -11,7 +11,7 @@ Catalog.Database["MalgraveTrail"] = {
       ["name"] = {
         ["en"] = "Rewards",
         ["de"] = "Rewards",
-        ["fr"] = "Rewards"
+        ["fr"] = "Récompenses"
       },
       ["normal"] = {
         15323, -- Habanero Bloom Bush

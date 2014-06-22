@@ -1,7 +1,7 @@
 Catalog.Locale["fr"] = {
-  ["adventure"] = { "", "" },
-  ["dungeon"] = { "", "" },
-  ["raid"] = { "", "" },
-  ["level"] = "",
-  ["veteran"] = ""
+  ["adventure"] = { "aventure", "aventures" },
+  ["dungeon"] = { "donjon", "donjons" },
+  ["raid"] = { "raid", "raids" },
+  ["level"] = "Niveau",
+  ["veteran"] = "Difficulté Vétéran"
 }

@@ -3,7 +3,7 @@ Catalog.Database["CrimelordsOfWhitevale"] = {
   ["name"] = {
     ["en"] = "Crimelords of Whitevale",
     ["de"] = "Crimelords of Whitevale",
-    ["fr"] = "Crimelords of Whitevale"
+    ["fr"] = " Seigneurs du crime de Valblanc"
   },
   ["type"] = "adventure",
   ["bosses"] = {
@@ -11,7 +11,7 @@ Catalog.Database["CrimelordsOfWhitevale"] = {
       ["name"] = {
         ["en"] = "Rewards",
         ["de"] = "Rewards",
-        ["fr"] = "Rewards"
+        ["fr"] = "Récompenses"
       },
       ["normal"] = {
         21529, -- Resold Marauder Anchor

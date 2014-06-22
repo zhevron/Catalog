@@ -3,7 +3,7 @@ Catalog.Database["SkullcanoIsland"] = {
   ["name"] = {
     ["en"] = "Skullcano Island",
     ["de"] = "Skullcano Island",
-    ["fr"] = "Skullcano Island"
+    ["fr"] = "Volcrâno"
   },
   ["type"] = "dungeon",
   ["bosses"] = {
