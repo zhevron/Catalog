@@ -11,7 +11,7 @@ Catalog.Database["SkullcanoIsland"] = {
       ["name"] = {
         ["en"] = "Stew-Shaman Tugga",
         ["de"] = "Stew-Shaman Tugga",
-        ["fr"] = "Stew-Shaman Tugga"
+        ["fr"] = "Chamiam Tugga"
       },
       ["normal"] = {
         21749, -- Golden Skull
@@ -50,7 +50,7 @@ Catalog.Database["SkullcanoIsland"] = {
       ["name"] = {
         ["en"] = "Thunderfoot",
         ["de"] = "Thunderfoot",
-        ["fr"] = "Thunderfoot"
+        ["fr"] = "Fulguropied"
       },
       ["normal"] = {
         7627, -- Small Pile of Bones
@@ -98,7 +98,7 @@ Catalog.Database["SkullcanoIsland"] = {
       ["name"] = {
         ["en"] = "Bosun Octog",
         ["de"] = "Bosun Octog",
-        ["fr"] = "Bosun Octog"
+        ["fr"] = "Bosco Octog"
       },
       ["normal"] = {
         31620, -- Shiny Golden Lopp
@@ -130,7 +130,7 @@ Catalog.Database["SkullcanoIsland"] = {
       ["name"] = {
         ["en"] = "Mordechai Redmoon",
         ["de"] = "Mordechai Redmoon",
-        ["fr"] = "Mordechai Redmoon"
+        ["fr"] = "Mordechai Rougelune"
       },
       ["normal"] = {
         30627, -- Marauder Captain's Chair

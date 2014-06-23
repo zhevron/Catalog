@@ -11,7 +11,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
       ["name"] = {
         ["en"] = "Deadringer Shallaos",
         ["de"] = "Deadringer Shallaos",
-        ["fr"] = "Deadringer Shallaos"
+        ["fr"] = "Sosie Shallaos"
       },
       ["normal"] = {
         7691, -- Pearl Necklace
@@ -47,7 +47,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
       ["name"] = {
         ["en"] = "Rayna Darkspeaker",
         ["de"] = "Rayna Darkspeaker",
-        ["fr"] = "Rayna Darkspeaker"
+        ["fr"] = "Rayna Languenoire"
       },
       ["normal"] = {
         7691, -- Pearl Necklace
@@ -78,7 +78,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
       ["name"] = {
         ["en"] = "Ondu Lifeweaver",
         ["de"] = "Ondu Lifeweaver",
-        ["fr"] = "Ondu Lifeweaver"
+        ["fr"] = "Ondu Tisse-âme"
       },
       ["normal"] = {
         8397, -- Fluorescent Leaf
@@ -106,7 +106,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
       ["name"] = {
         ["en"] = "Moldwood Overlord Skash",
         ["de"] = "Moldwood Overlord Skash",
-        ["fr"] = "Moldwood Overlord Skash"
+        ["fr"] = "Seigneur de Putrebois Skash"
       },
       ["normal"] = {
         16069, -- Impure Growth
@@ -128,7 +128,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
       ["name"] = {
         ["en"] = "Spiritmother Selene the Corrupted",
         ["de"] = "Spiritmother Selene the Corrupted",
-        ["fr"] = "Spiritmother Selene the Corrupted"
+        ["fr"] = "Mère spirituelle Sélène la Corrompue"
       },
       ["normal"] = {
         14520, -- Starloom Cloth

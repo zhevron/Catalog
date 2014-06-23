@@ -3,7 +3,7 @@ Catalog.Database["CrimelordsOfWhitevale"] = {
   ["name"] = {
     ["en"] = "Crimelords of Whitevale",
     ["de"] = "Crimelords of Whitevale",
-    ["fr"] = " Seigneurs du crime de Valblanc"
+    ["fr"] = "Seigneurs du crime de Valblanc"
   },
   ["type"] = "adventure",
   ["bosses"] = {

@@ -11,7 +11,7 @@ Catalog.Database["RuinsOfKelVoreth"] = {
       ["name"] = {
         ["en"] = "Grond the Corpsemaker",
         ["de"] = "Grond the Corpsemaker",
-        ["fr"] = "Grond the Corpsemaker"
+        ["fr"] = "Grond le Boucher"
       },
       ["normal"] = {
         30716, -- Burst Power AMP
@@ -47,7 +47,7 @@ Catalog.Database["RuinsOfKelVoreth"] = {
       ["name"] = {
         ["en"] = "Slavemaster Drokk",
         ["de"] = "Slavemaster Drokk",
-        ["fr"] = "Slavemaster Drokk"
+        ["fr"] = "Maître d'esclaves Drokk"
       },
       ["normal"] = {
         30709, -- Vengeance AMP
@@ -77,7 +77,7 @@ Catalog.Database["RuinsOfKelVoreth"] = {
       ["name"] = {
         ["en"] = "Forgemaster Trogun",
         ["de"] = "Forgemaster Trogun",
-        ["fr"] = "Forgemaster Trogun"
+        ["fr"] = "Maître-forgeron Trogun"
       },
       ["normal"] = {
         7782, -- Filled Flask

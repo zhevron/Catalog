@@ -11,7 +11,7 @@ Catalog.Database["StormtalonsLair"] = {
       ["name"] = {
         ["en"] = "Blade-Wind the Invoker",
         ["de"] = "Blade-Wind the Invoker",
-        ["fr"] = "Blade-Wind the Invoker"
+        ["fr"] = "Lamevent l'Invocateur"
       },
       ["normal"] = {
         8025, -- Eerie Pell Idol
@@ -113,7 +113,7 @@ Catalog.Database["StormtalonsLair"] = {
       ["name"] = {
         ["en"] = "Stormtalon",
         ["de"] = "Stormtalon",
-        ["fr"] = "Stormtalon"
+        ["fr"] = "Ouragriffe"
       },
       ["normal"] = {
         21652, -- Statue of Osiric
