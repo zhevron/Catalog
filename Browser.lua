@@ -53,6 +53,7 @@ function Catalog.Browser:Close()
     local left, top = self.Window:GetAnchorOffsets()
     Catalog.Options.Position.X = left
     Catalog.Options.Position.Y = top
+    Catalog.Settings:Close()
     self.Window:Show(false)
   end
 end

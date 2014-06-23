@@ -19,11 +19,11 @@ end
 
 function Catalog.Settings:Open()
   if self.Window and self.Window:IsValid() then
-    local left, top = Catalog.Browser.Window:GetAnchorOffsets()
+    local _, top, right = Catalog.Browser.Window:GetAnchorOffsets()
     local form = Apollo.LoadForm(self.Xml, "CatalogSettings", nil, self)
-    local _, _, right, bottom = form:GetAnchorOffsets()
+    local _, _, width, height = form:GetAnchorOffsets()
     form:Destroy()
-    self.Window:SetAnchorOffsets(left + 5, top, left + 5 + right, top + bottom)
+    self.Window:SetAnchorOffsets(right, top, right + width, top + height)
     self.Window:Show(true)
   end
 end
