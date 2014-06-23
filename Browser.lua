@@ -212,6 +212,14 @@ function Catalog.Browser:OnModeChange(handler, control)
   self:BuildItemList(self.Window:FindChild("ItemList"):GetData())
 end
 
+function Catalog.Browser:OnToggleSettings(handler, control)
+  if control:IsChecked() then
+    Catalog.Settings:Open()
+  else
+    Catalog.Settings:Close()
+  end
+end
+
 function Catalog.Browser:OnGenerateTooltip(handler, control)
   local equipped = control:GetParent():GetData():GetEquippedItemForItemType()
   Tooltip.GetItemTooltipForm(self, control, control:GetParent():GetData(), {

@@ -11,6 +11,12 @@
              RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="PushButton">
       <Event Name="ButtonSignal" Function="Close"/>
     </Control>
+    <Control Name="SettingsButton" Class="Button" Base="CRB_TutorialSprites:btnTut_Close"
+             LAnchorPoint="0" LAnchorOffset="864" TAnchorPoint="0" TAnchorOffset="45" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="73"
+             RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
+      <Event Name="ButtonCheck" Function="OnToggleSettings"/>
+      <Event Name="ButtonUncheck" Function="OnToggleSettings"/>
+    </Control>
     <Control Name="HeaderText" Class="Window" Template="Default"
              LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="0" BAnchorOffset="45"
              RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1"/>
