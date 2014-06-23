@@ -189,22 +189,24 @@ function Catalog.Browser:OnLocationClose(handler, control)
 end
 
 function Catalog.Browser:OnBossSelect(handler, control)
-  self.Window:FindChild("ItemListHeaderText"):SetText(control:GetParent():GetData().name[Catalog.Options.Locale])
-  self:BuildItemList(control:GetParent():GetData())
+  local boss = control:GetParent():GetData()
+  self.Window:FindChild("ItemListHeaderText"):SetText(boss.name[Catalog.Options.Locale])
+  self:BuildItemList(boss)
 end
 
 function Catalog.Browser:OnMouseButtonDown(handler, control, button)
   if button ~= GameLib.CodeEnumInputMouse.Right then
     return
   end
+  local item = control:GetParent():GetData()
   if Apollo.IsControlKeyDown() then
-    if control:GetParent():GetData():GetHousingDecorInfoId() ~= nil then
-      Event_FireGenericEvent("DecorPreviewOpen", control:GetParent():GetData():GetHousingDecorInfoId())
+    if item:GetHousingDecorInfoId() ~= nil then
+      Event_FireGenericEvent("DecorPreviewOpen", item:GetHousingDecorInfoId())
     else
-      Event_FireGenericEvent("ShowItemInDressingRoom", control:GetParent():GetData())
+      Event_FireGenericEvent("ShowItemInDressingRoom", item)
     end
   elseif Apollo.IsShiftKeyDown() then
-    Event_FireGenericEvent("ItemLink", control:GetParent():GetData())
+    Event_FireGenericEvent("ItemLink", item)
   end
 end
 
@@ -221,8 +223,9 @@ function Catalog.Browser:OnToggleSettings(handler, control)
 end
 
 function Catalog.Browser:OnGenerateTooltip(handler, control)
-  local equipped = control:GetParent():GetData():GetEquippedItemForItemType()
-  Tooltip.GetItemTooltipForm(self, control, control:GetParent():GetData(), {
+  local item = control:GetParent():GetData()
+  local equipped = item:GetEquippedItemForItemType()
+  Tooltip.GetItemTooltipForm(self, control, item, {
     bPrimary = true,
     bSelling = false,
     itemCompare = equipped
