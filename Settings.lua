@@ -38,10 +38,10 @@ function Catalog.Settings:Localize()
   local locale = Catalog:GetLocale()
 end
 
-function Catalog.Settings:OnLocaleChange(handler, control)
+function Catalog.Settings:OnChangeLocale(handler, control)
   Catalog.Options.Locale = control:GetData()
 end
 
-function Catalog.Settings:OnLockedToggle(handler, control)
+function Catalog.Settings:OnToggleLocked(handler, control)
   Catalog.Options.Locked = control:IsChecked()
 end

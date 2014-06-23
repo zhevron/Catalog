@@ -2,6 +2,41 @@
 <Forms>
   <Form Name="CatalogSettings" Class="Window" Template="Default"
         LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="0" RAnchorOffset="400" BAnchorPoint="0" BAnchorOffset="300"
-        RelativeToClient="1" Font="Thick" TooltipType="OnCursor" Picture="1" SwallowMouseClicks="1" Moveable="1" Overlapped="1" IgnoreMouse="1">
+        RelativeToClient="1" Font="Thick" TooltipType="OnCursor" Picture="1" SwallowMouseClicks="1" Overlapped="1">
+    <Control Name="LocaleText" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="335" TAnchorPoint="0" TAnchorOffset="511" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="1" BAnchorOffset="-15"
+             RelativeToClient="1" Font="CRB_InterfaceTiny_BB" Text="Veteran difficulty" TooltipType="OnCursor" DT_RIGHT="1" DT_VCENTER="1"/>
+    <Control Name="LocaleInfo" Class="Window" Template="Default"/>
+    <Control Name="LocaleEnglishText" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="335" TAnchorPoint="0" TAnchorOffset="511" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="1" BAnchorOffset="-15"
+             RelativeToClient="1" Font="CRB_InterfaceTiny_BB" Text="Veteran difficulty" TooltipType="OnCursor" DT_RIGHT="1" DT_VCENTER="1"/>
+    <Control Name="LocaleEnglish" Class="Button" Base=""
+      <Event Name="ButtonCheck" Function="OnChangeLocale"/>
+    </Control>
+    <Control Name="LocaleFrenchText" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="335" TAnchorPoint="0" TAnchorOffset="511" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="1" BAnchorOffset="-15"
+             RelativeToClient="1" Font="CRB_InterfaceTiny_BB" Text="Veteran difficulty" TooltipType="OnCursor" DT_RIGHT="1" DT_VCENTER="1"/>
+    <Control Name="LocaleFrench" Class="Button" Base=""
+             LAnchorPoint="0" LAnchorOffset="863" TAnchorPoint="0" TAnchorOffset="515" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="-15"
+             RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
+      <Event Name="ButtonCheck" Function="OnChangeLocale"/>
+    </Control>
+    <Control Name="LocaleGermanText" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="335" TAnchorPoint="0" TAnchorOffset="511" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="1" BAnchorOffset="-15"
+             RelativeToClient="1" Font="CRB_InterfaceTiny_BB" Text="Veteran difficulty" TooltipType="OnCursor" DT_RIGHT="1" DT_VCENTER="1"/>
+    <Control Name="LocaleGermanButton" Class="Button" Base=""
+             LAnchorPoint="0" LAnchorOffset="863" TAnchorPoint="0" TAnchorOffset="515" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="-15"
+             RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
+      <Event Name="ButtonCheck" Function="OnChangeLocale"/>
+    </Control>
+    <Control Name="LockedText" Class="Window" Template="Default"
+             LAnchorPoint="0" LAnchorOffset="335" TAnchorPoint="0" TAnchorOffset="511" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="1" BAnchorOffset="-15"
+             RelativeToClient="1" Font="CRB_InterfaceTiny_BB" Text="Veteran difficulty" TooltipType="OnCursor" DT_RIGHT="1" DT_VCENTER="1"/>
+    <Control Name="LockedButton" Class="Button" Base=""
+             LAnchorPoint="0" LAnchorOffset="863" TAnchorPoint="0" TAnchorOffset="515" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="-15"
+             RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
+      <Event Name="ButtonCheck" Function="OnToggleLocked"/>
+      <Event Name="ButtonUncheck" Function="OnToggleLocked"/>
+    </Control>
   </Form>
 </Forms>
