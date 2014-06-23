@@ -54,7 +54,7 @@ function Catalog:OnRestore(level, options)
 end
 
 function Catalog:OnConfigure()
-  self.Settings:Open()
+  self.Browser:Open()
 end
 
 function Catalog:GetLocale()
