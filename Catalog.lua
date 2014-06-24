@@ -14,6 +14,13 @@ Catalog.Defaults = {
   ["Position"] = {
     ["X"] = 100,
     ["Y"] = 100
+  },
+  ["Filter"] = {
+    ["Location"] = {
+      ["adventure"] = true,
+      ["dungeon"] = true,
+      ["raid"] = true
+    }
   }
 }
 
