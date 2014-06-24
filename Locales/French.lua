@@ -3,5 +3,10 @@ Catalog.Locale["fr"] = {
   ["dungeon"] = { "donjon", "donjons" },
   ["raid"] = { "raid", "raids" },
   ["level"] = "Niveau",
-  ["veteran"] = "Difficulté Vétéran"
+  ["veteran"] = "Difficulté Vétéran",
+  ["english"] = "English",
+  ["german"] = "German",
+  ["french"] = "French",
+  ["language"] = "Language",
+  ["lock"] = "Lock window"
 }

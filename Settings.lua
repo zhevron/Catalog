@@ -36,6 +36,11 @@ end
 
 function Catalog.Settings:Localize()
   local locale = Catalog:GetLocale()
+  self.Window:FindChild("LocaleText"):SetText(locale["language"])
+  self.Window:FindChild("LocaleEnglishText"):SetText(locale["english"])
+  self.Window:FindChild("LocaleGermanText"):SetText(locale["german"])
+  self.Window:FindChild("LocaleFrenchText"):SetText(locale["french"])
+  self.Window:FindChild("LockedText"):SetText(locale["lock"])
 end
 
 function Catalog.Settings:Position()
