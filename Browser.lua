@@ -199,7 +199,8 @@ function Catalog.Browser:OnMouseButtonDown(handler, control, button)
   end
   local item = control:GetParent():GetData()
   if Apollo.IsControlKeyDown() then
-    if item:GetHousingDecorInfoId() ~= nil then
+    if item:GetHousingDecorInfoId() ~= nil and item:GetHousingDecorInfoId() ~= 0 then
+      Print("Housing decor ID: "..item:GetHousingDecorInfoId())
       Event_FireGenericEvent("DecorPreviewOpen", item:GetHousingDecorInfoId())
     else
       Event_FireGenericEvent("ShowItemInDressingRoom", item)
