@@ -24,8 +24,9 @@ function Catalog.Browser:OnDocumentReady()
     Apollo.AddAddonErrorText(Catalog, "Could not load the Catalog browser")
     return
   end
+  local version = Catalog.Version.Major.."."..Catalog.Version.Minor.."."..Catalog.Version.Build
   self.Window = Apollo.LoadForm(self.Xml, "CatalogBrowser", nil, self)
-  self.Window:FindChild("HeaderText"):SetText("Catalog v"..Catalog.Version)
+  self.Window:FindChild("HeaderText"):SetText("Catalog v"..version)
   self:Close()
   self:Localize()
   self:BuildLocationTypeList()
