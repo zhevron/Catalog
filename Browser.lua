@@ -114,6 +114,7 @@ end
 
 function Catalog.Browser:BuildItemList(boss)
   local locale = Catalog:GetLocale()
+  self.Window:FindChild("ItemListHeaderText"):SetText(boss.name[Catalog.Options.Locale])
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
   list:SetData(boss)
@@ -189,9 +190,7 @@ function Catalog.Browser:OnLocationClose(handler, control)
 end
 
 function Catalog.Browser:OnBossSelect(handler, control)
-  local boss = control:GetParent():GetData()
-  self.Window:FindChild("ItemListHeaderText"):SetText(boss.name[Catalog.Options.Locale])
-  self:BuildItemList(boss)
+  self:BuildItemList(control:GetParent():GetData())
 end
 
 function Catalog.Browser:OnMouseButtonDown(handler, control, button)
