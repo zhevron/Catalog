@@ -50,9 +50,6 @@ end
 
 function Catalog.Browser:Close()
   if self.Window and self.Window:IsValid() then
-    local left, top = self.Window:GetAnchorOffsets()
-    Catalog.Options.Position.X = left
-    Catalog.Options.Position.Y = top
     Catalog.Settings:Close()
     self.Window:Show(false)
   end
@@ -221,6 +218,13 @@ function Catalog.Browser:OnToggleSettings(handler, control)
   else
     Catalog.Settings:Close()
   end
+end
+
+function Catalog.Browser:OnWindowMove(handler, control)
+  local left, top = self.Window:GetAnchorOffsets()
+  Catalog.Options.Position.X = left
+  Catalog.Options.Position.Y = top
+  Catalog.Settings:Position()
 end
 
 function Catalog.Browser:OnGenerateTooltip(handler, control)
