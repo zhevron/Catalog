@@ -9,9 +9,6 @@
     <Control Name="LocaleText" Class="Window" Template="Default"
              LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="5" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="30"
              RelativeToClient="1" Font="CRB_InterfaceMedium_BB" Text="Language:" TooltipType="OnCursor" DT_VCENTER="1"/>
-    <Control Name="LocaleInfo" Class="Button" Base="CRB_DatachronSprites:btnDC_Interface"
-             LAnchorPoint="0" LAnchorOffset="367" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-5" BAnchorPoint="0" BAnchorOffset="40"
-             RelativeToClient="1" Picture="1" TooltipType="OnCursor"/>
     <Control Name="LocaleEnglishText" Class="Window" Template="Default"
              LAnchorPoint="0" LAnchorOffset="40" TAnchorPoint="0" TAnchorOffset="35" RAnchorPoint="0" RAnchorOffset="95" BAnchorPoint="0" BAnchorOffset="60"
              RelativeToClient="1" Font="CRB_InterfaceTiny_BB" Text="English" TooltipType="OnCursor" DT_VCENTER="1"/>
