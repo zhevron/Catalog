@@ -67,4 +67,9 @@ end
 
 function Catalog.Settings:OnToggleLocked(handler, control)
   Catalog.Options.Locked = control:IsChecked()
+  if Catalog.Options.Locked then
+    Catalog.Browser.Window:AddStyle("Moveable")
+  else
+    Catalog.Browser.Window:RemoveStyle("Moveable")
+  end
 end
