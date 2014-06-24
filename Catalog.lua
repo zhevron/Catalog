@@ -46,8 +46,8 @@ function Catalog:OnSave(type)
   return Catalog.Utility:TableCopyRecursive(self.Options)
 end
 
-function Catalog:OnRestore(level, options)
-  if level ~= GameLib.CodeEnumAddonSaveLevel.Account then
+function Catalog:OnRestore(type, options)
+  if type ~= GameLib.CodeEnumAddonSaveLevel.Account then
     return
   end
   for k, v in pairs(Catalog.Defaults) do
