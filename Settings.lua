@@ -15,11 +15,15 @@ function Catalog.Settings:OnDocumentReady()
   self.Window = Apollo.LoadForm(self.Xml, "CatalogSettings", nil, self)
   self:Close()
   self:Localize()
+  self.Window:FindChild("LocaleEnglishButton"):SetData("en")
+  self.Window:FindChild("LocaleGermanButton"):SetData("de")
+  self.Window:FindChild("LocaleFrenchButton"):SetData("fr")
 end
 
 function Catalog.Settings:Open()
   if self.Window and self.Window:IsValid() then
     self:Position()
+    self:ApplyCurrent()
     self.Window:Show(true)
   end
 end
@@ -40,6 +44,13 @@ function Catalog.Settings:Position()
   local _, _, width, height = form:GetAnchorOffsets()
   form:Destroy()
   self.Window:SetAnchorOffsets(right, top, right + width, top + height)
+end
+
+function Catalog.Settings:ApplyCurrent()
+  self.Window:FindChild("LocaleEnglishButton"):SetCheck(Catalog.Options.Locale == "en")
+  self.Window:FindChild("LocaleGermanButton"):SetCheck(Catalog.Options.Locale == "de")
+  self.Window:FindChild("LocaleFrenchButton"):SetCheck(Catalog.Options.Locale == "fr")
+  self.Window:FindChild("LockedButton"):SetCheck(Catalog.Options.Locked)
 end
 
 function Catalog.Settings:OnChangeLocale(handler, control)
