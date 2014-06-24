@@ -8,5 +8,5 @@ Catalog.Locale["fr"] = {
   ["german"] = "German",
   ["french"] = "French",
   ["language"] = "Langage",
-  ["lock"] = "Verrouiller fenêtre"
+  ["lock"] = "Verrouiller la fenêtre"
 }
