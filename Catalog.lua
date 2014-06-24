@@ -8,7 +8,7 @@ Catalog.Version = {
   ["Build"] = 3
 }
 
-local Defaults = {
+Catalog.Defaults = {
   ["Locale"] = "en",
   ["Locked"] = false,
   ["Position"] = {
@@ -39,23 +39,23 @@ function Catalog:OnLoad()
   Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
 end
 
-function Catalog:OnSave(level)
-  if level == GameLib.CodeEnumAddonSaveLevel.Character then
-    return Catalog.Utility:TableCopyRecursive(self.Options)
-  else
+function Catalog:OnSave(type)
+  if type ~= GameLib.CodeEnumAddonSaveLevel.Character then
     return nil
   end
+  return Catalog.Utility:TableCopyRecursive(self.Options)
 end
 
 function Catalog:OnRestore(level, options)
-  if level == GameLib.CodeEnumAddonSaveLevel.Character then
-    for k, v in pairs(Defaults) do
-      if not options[k] then
-        options[k] = v
-      end
-    end
-    self.Options = Catalog.Utility:TableCopyRecursive(options, self.Options)
+  if level ~= GameLib.CodeEnumAddonSaveLevel.Character then
+    return
   end
+  for k, v in pairs(Catalog.Defaults) do
+    if options[k] == nil then
+      options[k] = v
+    end
+  end
+  self.Options = Catalog.Utility:TableCopyRecursive(options, self.Options)
 end
 
 function Catalog:OnConfigure()
