@@ -11,7 +11,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Genetic Monstrosity",
         ["de"] = "Genetic Monstrosity",
-        ["fr"] = "Genetic Monstrosity"
+        ["fr"] = "Monstruosité Génétique"
       },
       ["normal"] = {
         29603, -- Sign of Logic - Eldan
@@ -26,7 +26,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Hideously Malformed Mutant",
         ["de"] = "Hideously Malformed Mutant",
-        ["fr"] = "Hideously Malformed Mutant"
+        ["fr"] = "Mutant horriblement déformé"
       },
       ["normal"] = {
         29603, -- Sign of Logic - Eldan
@@ -40,7 +40,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Gravitron Operator",
         ["de"] = "Gravitron Operator",
-        ["fr"] = "Gravitron Operator"
+        ["fr"] = "Opérateur gravitron"
       },
       ["normal"] = {
       },
@@ -51,7 +51,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Experiment X-89",
         ["de"] = "Experiment X-89",
-        ["fr"] = "Experiment X-89"
+        ["fr"] = "Expérience X-89"
       },
       ["normal"] = {
         29599, -- Sign of Fire - Eldan
@@ -69,7 +69,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Kuralak the Defiler",
         ["de"] = "Kuralak the Defiler",
-        ["fr"] = "Kuralak the Defiler"
+        ["fr"] = "Kuralak le Profanateur"
       },
       ["normal"] = {
       },
@@ -80,7 +80,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Fetid Miscreation",
         ["de"] = "Fetid Miscreation",
-        ["fr"] = "Fetid Miscreation"
+        ["fr"] = "Malformation fétide"
       },
       ["normal"] = {
       },
@@ -91,7 +91,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Phagetech Guardian",
         ["de"] = "Phagetech Guardian",
-        ["fr"] = "Phagetech Guardian"
+        ["fr"] = "Gardien de phagetech"
       },
       ["normal"] = {
       },
@@ -102,7 +102,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Phage Maw",
         ["de"] = "Phage Maw",
-        ["fr"] = "Phage Maw"
+        ["fr"] = "Phagegueule"
       },
       ["normal"] = {
       },
@@ -113,7 +113,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Phagetech Prototypes",
         ["de"] = "Phagetech Prototypes",
-        ["fr"] = "Phagetech Prototypes"
+        ["fr"] = "Prototypes phagetech"
       },
       ["normal"] = {
       },
@@ -124,7 +124,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Phageborn Convergence",
         ["de"] = "Phageborn Convergence",
-        ["fr"] = "Phageborn Convergence"
+        ["fr"] = "Convergence néophage"
       },
       ["normal"] = {
       },
@@ -135,7 +135,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Malfunctioning Gear",
         ["de"] = "Malfunctioning Gear",
-        ["fr"] = "Malfunctioning Gear"
+        ["fr"] = "Engrenage défectueux"
       },
       ["normal"] = {
       },
@@ -146,7 +146,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Malfunctioning Dynamo",
         ["de"] = "Malfunctioning Dynamo",
-        ["fr"] = "Malfunctioning Dynamo"
+        ["fr"] = "Dynamo défectueuse"
       },
       ["normal"] = {
       },
@@ -157,7 +157,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Malfunctioning Piston",
         ["de"] = "Malfunctioning Piston",
-        ["fr"] = "Malfunctioning Piston"
+        ["fr"] = "Piston défectueux"
       },
       ["normal"] = {
       },
@@ -168,7 +168,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Malfunctioning Battery",
         ["de"] = "Malfunctioning Battery",
-        ["fr"] = "Malfunctioning Battery"
+        ["fr"] = "Batterie défaillante"
       },
       ["normal"] = {
       },
@@ -179,7 +179,7 @@ Catalog.Database["GeneticArchives"] = {
       ["name"] = {
         ["en"] = "Dreadphage Ohmna",
         ["de"] = "Dreadphage Ohmna",
-        ["fr"] = "Dreadphage Ohmna"
+        ["fr"] = "Ohmna la Terriphage"
       },
       ["normal"] = {
       },
