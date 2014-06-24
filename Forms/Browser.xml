@@ -40,6 +40,7 @@
       <Event Name="ButtonCheck" Function="OnModeChange"/>
       <Event Name="ButtonUncheck" Function="OnModeChange"/>
     </Control>
+    <Event Name="WindowClosed" Function="Close"/>
     <Event Name="WindowMove" Function="OnWindowMove"/>
   </Form>
   <Form Name="LocationType" Class="Window" Template="Default"
