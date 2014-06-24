@@ -52,6 +52,7 @@ end
 function Catalog.Browser:Close()
   if self.Window and self.Window:IsValid() then
     Catalog.Settings:Close()
+    self.Window:FindChild("SettingsButton"):SetCheck(false)
     self.Window:Show(false)
   end
 end
