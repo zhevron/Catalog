@@ -60,6 +60,9 @@ end
 
 function Catalog.Settings:OnChangeLocale(handler, control)
   Catalog.Options.Locale = control:GetData()
+  Catalog.Settings:Localize()
+  Catalog.Browser:Localize()
+  Catalog.Browser:BuildLocationTypeList()
 end
 
 function Catalog.Settings:OnToggleLocked(handler, control)
