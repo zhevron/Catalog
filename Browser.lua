@@ -29,7 +29,7 @@ function Catalog.Browser:OnDocumentReady()
   self.Window:FindChild("HeaderText"):SetText("Catalog v"..version)
   self:Close()
   self:Localize()
-  self:BuildLocationTypeList()
+  self:BuildLocationList()
 end
 
 function Catalog.Browser:Open()
@@ -62,29 +62,12 @@ function Catalog.Browser:Localize()
   self.Window:FindChild("VeteranText"):SetText(locale["veteran"])
 end
 
-function Catalog.Browser:BuildLocationTypeList()
-  local locale = Catalog:GetLocale()
-  local types = { "adventure", "dungeon", "raid" }
-  local list = self.Window:FindChild("LocationTypeList")
-  list:DestroyChildren()
-  for _, type in ipairs(types) do
-    local name = Catalog.Utility:Capitalize(locale[type][2])
-    local form = Apollo.LoadForm(self.Xml, "LocationType", list, self)
-    form:SetData(type)
-    form:FindChild("LocationTypeText"):SetText(name)
-    self:BuildLocationList(type, form)
-    local left, top, right, bottom = form:GetAnchorOffsets()
-    form:SetAnchorOffsets(left, top, right, bottom + 2)
-  end
-  list:ArrangeChildrenVert()
-end
-
-function Catalog.Browser:BuildLocationList(type, parent)
-  local list = parent:FindChild("LocationList")
+function Catalog.Browser:BuildLocationList()
+  local list = self.Window:FindChild("LocationList")
   list:DestroyChildren()
   local locations = {}
   for _, location in pairs(Catalog.Database) do
-    if location.type == type then
+    if Catalog.Options.Filter.Location[location.type] then
       local tbl = Catalog.Utility:TableCopyRecursive(location)
       tbl.name = location.name[Catalog.Options.Locale]
       table.insert(locations, tbl)
@@ -163,34 +146,30 @@ function Catalog.Browser:Collapse(list, sublist)
   list:SetAnchorOffsets(left, top, right, bottom - height)
 end
 
-function Catalog.Browser:OnLocationTypeOpen(handler, control)
-  self:Expand(control:GetParent(), control:GetParent():FindChild("LocationList"))
-  self.Window:FindChild("LocationTypeList"):ArrangeChildrenVert()
-end
-
-function Catalog.Browser:OnLocationTypeClose(handler, control)
-  self:Collapse(control:GetParent(), control:GetParent():FindChild("LocationList"))
-  self.Window:FindChild("LocationTypeList"):ArrangeChildrenVert()
-end
-
 function Catalog.Browser:OnLocationOpen(handler, control)
   self:Expand(control:GetParent(), control:GetParent():FindChild("BossList"))
-  self:Expand(control:GetParent():GetParent(), control:GetParent():FindChild("BossList"))
-  self:Expand(control:GetParent():GetParent():GetParent(), control:GetParent():FindChild("BossList"))
-  control:GetParent():GetParent():ArrangeChildrenVert()
-  self.Window:FindChild("LocationTypeList"):ArrangeChildrenVert()
+  self.Window:FindChild("LocationList"):ArrangeChildrenVert()
 end
 
 function Catalog.Browser:OnLocationClose(handler, control)
   self:Collapse(control:GetParent(), control:GetParent():FindChild("BossList"))
-  self:Collapse(control:GetParent():GetParent(), control:GetParent():FindChild("BossList"))
-  self:Collapse(control:GetParent():GetParent():GetParent(), control:GetParent():FindChild("BossList"))
-  control:GetParent():GetParent():ArrangeChildrenVert()
-  self.Window:FindChild("LocationTypeList"):ArrangeChildrenVert()
+  self.Window:FindChild("LocationList"):ArrangeChildrenVert()
 end
 
 function Catalog.Browser:OnBossSelect(handler, control)
   self:BuildItemList(control:GetParent():GetData())
+end
+
+function Catalog.Browser:OnTypeButton(handler, control)
+  --
+end
+
+function Catalog.Browser:OnTypeCheck(handler, control)
+  --
+end
+
+function Catalog.Browser:OnTypeUncheck(handler, control)
+  --
 end
 
 function Catalog.Browser:OnMouseButtonDown(handler, control, button)
