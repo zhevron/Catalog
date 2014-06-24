@@ -25,8 +25,8 @@ Catalog.Defaults = {
 }
 
 Catalog.Locale = {}
-Catalog.Options = {}
 Catalog.Database = {}
+Catalog.Options = Catalog.Defaults
 
 function Catalog:new(o)
   o = o or {}
