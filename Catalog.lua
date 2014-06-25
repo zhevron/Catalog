@@ -16,7 +16,7 @@ Catalog.Defaults = {
     ["Y"] = 100
   },
   ["Filter"] = {
-    ["Location"] = {
+    ["Category"] = {
       ["adventure"] = true,
       ["dungeon"] = true,
       ["raid"] = true

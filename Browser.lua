@@ -160,15 +160,15 @@ function Catalog.Browser:OnBossSelect(handler, control)
   self:BuildItemList(control:GetParent():GetData())
 end
 
-function Catalog.Browser:OnTypeButton(handler, control)
+function Catalog.Browser:OnCategoryButton(handler, control)
   --
 end
 
-function Catalog.Browser:OnTypeCheck(handler, control)
+function Catalog.Browser:OnCategoryCheck(handler, control)
   --
 end
 
-function Catalog.Browser:OnTypeUncheck(handler, control)
+function Catalog.Browser:OnCategoryUncheck(handler, control)
   --
 end
 

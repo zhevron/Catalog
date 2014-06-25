@@ -20,64 +20,64 @@
     <Control Name="HeaderText" Class="Window" Template="Default"
              LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="0" BAnchorOffset="45"
              RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1"/>
-    <Control Name="LocationTypeButton" Class="Button" Base=""
+    <Control Name="CategoryButton" Class="Button" Base=""
              LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="50" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="0" BAnchorOffset="70"
              RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
     </Control>
-    <Control Name="LocationTypeList" Class="Window" Template="Default"
+    <Control Name="CategoryList" Class="Window" Template="Default"
              LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="70" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="0" BAnchorOffset="70"
              RelativeToClient="1" TooltipType="OnCursor" Overlapping="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
-      <Control Name="TypeAdventure" Class="Window" Template="Default"
+      <Control Name="CategoryAdventure" Class="Window" Template="Default"
                LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
                RelativeToClient="1" TooltipType="OnCursor" Overlapping="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
-        <Control Name="TypeButton" Class="Button" Base=""
+        <Control Name="CategoryButton" Class="Button" Base=""
                  LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
                  RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="PushButton">
-          <Event Name="ButtonSignal" Function="OnTypeButton"/>
+          <Event Name="ButtonSignal" Function="OnCategoryButton"/>
         </Control>
-        <Control Name="TypeCheck" Class="Button" Base=""
+        <Control Name="CategoryCheck" Class="Button" Base=""
                  LAnchorPoint="0" LAnchorOffset="2" TAnchorPoint="0" TAnchorOffset="2" RAnchorPoint="0" RAnchorOffset="17" BAnchorPoint="0" BAnchorOffset="17"
                  RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
-          <Event Name="ButtonCheck" Function="OnTypeCheck"/>
-          <Event Name="ButtonUncheck" Function="OnTypeUncheck"/>
+          <Event Name="ButtonCheck" Function="OnCategoryCheck"/>
+          <Event Name="ButtonUncheck" Function="OnCategoryUncheck"/>
         </Control>
-        <Control Name="TypeText" Class="Window" Template="Default"
+        <Control Name="CategoryText" Class="Window" Template="Default"
                  LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
                  RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" DT_VCENTER="1" Text="Adventures"/>
       </Control>
-      <Control Name="TypeDungeon" Class="Window" Template="Default"
+      <Control Name="CategoryDungeon" Class="Window" Template="Default"
                LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="20" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="40"
                RelativeToClient="1" TooltipType="OnCursor" Overlapping="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
-        <Control Name="TypeButton" Class="Button" Base=""
+        <Control Name="CategoryButton" Class="Button" Base=""
                  LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
                  RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="PushButton">
-          <Event Name="ButtonSignal" Function="OnTypeButton"/>
+          <Event Name="ButtonSignal" Function="OnCategoryButton"/>
         </Control>
-        <Control Name="TypeCheck" Class="Button" Base=""
+        <Control Name="CategoryCheck" Class="Button" Base=""
                  LAnchorPoint="0" LAnchorOffset="2" TAnchorPoint="0" TAnchorOffset="2" RAnchorPoint="0" RAnchorOffset="17" BAnchorPoint="0" BAnchorOffset="17"
                  RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
-          <Event Name="ButtonCheck" Function="OnTypeCheck"/>
-          <Event Name="ButtonUncheck" Function="OnTypeUncheck"/>
+          <Event Name="ButtonCheck" Function="OnCategoryCheck"/>
+          <Event Name="ButtonUncheck" Function="OnCategoryUncheck"/>
         </Control>
-        <Control Name="TypeText" Class="Window" Template="Default"
+        <Control Name="CategoryText" Class="Window" Template="Default"
                  LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
                  RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" DT_VCENTER="1" Text="Dungeons"/>
       </Control>
-      <Control Name="TypeRaid" Class="Window" Template="Default"
+      <Control Name="CategoryRaid" Class="Window" Template="Default"
                LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="40" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="60"
                RelativeToClient="1" TooltipType="OnCursor" Overlapping="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
-        <Control Name="TypeButton" Class="Button" Base=""
+        <Control Name="CategoryButton" Class="Button" Base=""
                  LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
                  RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="PushButton">
-          <Event Name="ButtonSignal" Function="OnTypeButton"/>
+          <Event Name="ButtonSignal" Function="OnCategoryButton"/>
         </Control>
-        <Control Name="TypeCheck" Class="Button" Base=""
+        <Control Name="CategoryCheck" Class="Button" Base=""
                  LAnchorPoint="0" LAnchorOffset="2" TAnchorPoint="0" TAnchorOffset="2" RAnchorPoint="0" RAnchorOffset="17" BAnchorPoint="0" BAnchorOffset="17"
                  RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
-          <Event Name="ButtonCheck" Function="OnTypeCheck"/>
-          <Event Name="ButtonUncheck" Function="OnTypeUncheck"/>
+          <Event Name="ButtonCheck" Function="OnCategoryCheck"/>
+          <Event Name="ButtonUncheck" Function="OnCategoryUncheck"/>
         </Control>
-        <Control Name="TypeText" Class="Window" Template="Default"
+        <Control Name="CategoryText" Class="Window" Template="Default"
                  LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
                  RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" DT_VCENTER="1" Text="Raids"/>
       </Control>
