@@ -166,9 +166,15 @@ function Catalog.Browser:OnBossSelect(handler, control)
   self:BuildItemList(control:GetParent():GetData())
 end
 
-function Catalog.Browser:OnCategoryButton(handler, control)
+function Catalog.Browser:OnCategoryCheck(handler, control)
   local category = control:GetParent():GetData()
-  Catalog.Options.Filter.Category[category] = not Catalog.Options.Filter.Category[category]
+  Catalog.Options.Filter.Category[category] = true
+  self:BuildLocationList()
+end
+
+function Catalog.Browser:OnCategoryUncheck(handler, control)
+  local category = control:GetParent():GetData()
+  Catalog.Options.Filter.Category[category] = false
   self:BuildLocationList()
 end
 
