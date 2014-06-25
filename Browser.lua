@@ -24,15 +24,15 @@ function Catalog.Browser:OnDocumentReady()
     Apollo.AddAddonErrorText(Catalog, "Could not load the Catalog browser")
     return
   end
-  local version = Catalog.Version.Major.."."..Catalog.Version.Minor.."."..Catalog.Version.Build
   self.Window = Apollo.LoadForm(self.Xml, "CatalogBrowser", nil, self)
-  self.Window:FindChild("HeaderText"):SetText("Catalog v"..version)
-  self.Window:FindChild("CategoryAdventure"):SetData("adventure")
-  self.Window:FindCHild("CategoryDungeon"):SetData("dungeon")
-  self.WIndow:FindChild("CategoryRaid"):SetData("raid")
+  self.Window:FindChild("AdventureButton"):SetCheck(Catalog.Options.Filter.Category["adventure"])
+  self.Window:FindChild("AdventureButton"):SetData("adventure")
+  self.Window:FindChild("DungeonButton"):SetCheck(Catalog.Options.Filter.Category["dungeon"])
+  self.Window:FindChild("DungeonButton"):SetData("dungeon")
+  self.Window:FindChild("RaidButton"):SetCheck(Catalog.Options.Filter.Category["raid"])
+  self.Window:FindChild("RaidButton"):SetData("raid")
+  self.Window:FindChild("NormalButton"):SetCheck(true)
   self:Close()
-  self:Localize()
-  self:BuildLocationList()
 end
 
 function Catalog.Browser:Open()
@@ -43,11 +43,10 @@ function Catalog.Browser:Open()
     local _, _, right, bottom = form:GetAnchorOffsets()
     form:Destroy()
     self.Window:SetAnchorOffsets(left, top, left + right, top + bottom)
-    if not Catalog.Options.Locked then
-      self.Window:AddStyle("Moveable")
-    else
+    if Catalog.Options.Locked then
       self.Window:RemoveStyle("Moveable")
     end
+    self:BuildLocationList()
     self.Window:Show(true)
   end
 end
@@ -60,20 +59,12 @@ function Catalog.Browser:Close()
   end
 end
 
-function Catalog.Browser:Localize()
-  local locale = Catalog:GetLocale()
-  self.Window:FindChild("CategoryAdventure"):FindChild("CategoryText"):SetText(locale["adventure"][2])
-  self.Window:FindChild("CategoryDungeon"):FindChild("CategoryText"):SetText(locale["dungeon"][2])
-  self.Window:FindChild("CategoryRaid"):FindChild("CategoryText"):SetText(locale["raid"][2])
-  self.Window:FindChild("VeteranText"):SetText(locale["veteran"])
-end
-
 function Catalog.Browser:BuildLocationList()
   local list = self.Window:FindChild("LocationList")
   list:DestroyChildren()
   local locations = {}
   for _, location in pairs(Catalog.Database) do
-    if Catalog.Options.Filter.Location[location.type] then
+    if Catalog.Options.Filter.Category[location.type] then
       local tbl = Catalog.Utility:TableCopyRecursive(location)
       tbl.name = location.name[Catalog.Options.Locale]
       table.insert(locations, tbl)
@@ -85,7 +76,6 @@ function Catalog.Browser:BuildLocationList()
     form:FindChild("LocationText"):SetText(name)
     self:BuildBossList(location, form)
   end
-  self:SizeToFit(list)
   list:ArrangeChildrenVert()
 end
 
@@ -103,7 +93,6 @@ end
 
 function Catalog.Browser:BuildItemList(boss)
   local locale = Catalog:GetLocale()
-  self.Window:FindChild("ItemListHeaderText"):SetText(boss.name[Catalog.Options.Locale])
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
   list:SetData(boss)
@@ -152,6 +141,28 @@ function Catalog.Browser:Collapse(list, sublist)
   list:SetAnchorOffsets(left, top, right, bottom - height)
 end
 
+function Catalog.Browser:OnCategoryListOpen(handler, control)
+  self.Window:FindChild("CategoryList"):Show(true)
+  local left, _, right, bottom = self.Window:FindChild("LocationList"):GetAnchorOffsets()
+  self.Window:FindChild("LocationList"):SetAnchorOffsets(left, 236, right, bottom)
+end
+
+function Catalog.Browser:OnCategoryListClose(handler, control)
+  self.Window:FindChild("CategoryList"):Show(false)
+  local left, _, right, bottom = self.Window:FindChild("LocationList"):GetAnchorOffsets()
+  self.Window:FindChild("LocationList"):SetAnchorOffsets(left, 107, right, bottom)
+end
+
+function Catalog.Browser:OnCategoryCheck(handler, control)
+  Catalog.Options.Filter.Category[control:GetData()] = true
+  self:BuildLocationList()
+end
+
+function Catalog.Browser:OnCategoryUncheck(handler, control)
+  Catalog.Options.Filter.Category[control:GetData()] = false
+  self:BuildLocationList()
+end
+
 function Catalog.Browser:OnLocationOpen(handler, control)
   self:Expand(control:GetParent(), control:GetParent():FindChild("BossList"))
   self.Window:FindChild("LocationList"):ArrangeChildrenVert()
@@ -166,18 +177,6 @@ function Catalog.Browser:OnBossSelect(handler, control)
   self:BuildItemList(control:GetParent():GetData())
 end
 
-function Catalog.Browser:OnCategoryCheck(handler, control)
-  local category = control:GetParent():GetData()
-  Catalog.Options.Filter.Category[category] = true
-  self:BuildLocationList()
-end
-
-function Catalog.Browser:OnCategoryUncheck(handler, control)
-  local category = control:GetParent():GetData()
-  Catalog.Options.Filter.Category[category] = false
-  self:BuildLocationList()
-end
-
 function Catalog.Browser:OnMouseButtonDown(handler, control, button)
   if button ~= GameLib.CodeEnumInputMouse.Right then
     return
@@ -185,7 +184,6 @@ function Catalog.Browser:OnMouseButtonDown(handler, control, button)
   local item = control:GetParent():GetData()
   if Apollo.IsControlKeyDown() then
     if item:GetHousingDecorInfoId() ~= nil and item:GetHousingDecorInfoId() ~= 0 then
-      Print("Housing decor ID: "..item:GetHousingDecorInfoId())
       Event_FireGenericEvent("DecorPreviewOpen", item:GetHousingDecorInfoId())
     else
       Event_FireGenericEvent("ShowItemInDressingRoom", item)

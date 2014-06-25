@@ -1,156 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Forms>
-  <Form Name="CatalogBrowser" Class="Window" Template="Default"
-        LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="0" RAnchorOffset="900" BAnchorPoint="0" BAnchorOffset="550"
-        RelativeToClient="1" Font="Thick" TooltipType="OnCursor" Picture="1" SwallowMouseClicks="1" Escapable="1" Overlapped="1">
-    <Control Name="Background" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="0"
-             RelativeToClient="1" TooltipType="OnCursor" IgnoreMouse="1" Picture="1" Sprite="CRB_Basekit:kitBase_HoloBlue_Tiny"/>
-    <Control Name="CloseButton" Class="Button" Base="CRB_TutorialSprites:btnTut_Close"
-             LAnchorPoint="0" LAnchorOffset="864" TAnchorPoint="0" TAnchorOffset="12" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="40"
-             RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="PushButton">
-      <Event Name="ButtonSignal" Function="Close"/>
-    </Control>
-    <Control Name="SettingsButton" Class="Button" Base="CRB_Basekit:kitBtn_Metal_Options"
-             LAnchorPoint="0" LAnchorOffset="839" TAnchorPoint="0" TAnchorOffset="13" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="0" BAnchorOffset="41"
-             RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
-      <Event Name="ButtonCheck" Function="OnToggleSettings"/>
-      <Event Name="ButtonUncheck" Function="OnToggleSettings"/>
-    </Control>
-    <Control Name="HeaderText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="0" BAnchorOffset="45"
-             RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1"/>
-    <Control Name="CategoryButton" Class="Button" Base=""
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="50" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="0" BAnchorOffset="70"
-             RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
-    </Control>
-    <Control Name="CategoryList" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="70" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="0" BAnchorOffset="70"
-             RelativeToClient="1" TooltipType="OnCursor" Overlapping="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
-      <Control Name="CategoryAdventure" Class="Window" Template="Default"
-               LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
-               RelativeToClient="1" TooltipType="OnCursor" Overlapping="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
-        <Control Name="CategoryButton" Class="Button" Base=""
-                 LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
-                 RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="PushButton">
-          <Event Name="ButtonSignal" Function="OnCategoryButton"/>
+    <Form Name="CatalogBrowser" Class="Window" Template="CRB_Default" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="0" RAnchorOffset="900" BAnchorPoint="0" BAnchorOffset="550" RelativeToClient="1" Font="Thick" TooltipType="OnCursor" Picture="1" SwallowMouseClicks="1" Escapable="1" Overlapped="1" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" Tooltip="" Moveable="1" UseTemplateBG="1">
+        <Event Name="WindowClosed" Function="Close"/>
+        <Event Name="WindowMove" Function="OnWindowMove"/>
+        <Control Name="Background" Class="Window" Template="Metal_Primary_NoNav" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="-2" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="-2" RelativeToClient="1" TooltipType="OnCursor" IgnoreMouse="1" Picture="1" Sprite="" BGColor="white" TextColor="white" TooltipColor="" Border="1" UseTemplateBG="1" Tooltip="">
+            <Pixie LAnchorPoint="0" LAnchorOffset="282" TAnchorPoint="1" TAnchorOffset="-69" RAnchorPoint="1" RAnchorOffset="4" BAnchorPoint="1" BAnchorOffset="4" Sprite="BK3:UI_BK3_Metal_Footer_Large" BGColor="white" TextColor="black" Rotation="0" Font="Default" DT_VCENTER="1" Text=""/>
+            <Pixie LAnchorPoint="0" LAnchorOffset="273" TAnchorPoint="0" TAnchorOffset="62" RAnchorPoint="0" RAnchorOffset="291" BAnchorPoint="1" BAnchorOffset="17" Sprite="BK3:UI_BK3_Metal_Inset_Divider_V" BGColor="white" TextColor="black" Rotation="0" Font="Default" DT_CENTER="1" DT_BOTTOM="1"/>
+            <Control Class="Window" LAnchorPoint=".50" LAnchorOffset="-100" TAnchorPoint="0" TAnchorOffset="25" RAnchorPoint=".50" RAnchorOffset="100" BAnchorPoint="0" BAnchorOffset="61" RelativeToClient="0" Font="CRB_HeaderLarge" Text="" BGColor="white" TextColor="UI_BtnTextGoldListNormal" Template="Default" TooltipType="OnCursor" Name="Header" TooltipColor="" TextId="ScientistMission_Catalog" Sprite="BK3:sprMetal_Framing_Header" Picture="1" IgnoreMouse="1" NoClip="1" DT_CENTER="1" DT_VCENTER="1"/>
         </Control>
-        <Control Name="CategoryCheck" Class="Button" Base=""
-                 LAnchorPoint="0" LAnchorOffset="2" TAnchorPoint="0" TAnchorOffset="2" RAnchorPoint="0" RAnchorOffset="17" BAnchorPoint="0" BAnchorOffset="17"
-                 RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
-          <Event Name="ButtonCheck" Function="OnCategoryCheck"/>
-          <Event Name="ButtonUncheck" Function="OnCategoryUncheck"/>
+        <Control Class="Window" LAnchorPoint="0" LAnchorOffset="22" TAnchorPoint="0" TAnchorOffset="70" RAnchorPoint="0" RAnchorOffset="308" BAnchorPoint="1" BAnchorOffset="-20" RelativeToClient="1" Font="Default" Text="" BGColor="UI_WindowBGDefault" TextColor="UI_WindowTextDefault" Template="Metal_ScrollList" TooltipType="OnCursor" Name="LeftBackground" TooltipColor="" Border="1" IgnoreMouse="1" UseTemplateBG="1"/>
+        <Control Class="Window" LAnchorPoint="0" LAnchorOffset="308" TAnchorPoint="0" TAnchorOffset="71" RAnchorPoint="1" RAnchorOffset="-25" BAnchorPoint="1" BAnchorOffset="-23" RelativeToClient="1" Font="Default" Text="" BGColor="UI_WindowBGDefault" TextColor="UI_WindowTextDefault" Template="Holo_Background_General" TooltipType="OnCursor" Name="RightBackground" TooltipColor="" Border="1" IgnoreMouse="1" UseTemplateBG="1"/>
+        <Control Name="CloseButton" Class="Button" Base="CRB_Basekit:kitBtn_Close" LAnchorPoint="1" LAnchorOffset="-51" TAnchorPoint="0" TAnchorOffset="24" RAnchorPoint="1" RAnchorOffset="-23" BAnchorPoint="0" BAnchorOffset="53" RelativeToClient="0" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="PushButton" BGColor="white" TextColor="white" TooltipColor="" NormalTextColor="white" PressedTextColor="white" FlybyTextColor="whitw" PressedFlybyTextColor="white" DisabledTextColor="white" HideInEditor="0" Visible="1" Tooltip="" DT_CENTER="1" WindowSoundTemplate="CloseWindowPhys">
+            <Event Name="ButtonSignal" Function="Close"/>
         </Control>
-        <Control Name="CategoryText" Class="Window" Template="Default"
-                 LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
-                 RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" DT_VCENTER="1" Text="Adventures"/>
-      </Control>
-      <Control Name="CategoryDungeon" Class="Window" Template="Default"
-               LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="20" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="40"
-               RelativeToClient="1" TooltipType="OnCursor" Overlapping="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
-        <Control Name="CategoryButton" Class="Button" Base=""
-                 LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
-                 RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="PushButton">
-          <Event Name="ButtonSignal" Function="OnCategoryButton"/>
+        <Control Name="SettingsButton" Class="Button" Base=" CRB_Basekit:kitBtn_Metal_Options" LAnchorPoint="1" LAnchorOffset="-82" TAnchorPoint="0" TAnchorOffset="24" RAnchorPoint="1" RAnchorOffset="-54" BAnchorPoint="0" BAnchorOffset="53" RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" NormalTextColor="ffffffff" PressedTextColor="ffffffff" FlybyTextColor="ffffffff" PressedFlybyTextColor="ffffffff" DisabledTextColor="ffffffff" HideInEditor="0" Visible="1" Tooltip="">
+            <Event Name="ButtonCheck" Function="OnToggleSettings"/>
+            <Event Name="ButtonUncheck" Function="OnToggleSettings"/>
         </Control>
-        <Control Name="CategoryCheck" Class="Button" Base=""
-                 LAnchorPoint="0" LAnchorOffset="2" TAnchorPoint="0" TAnchorOffset="2" RAnchorPoint="0" RAnchorOffset="17" BAnchorPoint="0" BAnchorOffset="17"
-                 RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
-          <Event Name="ButtonCheck" Function="OnCategoryCheck"/>
-          <Event Name="ButtonUncheck" Function="OnCategoryUncheck"/>
+        <Control Name="CategoryButton" Class="Button" Base="BK3:btnMetal_Dropdown" LAnchorPoint="0" LAnchorOffset="22" TAnchorPoint="0" TAnchorOffset="70" RAnchorPoint="0" RAnchorOffset="307" BAnchorPoint="0" BAnchorOffset="110" RelativeToClient="0" DrawAsCheckbox="0" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_HeaderMedium_O" ButtonType="Check" BGColor="white" TextColor="white" TooltipColor="" NormalTextColor="UI_BtnTextGoldListNormal" PressedTextColor="UI_BtnTextGoldListPressed" FlybyTextColor="UI_BtnTextGoldListFlyby" PressedFlybyTextColor="UI_BtnTextGoldListPressedFlyby" DisabledTextColor="UI_BtnTextGoldListDisabled" Text="" TextId="Tutorials_Categories" DT_CENTER="1" HideInEditor="0" Visible="1" Overlapped="0" NoClip="0" Tooltip="">
+            <Event Name="ButtonCheck" Function="OnCategoryListOpen"/>
+            <Event Name="ButtonUncheck" Function="OnCategoryListClose"/>
         </Control>
-        <Control Name="CategoryText" Class="Window" Template="Default"
-                 LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
-                 RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" DT_VCENTER="1" Text="Dungeons"/>
-      </Control>
-      <Control Name="CategoryRaid" Class="Window" Template="Default"
-               LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="40" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="60"
-               RelativeToClient="1" TooltipType="OnCursor" Overlapping="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1">
-        <Control Name="CategoryButton" Class="Button" Base=""
-                 LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
-                 RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="PushButton">
-          <Event Name="ButtonSignal" Function="OnCategoryButton"/>
+        <Control Name="CategoryList" Class="Window" Template="Default" LAnchorPoint="0" LAnchorOffset="23" TAnchorPoint="0" TAnchorOffset="107" RAnchorPoint="0" RAnchorOffset="304" BAnchorPoint="0" BAnchorOffset="236" RelativeToClient="1" TooltipType="OnCursor" Overlapping="1" IgnoreMouse="1" Picture="1" Border="0" UseTemplateBG="0" BGColor="white" TextColor="white" TooltipColor="" CloseOnExternalClick="0" Overlapped="0" Visible="0" HideInEditor="0" Text="" Tooltip="" Sprite="BK3:sprMetal_ExpandMenu_MedSmall_Framing" NoClip="0" Font="Default">
+            <Control Class="Button" Base="CRB_Basekit:kitBtn_List_MetalContextMenu" Font="Default" ButtonType="Check" RadioGroup="" LAnchorPoint="0" LAnchorOffset="4" TAnchorPoint="0" TAnchorOffset="4" RAnchorPoint="1" RAnchorOffset="-4" BAnchorPoint="0" BAnchorOffset="44" DT_VCENTER="1" DT_CENTER="1" BGColor="white" TextColor="white" NormalTextColor="UI_BtnTextGoldListNormal" PressedTextColor="UI_BtnTextGoldListPressed" FlybyTextColor="UI_BtnTextGoldListFlyby" PressedFlybyTextColor="UI_BtnTextGoldListPressedFlyby" DisabledTextColor="UI_BtnTextGoldListDisabled" TooltipType="OnCursor" Name="AdventureButton" TooltipColor="" Text="" TextId="Tutorials_Adventures" RadioDisallowNonSelection="1" GlobalRadioGroup="" Template="Default" Tooltip="" NoClip="0">
+                <Event Name="ButtonCheck" Function="OnCategoryCheck"/>
+                <Event Name="ButtonUncheck" Function="OnCategoryUncheck"/>
+            </Control>
+            <Control Class="Button" Base="CRB_Basekit:kitBtn_List_MetalContextMenu" Font="CRB_InterfaceSmall" ButtonType="Check" RadioGroup="" LAnchorPoint="0" LAnchorOffset="4" TAnchorPoint="0" TAnchorOffset="44" RAnchorPoint="1" RAnchorOffset="-4" BAnchorPoint="0" BAnchorOffset="84" DT_VCENTER="1" DT_CENTER="1" BGColor="white" TextColor="white" NormalTextColor="UI_BtnTextGoldListNormal" PressedTextColor="UI_BtnTextGoldListPressed" FlybyTextColor="UI_BtnTextGoldListFlyby" PressedFlybyTextColor="UI_BtnTextGoldListPressedFlyby" DisabledTextColor="UI_BtnTextGoldListDisabled" TooltipType="OnCursor" Name="DungeonButton" TooltipColor="" Text="" TextId="CRB_Dungeons" RadioDisallowNonSelection="1" GlobalRadioGroup="" Template="Default" NoClip="0">
+                <Event Name="ButtonCheck" Function="OnCategoryCheck"/>
+                <Event Name="ButtonUncheck" Function="OnCategoryUncheck"/>
+            </Control>
+            <Control Class="Button" Base="CRB_Basekit:kitBtn_List_MetalContextMenu" Font="CRB_InterfaceSmall" ButtonType="Check" RadioGroup="" LAnchorPoint="0" LAnchorOffset="4" TAnchorPoint="0" TAnchorOffset="84" RAnchorPoint="1" RAnchorOffset="-4" BAnchorPoint="0" BAnchorOffset="124" DT_VCENTER="1" DT_CENTER="1" BGColor="white" TextColor="white" NormalTextColor="UI_BtnTextGoldListNormal" PressedTextColor="UI_BtnTextGoldListPressed" FlybyTextColor="UI_BtnTextGoldListFlyby" PressedFlybyTextColor="UI_BtnTextGoldListPressedFlyby" DisabledTextColor="UI_BtnTextGoldListDisabled" TooltipType="OnCursor" Name="RaidButton" TooltipColor="" Text="" TextId="CRB_Raid" RadioDisallowNonSelection="1" GlobalRadioGroup="" Template="Default" NoClip="0">
+                <Event Name="ButtonCheck" Function="OnCategoryCheck"/>
+                <Event Name="ButtonUncheck" Function="OnCategoryUncheck"/>
+            </Control>
+            <Pixie LAnchorPoint="0" LAnchorOffset="5" TAnchorPoint="0" TAnchorOffset="5" RAnchorPoint="1" RAnchorOffset="-5" BAnchorPoint="1" BAnchorOffset="-4" Sprite="CRB_Basekit:kitBase_MetalGrey_Small" BGColor="white" TextColor="black" Rotation="0" Font="Default" Text=""/>
         </Control>
-        <Control Name="CategoryCheck" Class="Button" Base=""
-                 LAnchorPoint="0" LAnchorOffset="2" TAnchorPoint="0" TAnchorOffset="2" RAnchorPoint="0" RAnchorOffset="17" BAnchorPoint="0" BAnchorOffset="17"
-                 RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
-          <Event Name="ButtonCheck" Function="OnCategoryCheck"/>
-          <Event Name="ButtonUncheck" Function="OnCategoryUncheck"/>
+        <Control Name="LocationList" Class="Window" Template="Metal_ScrollList" LAnchorPoint="0" LAnchorOffset="24" TAnchorPoint="0" TAnchorOffset="107" RAnchorPoint="0" RAnchorOffset="305" BAnchorPoint="1" BAnchorOffset="-27" RelativeToClient="1" TooltipType="OnCursor" VScroll="1" IgnoreMouse="1" Picture="1" Border="0" UseTemplateBG="0" BGColor="white" TextColor="white" TooltipColor="" Text="" Sprite="BK3:UI_BK3_Holo_InsetSimple" Visible="1" HideInEditor="0" NoClip="0" Tooltip=""/>
+        <Control Name="ItemList" Class="Window" Template="Holo_ScrollList" LAnchorPoint="0" LAnchorOffset="315" TAnchorPoint="0" TAnchorOffset="72" RAnchorPoint="1" RAnchorOffset="-26" BAnchorPoint="1" BAnchorOffset="-97" RelativeToClient="1" TooltipType="OnCursor" VScroll="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" HideInEditor="0" Visible="1"/>
+        <Control Name="NormalButton" Class="Button" Base="CRB_Basekit:kitBtn_List_MetalNoEdge" LAnchorPoint="0" LAnchorOffset="350" TAnchorPoint="0" TAnchorOffset="470" RAnchorPoint="0" RAnchorOffset="570" BAnchorPoint="1" BAnchorOffset="-40" RelativeToClient="1" DrawAsCheckbox="0" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_Button" ButtonType="Check" BGColor="white" TextColor="white" TooltipColor="" NormalTextColor="UI_BtnTextGoldListNormal" PressedTextColor="UI_BtnTextGoldListPressed" FlybyTextColor="UI_BtnTextGoldListFlyby" PressedFlybyTextColor="UI_BtnTextGoldListPressedFlyby" DisabledTextColor="UI_BtnTextGoldListDisabled" HideInEditor="0" Visible="1" Template="Default" Picture="1" Border="1" GlobalRadioGroup="CatalogMode" RadioGroup="" Text="" TextId="Tooltips_Normal" NewWindowDepth="1" DT_CENTER="1" Tooltip="">
+            <Event Name="ButtonCheck" Function="OnModeChange"/>
+            <Event Name="ButtonUncheck" Function="OnModeChange"/>
         </Control>
-        <Control Name="CategoryText" Class="Window" Template="Default"
-                 LAnchorPoint="0" LAnchorOffset="20" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="20"
-                 RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" DT_VCENTER="1" Text="Raids"/>
-      </Control>
-    </Control>
-    <Control Name="LocationList" Class="Window" Template="Holo_ScrollList"
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="75" RAnchorPoint="0" RAnchorOffset="330" BAnchorPoint="1" BAnchorOffset="-40"
-             RelativeToClient="1" TooltipType="OnCursor" VScroll="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1"/>
-    <Control Name="ItemListHeaderText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="340" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="0" BAnchorOffset="45"
-             RelativeToClient="1" Font="CRB_HeaderMedium" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1"/>
-    <Control Name="ItemList" Class="Window" Template="Holo_ScrollList"
-             LAnchorPoint="0" LAnchorOffset="335" TAnchorPoint="0" TAnchorOffset="50" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="1" BAnchorOffset="-40"
-             RelativeToClient="1" TooltipType="OnCursor" VScroll="1" IgnoreMouse="1" Picture="1" Border="1" UseTemplateBG="1"/>
-    <Control Name="VeteranText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="335" TAnchorPoint="0" TAnchorOffset="511" RAnchorPoint="1" RAnchorOffset="-35" BAnchorPoint="1" BAnchorOffset="-15"
-             RelativeToClient="1" Font="CRB_InterfaceTiny_BB" Text="Veteran difficulty" TooltipType="OnCursor" DT_RIGHT="1" DT_VCENTER="1"/>
-    <Control Name="VeteranButton" Class="Button" Base="CRB_UIKitSprites:btn_radioSMALL"
-             LAnchorPoint="0" LAnchorOffset="863" TAnchorPoint="0" TAnchorOffset="515" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="-15"
-             RelativeToClient="1" DrawAsCheckbox="1" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_InterfaceTiny_BB" ButtonType="Check">
-      <Event Name="ButtonCheck" Function="OnModeChange"/>
-      <Event Name="ButtonUncheck" Function="OnModeChange"/>
-    </Control>
-    <Event Name="WindowClosed" Function="Close"/>
-    <Event Name="WindowMove" Function="OnWindowMove"/>
-  </Form>
-  <Form Name="Location" Class="Window" Template="Default"
-        LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
-        RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="1">
-    <Control Name="LocationButton" Class="Button" Base="BK3:btnMetal_ExpandMenu_Med"
-             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
-             RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="Check">
-      <Event Name="ButtonCheck" Function="OnLocationOpen"/>
-      <Event Name="ButtonUncheck" Function="OnLocationClose"/>
-    </Control>
-    <Control Name="LocationText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42"
-             RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_WORDBREAK="1"/>
-    <Control Name="BossList" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="42" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="0"
-             RelativeToClient="1" TooltipType="OnCursor"/>
-  </Form>
-  <Form Name="Boss" Class="Window" Template="Default"
-        LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
-        RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="1">
-    <Control Name="BossButton" Class="Button" Base="CRB_Basekit:kitBtn_List_MetalBorder"
-             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42"
-             RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="Check" GlobalRadioGroup="CatalogBoss">
-      <Event Name="ButtonCheck" Function="OnBossSelect"/>
-    </Control>
-    <Control Name="BossText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42"
-             RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_WORDBREAK="1"/>
-  </Form>
-  <Form Name="Item" Class="Window" Template="Default"
-        LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="60"
-        RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="1">
-    <Control Name="ItemButton" Class="Button" Base="BK3:btnHolo_ListView_Simple"
-             LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="60"
-             RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="PushButton">
-      <Event Name="MouseButtonDown" Function="OnMouseButtonDown"/>
-      <Event Name="GenerateTooltip" Function="OnGenerateTooltip"/>
-    </Control>
-    <Control Name="ItemIcon" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="0" RAnchorOffset="50" BAnchorPoint="0" BAnchorOffset="50"
-             RelativeToClient="1"TooltipType="OnCursor" Picture="1" IgnoreMouse="1" TooltipFont="CRB_InterfaceSmall_O"/>
-    <Control Name="ItemText" Class="Window" Template="Default"
-             LAnchorPoint="0" LAnchorOffset="55" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-200" BAnchorPoint="0" BAnchorOffset="50"
-             RelativeToClient="1" Font="CRB_InterfaceLarge_BB" TooltipType="OnCursor" TextColor="ffffffff" DT_VCENTER="1"/>
-    <Control Name="ItemLevelText" Class="Window" Template="Default"
-             LAnchorPoint="1" LAnchorOffset="-205" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="30"
-             RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_RIGHT="1"/>
-    <Control Name="ItemTypeText" Class="Window" Template="Default"
-             LAnchorPoint="1" LAnchorOffset="-205" TAnchorPoint="0" TAnchorOffset="30" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="50"
-             RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_RIGHT="1"/>
-  </Form>
+        <Control Name="VeteranButton" Class="Button" Base="CRB_Basekit:kitBtn_List_MetalNoEdge" LAnchorPoint="1" LAnchorOffset="-280" TAnchorPoint="0" TAnchorOffset="470" RAnchorPoint="1" RAnchorOffset="-60" BAnchorPoint="1" BAnchorOffset="-40" RelativeToClient="1" DrawAsCheckbox="0" TooltipType="OnCursor" DT_VCENTER="1" Font="CRB_Button" ButtonType="Check" BGColor="white" TextColor="white" TooltipColor="" NormalTextColor="UI_BtnTextGoldListNormal" PressedTextColor="UI_BtnTextGoldListPressed" FlybyTextColor="UI_BtnTextGoldListFlyby" PressedFlybyTextColor="UI_BtnTextGoldListPressedFlyby" DisabledTextColor="UI_BtnTextGoldListDisabled" HideInEditor="0" Visible="1" DT_CENTER="1" Template="Default" Text="" TextId="MiniMap_Veteran" Picture="1" NewWindowDepth="1" GlobalRadioGroup="CatalogMode" RadioGroup="" Border="0">
+            <Event Name="ButtonCheck" Function="OnModeChange"/>
+            <Event Name="ButtonUncheck" Function="OnModeChange"/>
+        </Control>
+    </Form>
+    <Form Name="Location" Class="Window" Template="Default" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42" RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="0" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" Tooltip="" NeverBringToFront="1">
+        <Control Name="LocationButton" Class="Button" Base="BK3:btnMetal_ExpandMenu_Med" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42" RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="Check" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" NormalTextColor="ffffffff" PressedTextColor="ffffffff" FlybyTextColor="ffffffff" PressedFlybyTextColor="ffffffff" DisabledTextColor="ffffffff">
+            <Event Name="ButtonCheck" Function="OnLocationOpen"/>
+            <Event Name="ButtonUncheck" Function="OnLocationClose"/>
+        </Control>
+        <Control Name="LocationText" Class="Window" Template="Default" LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42" RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_WORDBREAK="1" BGColor="ffffffff" TooltipColor=""/>
+        <Control Name="BossList" Class="Window" Template="Default" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="42" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="0" RelativeToClient="1" TooltipType="OnCursor" BGColor="ffffffff" TextColor="ffffffff" TooltipColor=""/>
+    </Form>
+    <Form Name="Boss" Class="Window" Template="Default" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42" RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="0" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" Tooltip="">
+        <Control Name="BossButton" Class="Button" Base="BK3:btnMetal_ExpandMenu_Small" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="42" RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="Check" GlobalRadioGroup="CatalogBoss" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" NormalTextColor="ffffffff" PressedTextColor="ffffffff" FlybyTextColor="ffffffff" PressedFlybyTextColor="ffffffff" DisabledTextColor="ffffffff">
+            <Event Name="ButtonCheck" Function="OnBossSelect"/>
+        </Control>
+        <Control Name="BossText" Class="Window" Template="Default" LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="-30" BAnchorPoint="0" BAnchorOffset="42" RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_WORDBREAK="1" BGColor="ffffffff" TooltipColor=""/>
+    </Form>
+    <Form Name="Item" Class="Window" Template="Default" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="60" RelativeToClient="1" TooltipType="OnCursor" Picture="1" Overlapped="0" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" Tooltip="">
+        <Control Name="ItemButton" Class="Button" Base="BK3:btnHolo_ListView_Simple" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="0" BAnchorOffset="60" RelativeToClient="1" TooltipType="OnCursor" DT_VCENTER="1" DT_CENTER="1" Font="Thick" ButtonType="PushButton" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" NormalTextColor="ffffffff" PressedTextColor="ffffffff" FlybyTextColor="ffffffff" PressedFlybyTextColor="ffffffff" DisabledTextColor="ffffffff" IgnoreTooltipDelay="1">
+            <Event Name="MouseButtonDown" Function="OnMouseButtonDown"/>
+            <Event Name="GenerateTooltip" Function="OnGenerateTooltip"/>
+        </Control>
+        <Control Name="ItemIcon" Class="Window" Template="Default" LAnchorPoint="0" LAnchorOffset="10" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="0" RAnchorOffset="50" BAnchorPoint="0" BAnchorOffset="50" RelativeToClient="1" TooltipType="OnCursor" Picture="1" IgnoreMouse="1" TooltipFont="CRB_InterfaceSmall_O" BGColor="ffffffff" TextColor="ffffffff" TooltipColor=""/>
+        <Control Name="ItemText" Class="Window" Template="Default" LAnchorPoint="0" LAnchorOffset="55" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-200" BAnchorPoint="0" BAnchorOffset="50" RelativeToClient="1" Font="CRB_InterfaceLarge_BB" TooltipType="OnCursor" TextColor="ffffffff" DT_VCENTER="1" BGColor="ffffffff" TooltipColor=""/>
+        <Control Name="ItemLevelText" Class="Window" Template="Default" LAnchorPoint="1" LAnchorOffset="-205" TAnchorPoint="0" TAnchorOffset="10" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="30" RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_RIGHT="1" BGColor="ffffffff" TooltipColor=""/>
+        <Control Name="ItemTypeText" Class="Window" Template="Default" LAnchorPoint="1" LAnchorOffset="-205" TAnchorPoint="0" TAnchorOffset="30" RAnchorPoint="1" RAnchorOffset="-10" BAnchorPoint="0" BAnchorOffset="50" RelativeToClient="1" Font="CRB_InterfaceMedium_BB" TooltipType="OnCursor" TextColor="UI_BtnTextGoldListNormal" DT_VCENTER="1" DT_RIGHT="1" BGColor="ffffffff" TooltipColor=""/>
+    </Form>
 </Forms>
