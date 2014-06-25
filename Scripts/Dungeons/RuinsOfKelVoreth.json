@@ -1,8 +1,5 @@
 {
-  "level": {
-    "normal": 15,
-    "veteran": 50
-  },
+  "level": 21,
   "bosses": [
     "Grond the Corpsemaker",
     "Slavemaster Drokk",
