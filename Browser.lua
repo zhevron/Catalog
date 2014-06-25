@@ -27,6 +27,9 @@ function Catalog.Browser:OnDocumentReady()
   local version = Catalog.Version.Major.."."..Catalog.Version.Minor.."."..Catalog.Version.Build
   self.Window = Apollo.LoadForm(self.Xml, "CatalogBrowser", nil, self)
   self.Window:FindChild("HeaderText"):SetText("Catalog v"..version)
+  self.Window:FindChild("CategoryAdventure"):SetData("adventure")
+  self.Window:FindCHild("CategoryDungeon"):SetData("dungeon")
+  self.WIndow:FindChild("CategoryRaid"):SetData("raid")
   self:Close()
   self:Localize()
   self:BuildLocationList()
@@ -59,6 +62,9 @@ end
 
 function Catalog.Browser:Localize()
   local locale = Catalog:GetLocale()
+  self.Window:FindChild("CategoryAdventure"):FindChild("CategoryText"):SetText(locale["adventure"][2])
+  self.Window:FindChild("CategoryDungeon"):FindChild("CategoryText"):SetText(locale["dungeon"][2])
+  self.Window:FindChild("CategoryRaid"):FindChild("CategoryText"):SetText(locale["raid"][2])
   self.Window:FindChild("VeteranText"):SetText(locale["veteran"])
 end
 
@@ -161,15 +167,9 @@ function Catalog.Browser:OnBossSelect(handler, control)
 end
 
 function Catalog.Browser:OnCategoryButton(handler, control)
-  --
-end
-
-function Catalog.Browser:OnCategoryCheck(handler, control)
-  --
-end
-
-function Catalog.Browser:OnCategoryUncheck(handler, control)
-  --
+  local category = control:GetParent():GetData()
+  Catalog.Options.Filter.Category[category] = not Catalog.Options.Filter.Category[category]
+  self:BuildLocationList()
 end
 
 function Catalog.Browser:OnMouseButtonDown(handler, control, button)
