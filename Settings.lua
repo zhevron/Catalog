@@ -44,7 +44,7 @@ function Catalog.Settings:Position()
   local form = Apollo.LoadForm(self.Xml, "CatalogSettings", nil, self)
   local _, _, width, height = form:GetAnchorOffsets()
   form:Destroy()
-  self.Window:SetAnchorOffsets(right, top, right + width, top + height)
+  self.Window:SetAnchorOffsets(right - 15, top + 5, right - 15 + width, top + 5 + height)
 end
 
 function Catalog.Settings:ApplyCurrent()
@@ -55,15 +55,17 @@ function Catalog.Settings:ApplyCurrent()
 end
 
 function Catalog.Settings:OnLocaleListOpen(handler, control)
-  self:FindChild("LocaleList"):Show(true)
+  self.Window:FindChild("LocaleList"):Show(true)
 end
 
 function Catalog.Settings:OnLocaleListClose(handler, control)
-  self:FindChild("LocaleList"):Show(false)
+  self.Window:FindChild("LocaleList"):Show(false)
 end
 
 function Catalog.Settings:OnChangeLocale(handler, control)
-  self:FindChild("LocaleList"):Show(false)
+  self.Window:FindChild("LocaleButton"):SetText(control:GetText())
+  self.Window:FindChild("LocaleButton"):SetCheck(false)
+  self.Window:FindChild("LocaleList"):Show(false)
   Catalog.Options.Locale = control:GetData()
   Catalog.Settings:Localize()
   Catalog.Browser:BuildLocationList()
