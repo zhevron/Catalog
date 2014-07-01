@@ -55,6 +55,16 @@ function Catalog.Browser:Close()
   end
 end
 
+function Catalog.Browser:Toggle()
+  if self.Window and self.Window:IsValid() then
+    if self.Window:IsShown() then
+      self:Close()
+    else
+      self:Open()
+    end
+  end
+end
+
 function Catalog.Browser:BuildSubcategoryList()
   local list = self.Window:FindChild("SubcategoryList")
   list:DestroyChildren()

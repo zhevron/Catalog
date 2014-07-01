@@ -37,6 +37,16 @@ function Catalog:OnLoad()
   self.Settings:Init()
   Apollo.RegisterSlashCommand("catalog", "Open", self.Browser)
   Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
+  Apollo.RegisterEventHandler("Catalog_ToggleBrowser", "Toggle", self.Browser)
+  Apollo.RegisterEventHandler("InterfaceMenuListHasLoaded", "OnInterfaceMenuListHasLoaded", self)
+end
+
+function Catalog:OnInterfaceMenuListHasLoaded()
+  Event_FireGenericEvent("InterfaceMenuList_NewAddOn", "Catalog", {
+    "Catalog_ToggleBrowser",
+    "",
+    "IconSprites:Icon_Windows32_UI_CRB_InterfaceMenu_Lore"
+  })
 end
 
 function Catalog:OnSave(type)
