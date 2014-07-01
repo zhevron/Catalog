@@ -15,9 +15,9 @@ function Catalog.Settings:OnDocumentReady()
   self.Window = Apollo.LoadForm(self.Xml, "CatalogSettings", nil, self)
   self:Close()
   self:Localize()
-  self.Window:FindChild("LocaleEnglishButton"):SetData("en")
-  self.Window:FindChild("LocaleGermanButton"):SetData("de")
-  self.Window:FindChild("LocaleFrenchButton"):SetData("fr")
+  self.Window:FindChild("EnglishButton"):SetData("en")
+  self.Window:FindChild("GermanButton"):SetData("de")
+  self.Window:FindChild("FrenchButton"):SetData("fr")
 end
 
 function Catalog.Settings:Open()
@@ -36,11 +36,7 @@ end
 
 function Catalog.Settings:Localize()
   local locale = Catalog:GetLocale()
-  self.Window:FindChild("LocaleText"):SetText(locale["language"])
-  self.Window:FindChild("LocaleEnglishText"):SetText(locale["english"])
-  self.Window:FindChild("LocaleGermanText"):SetText(locale["german"])
-  self.Window:FindChild("LocaleFrenchText"):SetText(locale["french"])
-  self.Window:FindChild("LockedText"):SetText(locale["lock"])
+  self.Window:FindChild("LockedButton"):SetText(locale["lock"])
 end
 
 function Catalog.Settings:Position()
@@ -52,13 +48,22 @@ function Catalog.Settings:Position()
 end
 
 function Catalog.Settings:ApplyCurrent()
-  self.Window:FindChild("LocaleEnglishButton"):SetCheck(Catalog.Options.Locale == "en")
-  self.Window:FindChild("LocaleGermanButton"):SetCheck(Catalog.Options.Locale == "de")
-  self.Window:FindChild("LocaleFrenchButton"):SetCheck(Catalog.Options.Locale == "fr")
+  self.Window:FindChild("EnglishButton"):SetCheck(Catalog.Options.Locale == "en")
+  self.Window:FindChild("GermanButton"):SetCheck(Catalog.Options.Locale == "de")
+  self.Window:FindChild("FrenchButton"):SetCheck(Catalog.Options.Locale == "fr")
   self.Window:FindChild("LockedButton"):SetCheck(Catalog.Options.Locked)
 end
 
+function Catalog.Settings:OnLocaleListOpen(handler, control)
+  self:FindChild("LocaleList"):Show(true)
+end
+
+function Catalog.Settings:OnLocaleListClose(handler, control)
+  self:FindChild("LocaleList"):Show(false)
+end
+
 function Catalog.Settings:OnChangeLocale(handler, control)
+  self:FindChild("LocaleList"):Show(false)
   Catalog.Options.Locale = control:GetData()
   Catalog.Settings:Localize()
   Catalog.Browser:BuildLocationList()
