@@ -25,11 +25,8 @@ function Catalog.Browser:OnDocumentReady()
     return
   end
   self.Window = Apollo.LoadForm(self.Xml, "CatalogBrowser", nil, self)
-  self.Window:FindChild("AdventureButton"):SetCheck(Catalog.Options.Filter.Category["adventure"])
   self.Window:FindChild("AdventureButton"):SetData("adventure")
-  self.Window:FindChild("DungeonButton"):SetCheck(Catalog.Options.Filter.Category["dungeon"])
   self.Window:FindChild("DungeonButton"):SetData("dungeon")
-  self.Window:FindChild("RaidButton"):SetCheck(Catalog.Options.Filter.Category["raid"])
   self.Window:FindChild("RaidButton"):SetData("raid")
   self.Window:FindChild("NormalButton"):SetCheck(true)
   self:Close()
@@ -46,7 +43,6 @@ function Catalog.Browser:Open()
     if Catalog.Options.Locked then
       self.Window:RemoveStyle("Moveable")
     end
-    self:BuildLocationList()
     self.Window:Show(true)
   end
 end
@@ -59,35 +55,34 @@ function Catalog.Browser:Close()
   end
 end
 
-function Catalog.Browser:BuildLocationList()
-  local list = self.Window:FindChild("LocationList")
+function Catalog.Browser:BuildSubcategoryList()
+  local list = self.Window:FindChild("SubcategoryList")
   list:DestroyChildren()
-  local locations = {}
-  for _, location in pairs(Catalog.Database) do
-    if Catalog.Options.Filter.Category[location.type] then
-      local tbl = Catalog.Utility:TableCopyRecursive(location)
-      tbl.name = location.name[Catalog.Options.Locale]
-      table.insert(locations, tbl)
+  local entries = {}
+  for _, entry in pairs(Catalog.Database) do
+    if entry.type == self.Window:FindChild("CategoryButton"):GetData() then
+      local tbl = Catalog.Utility:TableCopyRecursive(entry)
+      tbl.name = entry.name[Catalog.Options.Locale]
+      table.insert(entries, tbl)
     end
   end
-  for name, location in Catalog.Utility:TableSortPairs(locations, "name") do
-    local form = Apollo.LoadForm(self.Xml, "Location", list, self)
-    form:SetData(location)
-    form:FindChild("LocationText"):SetText(name)
-    self:BuildBossList(location, form)
+  for name, entry in Catalog.Utility:TableSortPairs(entries, "name") do
+    local form = Apollo.LoadForm(self.Xml, "Subcategory", list, self)
+    form:SetText(name)
+    form:SetData(entry)
   end
   list:ArrangeChildrenVert()
+  self:SizeToFit(list, 3)
 end
 
-function Catalog.Browser:BuildBossList(location, parent)
-  local list = parent:FindChild("BossList")
+function Catalog.Browser:BuildBossList(subcategory)
+  local list = self.Window:FindChild("BossList")
   list:DestroyChildren()
-  for _, boss in ipairs(location.bosses) do
+  for _, boss in ipairs(subcategory.bosses) do
     local form = Apollo.LoadForm(self.Xml, "Boss", list, self)
     form:SetData(boss)
     form:FindChild("BossText"):SetText(boss.name[Catalog.Options.Locale])
   end
-  self:SizeToFit(list)
   list:ArrangeChildrenVert()
 end
 
@@ -117,15 +112,16 @@ function Catalog.Browser:BuildItemList(boss)
   list:ArrangeChildrenVert()
 end
 
-function Catalog.Browser:SizeToFit(list)
+function Catalog.Browser:SizeToFit(list, offset)
+  offset = offset or 0
   if #list:GetChildren() > 0 then
     local height = 0
     for _, child in pairs(list:GetChildren()) do
-      local _, _, _, bottom = child:GetAnchorOffsets()
-      height = height + bottom
+      local _, top, _, bottom = child:GetAnchorOffsets()
+      height = height + (bottom - top)
     end
-    local left, top, right, bottom = list:GetAnchorOffsets()
-    list:SetAnchorOffsets(left, top, right, bottom + height)
+    local left, top, right = list:GetAnchorOffsets()
+    list:SetAnchorOffsets(left, top, right, top + height + offset)
   end
 end
 
@@ -143,34 +139,36 @@ end
 
 function Catalog.Browser:OnCategoryListOpen(handler, control)
   self.Window:FindChild("CategoryList"):Show(true)
-  local left, _, right, bottom = self.Window:FindChild("LocationList"):GetAnchorOffsets()
-  self.Window:FindChild("LocationList"):SetAnchorOffsets(left, 236, right, bottom)
 end
 
 function Catalog.Browser:OnCategoryListClose(handler, control)
   self.Window:FindChild("CategoryList"):Show(false)
-  local left, _, right, bottom = self.Window:FindChild("LocationList"):GetAnchorOffsets()
-  self.Window:FindChild("LocationList"):SetAnchorOffsets(left, 107, right, bottom)
 end
 
 function Catalog.Browser:OnCategoryCheck(handler, control)
-  Catalog.Options.Filter.Category[control:GetData()] = true
-  self:BuildLocationList()
+  self.Window:FindChild("CategoryButton"):SetText(control:GetText())
+  self.Window:FindChild("CategoryButton"):SetData(control:GetData())
+  self.Window:FindChild("CategoryButton"):SetCheck(false)
+  self.Window:FindChild("SubcategoryButton"):SetText("")
+  self.Window:FindChild("SubcategoryButton"):SetData(nil)
+  self.Window:FindChild("CategoryList"):Show(false)
+  self:BuildSubcategoryList()
 end
 
-function Catalog.Browser:OnCategoryUncheck(handler, control)
-  Catalog.Options.Filter.Category[control:GetData()] = false
-  self:BuildLocationList()
+function Catalog.Browser:OnSubcategoryListOpen(handler, control)
+  self.Window:FindChild("SubcategoryList"):Show(true)
 end
 
-function Catalog.Browser:OnLocationOpen(handler, control)
-  self:Expand(control:GetParent(), control:GetParent():FindChild("BossList"))
-  self.Window:FindChild("LocationList"):ArrangeChildrenVert()
+function Catalog.Browser:OnSubcategoryListClose(handler, control)
+  self.Window:FindChild("SubcategoryList"):Show(false)
 end
 
-function Catalog.Browser:OnLocationClose(handler, control)
-  self:Collapse(control:GetParent(), control:GetParent():FindChild("BossList"))
-  self.Window:FindChild("LocationList"):ArrangeChildrenVert()
+function Catalog.Browser:OnSubcategoryCheck(handler, control)
+  self.Window:FindChild("SubcategoryButton"):SetText(control:GetText())
+  self.Window:FindChild("SubcategoryButton"):SetData(control:GetData())
+  self.Window:FindChild("SubcategoryButton"):SetCheck(false)
+  self.Window:FindChild("SubcategoryList"):Show(false)
+  self:BuildBossList(control:GetData())
 end
 
 function Catalog.Browser:OnBossSelect(handler, control)
