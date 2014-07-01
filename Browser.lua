@@ -10,7 +10,7 @@ Catalog.Browser.ItemColor = {
   [Item.CodeEnumItemQuality.Good] = ApolloColor.new("ItemQuality_Good"),
   [Item.CodeEnumItemQuality.Excellent] = ApolloColor.new("ItemQuality_Excellent"),
   [Item.CodeEnumItemQuality.Superb] = ApolloColor.new("ItemQuality_Superb"),
-  [Item.CodeEnumItemQuality.Legendary] = ApolloColor.new("ItemQuality_Legedary"),
+  [Item.CodeEnumItemQuality.Legendary] = ApolloColor.new("ItemQuality_Legendary"),
   [Item.CodeEnumItemQuality.Artifact] = ApolloColor.new("ItemQuality_Artifact")
 }
 
