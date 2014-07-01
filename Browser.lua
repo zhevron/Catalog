@@ -40,6 +40,7 @@ function Catalog.Browser:Open()
     local _, _, right, bottom = form:GetAnchorOffsets()
     form:Destroy()
     self.Window:SetAnchorOffsets(left, top, left + right, top + bottom)
+    self.Window:SetScale(Catalog.Options.Scale)
     if Catalog.Options.Locked then
       self.Window:RemoveStyle("Moveable")
     end

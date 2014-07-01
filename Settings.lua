@@ -45,12 +45,15 @@ function Catalog.Settings:Position()
   local _, _, width, height = form:GetAnchorOffsets()
   form:Destroy()
   self.Window:SetAnchorOffsets(right - 15, top + 5, right - 15 + width, top + 5 + height)
+  self.Window:SetScale(Catalog.Browser.Window:GetScale())
 end
 
 function Catalog.Settings:ApplyCurrent()
   self.Window:FindChild("EnglishButton"):SetCheck(Catalog.Options.Locale == "en")
   self.Window:FindChild("GermanButton"):SetCheck(Catalog.Options.Locale == "de")
   self.Window:FindChild("FrenchButton"):SetCheck(Catalog.Options.Locale == "fr")
+  self.Window:FindChild("ScaleValueText"):SetText(tostring(Catalog.Options.Scale))
+  self.Window:FindChild("ScaleSlider"):SetValue(Catalog.Options.Scale)
   self.Window:FindChild("LockedButton"):SetCheck(Catalog.Options.Locked)
 end
 
@@ -69,6 +72,14 @@ function Catalog.Settings:OnChangeLocale(handler, control)
   Catalog.Options.Locale = control:GetData()
   Catalog.Settings:Localize()
   Catalog.Browser:BuildLocationList()
+end
+
+function Catalog.Settings:OnScaleChanged(handler, control, scale)
+  scale = math.floor(scale * math.pow(10, 1) + 0.5) / math.pow(10, 1)
+  self.Window:FindChild("ScaleValueText"):SetText(tostring(scale))
+  Catalog.Browser.Window:SetScale(scale)
+  self.Window:SetScale(scale)
+  Catalog.Options.Scale = scale
 end
 
 function Catalog.Settings:OnToggleLocked(handler, control)

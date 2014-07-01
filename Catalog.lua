@@ -14,7 +14,8 @@ Catalog.Defaults = {
   ["Position"] = {
     ["X"] = 100,
     ["Y"] = 100
-  }
+  },
+  ["Scale"] = 1.0
 }
 
 Catalog.Locale = {}
