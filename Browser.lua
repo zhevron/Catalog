@@ -78,6 +78,9 @@ end
 function Catalog.Browser:BuildBossList(subcategory)
   local list = self.Window:FindChild("BossList")
   list:DestroyChildren()
+  if subcategory == nil then
+    return
+  end
   for _, boss in ipairs(subcategory.bosses) do
     local form = Apollo.LoadForm(self.Xml, "Boss", list, self)
     form:SetData(boss)
@@ -90,6 +93,9 @@ function Catalog.Browser:BuildItemList(boss)
   local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
+  if boss == nil then
+    return
+  end
   list:SetData(boss)
   local mode = "normal"
   if self.Window:FindChild("VeteranButton"):IsChecked() then
@@ -153,6 +159,8 @@ function Catalog.Browser:OnCategoryCheck(handler, control)
   self.Window:FindChild("SubcategoryButton"):SetData(nil)
   self.Window:FindChild("CategoryList"):Show(false)
   self:BuildSubcategoryList()
+  self:BuildBossList(nil)
+  self:BuildItemList(nil)
 end
 
 function Catalog.Browser:OnSubcategoryListOpen(handler, control)
@@ -169,6 +177,7 @@ function Catalog.Browser:OnSubcategoryCheck(handler, control)
   self.Window:FindChild("SubcategoryButton"):SetCheck(false)
   self.Window:FindChild("SubcategoryList"):Show(false)
   self:BuildBossList(control:GetData())
+  self:BuildItemList(nil)
 end
 
 function Catalog.Browser:OnBossSelect(handler, control)
