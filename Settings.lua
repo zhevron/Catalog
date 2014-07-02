@@ -41,10 +41,11 @@ end
 
 function Catalog.Settings:Position()
   local _, top, right = Catalog.Browser.Window:GetAnchorOffsets()
+  local offset = (right - 15) * (1 - Catalog.Browser.Window:GetScale())
   local form = Apollo.LoadForm(self.Xml, "CatalogSettings", nil, self)
   local _, _, width, height = form:GetAnchorOffsets()
   form:Destroy()
-  self.Window:SetAnchorOffsets(right - 15, top + 5, right - 15 + width, top + 5 + height)
+  self.Window:SetAnchorOffsets(right - 15 - offset, top + 5, right - 15 -offset + width, top + 5 + height)
   self.Window:SetScale(Catalog.Browser.Window:GetScale())
 end
 
@@ -80,6 +81,7 @@ function Catalog.Settings:OnScaleChanged(handler, control, scale)
   Catalog.Browser.Window:SetScale(scale)
   self.Window:SetScale(scale)
   Catalog.Options.Scale = scale
+  self:Position()
 end
 
 function Catalog.Settings:OnToggleLocked(handler, control)
