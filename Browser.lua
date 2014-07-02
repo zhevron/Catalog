@@ -109,7 +109,7 @@ function Catalog.Browser:BuildItemList(boss)
   end
   list:SetData(boss)
   local mode = "normal"
-  if self.Window:FindChild("VeteranButton"):IsChecked() then
+  if boss.veteran ~= nil and self.Window:FindChild("VeteranButton"):IsChecked() then
     mode = "veteran"
   end
   for i = Item.CodeEnumItemQuality.Legendary, Item.CodeEnumItemQuality.Inferior, -1 do
@@ -169,6 +169,7 @@ function Catalog.Browser:OnCategoryCheck(handler, control)
   self.Window:FindChild("SubcategoryButton"):SetText("")
   self.Window:FindChild("SubcategoryButton"):SetData(nil)
   self.Window:FindChild("CategoryList"):Show(false)
+  self.Window:FindChild("ModeButton"):Show(false)
   self:BuildSubcategoryList()
   self:BuildBossList(nil)
   self:BuildItemList(nil)
@@ -187,12 +188,30 @@ function Catalog.Browser:OnSubcategoryCheck(handler, control)
   self.Window:FindChild("SubcategoryButton"):SetData(control:GetData())
   self.Window:FindChild("SubcategoryButton"):SetCheck(false)
   self.Window:FindChild("SubcategoryList"):Show(false)
+  self.Window:FindChild("ModeButton"):Show(false)
   self:BuildBossList(control:GetData())
   self:BuildItemList(nil)
 end
 
+function Catalog.Browser:OnModeListOpen(handler, control)
+  self.Window:FindChild("ModeList"):Show(true)
+end
+
+function Catalog.Browser:OnModeListClose(handler, control)
+  self.Window:FindChild("ModeList"):Show(false)
+end
+
+function Catalog.Browser:OnModeChange(handler, control)
+  self.Window:FindChild("ModeButton"):SetText(control:GetText())
+  self.Window:FindChild("ModeButton"):SetCheck(false)
+  self.Window:FindChild("ModeList"):Show(false)
+  self:BuildItemList(self.Window:FindChild("ItemList"):GetData())
+end
+
 function Catalog.Browser:OnBossSelect(handler, control)
-  self:BuildItemList(control:GetParent():GetData())
+  local boss = control:GetParent():GetData()
+  self:BuildItemList(boss)
+  self.Window:FindChild("ModeButton"):Show(boss.veteran ~= nil)
 end
 
 function Catalog.Browser:OnMouseButtonDown(handler, control, button)
@@ -209,10 +228,6 @@ function Catalog.Browser:OnMouseButtonDown(handler, control, button)
   elseif Apollo.IsShiftKeyDown() then
     Event_FireGenericEvent("ItemLink", item)
   end
-end
-
-function Catalog.Browser:OnModeChange(handler, control)
-  self:BuildItemList(self.Window:FindChild("ItemList"):GetData())
 end
 
 function Catalog.Browser:OnToggleSettings(handler, control)
