@@ -14,7 +14,7 @@ class Item:
 def parse_adventure(name, data):
   print "Parsing adventure: " + name
   with open(os.getcwd() + "/" + name + ".txt", "w") as file:
-    #
+    return
 
 def parse_dungeon(name, data):
   print "Parsing dungeon: " + name
