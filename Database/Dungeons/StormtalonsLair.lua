@@ -2,7 +2,7 @@
 Catalog.Database["StormtalonsLair"] = {
   ["name"] = {
     ["en"] = "Stormtalon's Lair",
-    ["de"] = "Stormtalon's Lair",
+    ["de"] = "Sturmklaues Unterschlupf",
     ["fr"] = "Antre d'Ouragriffe"
   },
   ["type"] = "dungeon",
@@ -10,7 +10,7 @@ Catalog.Database["StormtalonsLair"] = {
     {
       ["name"] = {
         ["en"] = "Blade-Wind the Invoker",
-        ["de"] = "Blade-Wind the Invoker",
+        ["de"] = "Klingenwind der Beschwörer",
         ["fr"] = "Lamevent l'Invocateur"
       },
       ["normal"] = {
@@ -60,7 +60,7 @@ Catalog.Database["StormtalonsLair"] = {
     {
       ["name"] = {
         ["en"] = "Aethros",
-        ["de"] = "Aethros",
+        ["de"] = "Ätheros",
         ["fr"] = "Aethros"
       },
       ["normal"] = {
@@ -112,7 +112,7 @@ Catalog.Database["StormtalonsLair"] = {
     {
       ["name"] = {
         ["en"] = "Stormtalon",
-        ["de"] = "Stormtalon",
+        ["de"] = "Sturmklaue",
         ["fr"] = "Ouragriffe"
       },
       ["normal"] = {

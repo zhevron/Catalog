@@ -2,7 +2,7 @@
 Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
   ["name"] = {
     ["en"] = "Sanctuary of the Swordmaiden",
-    ["de"] = "Sanctuary of the Swordmaiden",
+    ["de"] = "Zuflucht der Schwertmaid",
     ["fr"] = "Sanctuaire de la Valkyrie"
   },
   ["type"] = "dungeon",
@@ -10,7 +10,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
     {
       ["name"] = {
         ["en"] = "Deadringer Shallaos",
-        ["de"] = "Deadringer Shallaos",
+        ["de"] = "Doppelgängerin Shallaos",
         ["fr"] = "Sosie Shallaos"
       },
       ["normal"] = {
@@ -46,7 +46,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
     {
       ["name"] = {
         ["en"] = "Rayna Darkspeaker",
-        ["de"] = "Rayna Darkspeaker",
+        ["de"] = "Rayna Düsterbotin",
         ["fr"] = "Rayna Languenoire"
       },
       ["normal"] = {
@@ -77,7 +77,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
     {
       ["name"] = {
         ["en"] = "Ondu Lifeweaver",
-        ["de"] = "Ondu Lifeweaver",
+        ["de"] = "Ondu Lebensflechter",
         ["fr"] = "Ondu Tisse-âme"
       },
       ["normal"] = {
@@ -105,7 +105,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
     {
       ["name"] = {
         ["en"] = "Moldwood Overlord Skash",
-        ["de"] = "Moldwood Overlord Skash",
+        ["de"] = "Moderwald-Overlord Skash",
         ["fr"] = "Seigneur de Putrebois Skash"
       },
       ["normal"] = {
@@ -127,7 +127,7 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
     {
       ["name"] = {
         ["en"] = "Spiritmother Selene the Corrupted",
-        ["de"] = "Spiritmother Selene the Corrupted",
+        ["de"] = "Seelenmutter Selene",
         ["fr"] = "Mère spirituelle Sélène la Corrompue"
       },
       ["normal"] = {

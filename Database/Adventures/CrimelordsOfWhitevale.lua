@@ -2,7 +2,7 @@
 Catalog.Database["CrimelordsOfWhitevale"] = {
   ["name"] = {
     ["en"] = "Crimelords of Whitevale",
-    ["de"] = "Crimelords of Whitevale",
+    ["de"] = "Banden vom Weißtal",
     ["fr"] = "Seigneurs du crime de Valblanc"
   },
   ["type"] = "adventure",
@@ -10,7 +10,7 @@ Catalog.Database["CrimelordsOfWhitevale"] = {
     {
       ["name"] = {
         ["en"] = "Rewards",
-        ["de"] = "Rewards",
+        ["de"] = "Belohnungen",
         ["fr"] = "Récompenses"
       },
       ["normal"] = {

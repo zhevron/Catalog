@@ -2,7 +2,7 @@
 Catalog.Database["SkullcanoIsland"] = {
   ["name"] = {
     ["en"] = "Skullcano Island",
-    ["de"] = "Skullcano Island",
+    ["de"] = "Feuerschädel",
     ["fr"] = "Volcrâno"
   },
   ["type"] = "dungeon",
@@ -10,7 +10,7 @@ Catalog.Database["SkullcanoIsland"] = {
     {
       ["name"] = {
         ["en"] = "Stew-Shaman Tugga",
-        ["de"] = "Stew-Shaman Tugga",
+        ["de"] = "Suppenschamane Tugga",
         ["fr"] = "Chamiam Tugga"
       },
       ["normal"] = {
@@ -49,7 +49,7 @@ Catalog.Database["SkullcanoIsland"] = {
     {
       ["name"] = {
         ["en"] = "Thunderfoot",
-        ["de"] = "Thunderfoot",
+        ["de"] = "Donnerhuf",
         ["fr"] = "Fulguropied"
       },
       ["normal"] = {
@@ -97,7 +97,7 @@ Catalog.Database["SkullcanoIsland"] = {
     {
       ["name"] = {
         ["en"] = "Bosun Octog",
-        ["de"] = "Bosun Octog",
+        ["de"] = "Deckoffizier Octog",
         ["fr"] = "Bosco Octog"
       },
       ["normal"] = {
@@ -129,7 +129,7 @@ Catalog.Database["SkullcanoIsland"] = {
     {
       ["name"] = {
         ["en"] = "Mordechai Redmoon",
-        ["de"] = "Mordechai Redmoon",
+        ["de"] = "Mordechai Rotmond",
         ["fr"] = "Mordechai Rougelune"
       },
       ["normal"] = {

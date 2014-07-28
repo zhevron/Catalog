@@ -2,7 +2,7 @@
 Catalog.Database["RuinsOfKelVoreth"] = {
   ["name"] = {
     ["en"] = "Ruins of Kel Voreth",
-    ["de"] = "Ruins of Kel Voreth",
+    ["de"] = "Ruinen von Kel'Voreth",
     ["fr"] = "Ruines de Kel Voreth"
   },
   ["type"] = "dungeon",
@@ -10,7 +10,7 @@ Catalog.Database["RuinsOfKelVoreth"] = {
     {
       ["name"] = {
         ["en"] = "Grond the Corpsemaker",
-        ["de"] = "Grond the Corpsemaker",
+        ["de"] = "Grond der Leichenmacher",
         ["fr"] = "Grond le Boucher"
       },
       ["normal"] = {
@@ -45,8 +45,32 @@ Catalog.Database["RuinsOfKelVoreth"] = {
     },
     {
       ["name"] = {
+        ["en"] = "Darkwitch Gurka (optional)",
+        ["de"] = "Dämmerhexe Gurka (optional)",
+        ["fr"] = "Sorcîère ténébreuse Gurka (en option)"
+      },
+      ["normal"] = {
+        34504, -- Saliva-Covered Assist Module
+        34533, -- Will of the Osun
+        34509, -- Flexweave Exanite Boots
+        34530, -- Foehunter Boots
+        34496, -- Osun-Forged Blood Armor
+        34515, -- Power Suit Shoulder Guards
+        37106, -- Case of Coordinated Colors
+      },
+      ["veteran"] = {
+        38126, -- Voreth War Clogs
+        42843, -- Voreth Forged Crystal
+        42871, -- Osun Crusader's Resonators
+        42832, -- Bloodstrife Analyzer
+        38258, -- Lightning Capacitor
+        38201, -- Hyperpolling Sensor
+      }
+    },
+    {
+      ["name"] = {
         ["en"] = "Slavemaster Drokk",
-        ["de"] = "Slavemaster Drokk",
+        ["de"] = "Sklavenmeister Drokk",
         ["fr"] = "Maître d'esclaves Drokk"
       },
       ["normal"] = {
@@ -76,7 +100,7 @@ Catalog.Database["RuinsOfKelVoreth"] = {
     {
       ["name"] = {
         ["en"] = "Forgemaster Trogun",
-        ["de"] = "Forgemaster Trogun",
+        ["de"] = "Schmiedemeister Trogun",
         ["fr"] = "Maître-forgeron Trogun"
       },
       ["normal"] = {

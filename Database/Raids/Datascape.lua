@@ -2,7 +2,7 @@
 Catalog.Database["Datascape"] = {
   ["name"] = {
     ["en"] = "Datascape",
-    ["de"] = "Datascape",
+    ["de"] = "Datenzone",
     ["fr"] = "L'Infosphère"
   },
   ["type"] = "raid",

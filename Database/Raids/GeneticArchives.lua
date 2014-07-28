@@ -2,7 +2,7 @@
 Catalog.Database["GeneticArchives"] = {
   ["name"] = {
     ["en"] = "Genetic Archives",
-    ["de"] = "Genetic Archives",
+    ["de"] = "Genarchive",
     ["fr"] = "Les Archives Génétiques"
   },
   ["type"] = "raid",
@@ -10,7 +10,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Genetic Monstrosity",
-        ["de"] = "Genetic Monstrosity",
+        ["de"] = "Genetische Monstrosität",
         ["fr"] = "Monstruosité Génétique"
       },
       ["normal"] = {
@@ -25,7 +25,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Hideously Malformed Mutant",
-        ["de"] = "Hideously Malformed Mutant",
+        ["de"] = "Entsetzlich missgebildeter Mutant",
         ["fr"] = "Mutant horriblement déformé"
       },
       ["normal"] = {
@@ -39,7 +39,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Gravitron Operator",
-        ["de"] = "Gravitron Operator",
+        ["de"] = "Gravitionssingularität",
         ["fr"] = "Opérateur gravitron"
       },
       ["normal"] = {
@@ -68,7 +68,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Kuralak the Defiler",
-        ["de"] = "Kuralak the Defiler",
+        ["de"] = "Kuralak die Schänderin",
         ["fr"] = "Kuralak le Profanateur"
       },
       ["normal"] = {
@@ -79,7 +79,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Fetid Miscreation",
-        ["de"] = "Fetid Miscreation",
+        ["de"] = "Stinkende Missgeburt",
         ["fr"] = "Malformation fétide"
       },
       ["normal"] = {
@@ -90,7 +90,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Phagetech Guardian",
-        ["de"] = "Phagetech Guardian",
+        ["de"] = "Phagentech-Wächter",
         ["fr"] = "Gardien de phagetech"
       },
       ["normal"] = {
@@ -101,7 +101,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Phage Maw",
-        ["de"] = "Phage Maw",
+        ["de"] = "Phagenschlund",
         ["fr"] = "Phagegueule"
       },
       ["normal"] = {
@@ -112,7 +112,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Phagetech Prototypes",
-        ["de"] = "Phagetech Prototypes",
+        ["de"] = "Phagentech-Prototypen",
         ["fr"] = "Prototypes phagetech"
       },
       ["normal"] = {
@@ -123,7 +123,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Phageborn Convergence",
-        ["de"] = "Phageborn Convergence",
+        ["de"] = "Phageborn Konvergenz",
         ["fr"] = "Convergence néophage"
       },
       ["normal"] = {
@@ -134,7 +134,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Malfunctioning Gear",
-        ["de"] = "Malfunctioning Gear",
+        ["de"] = "Defekte Ausrüstung",
         ["fr"] = "Engrenage défectueux"
       },
       ["normal"] = {
@@ -145,7 +145,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Malfunctioning Dynamo",
-        ["de"] = "Malfunctioning Dynamo",
+        ["de"] = "Defekter Dynamo",
         ["fr"] = "Dynamo défectueuse"
       },
       ["normal"] = {
@@ -156,7 +156,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Malfunctioning Piston",
-        ["de"] = "Malfunctioning Piston",
+        ["de"] = "Defekter Kolben",
         ["fr"] = "Piston défectueux"
       },
       ["normal"] = {
@@ -167,7 +167,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Malfunctioning Battery",
-        ["de"] = "Malfunctioning Battery",
+        ["de"] = "Defekte Batterie",
         ["fr"] = "Batterie défaillante"
       },
       ["normal"] = {
@@ -178,7 +178,7 @@ Catalog.Database["GeneticArchives"] = {
     {
       ["name"] = {
         ["en"] = "Dreadphage Ohmna",
-        ["de"] = "Dreadphage Ohmna",
+        ["de"] = "Schreckensphage Ohmna",
         ["fr"] = "Ohmna la Terriphage"
       },
       ["normal"] = {

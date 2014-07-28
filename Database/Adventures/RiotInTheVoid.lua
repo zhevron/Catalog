@@ -2,7 +2,7 @@
 Catalog.Database["RiotInTheVoid"] = {
   ["name"] = {
     ["en"] = "Riot in the Void",
-    ["de"] = "Riot in the Void",
+    ["de"] = "Viel Lärm im Nichts",
     ["fr"] = "L'Émeute sidérale"
   },
   ["type"] = "adventure",
@@ -10,7 +10,7 @@ Catalog.Database["RiotInTheVoid"] = {
     {
       ["name"] = {
         ["en"] = "Rewards",
-        ["de"] = "Rewards",
+        ["de"] = "Belohnungen",
         ["fr"] = "Récompenses"
       },
       ["normal"] = {

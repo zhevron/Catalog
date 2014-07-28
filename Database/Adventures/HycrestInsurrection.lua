@@ -2,7 +2,7 @@
 Catalog.Database["HycrestInsurrection"] = {
   ["name"] = {
     ["en"] = "Hycrest Insurrection",
-    ["de"] = "Hycrest Insurrection",
+    ["de"] = "Kronfelder Aufstand",
     ["fr"] = "L'Insurrection de Hautecrête"
   },
   ["type"] = "adventure",
@@ -10,7 +10,7 @@ Catalog.Database["HycrestInsurrection"] = {
     {
       ["name"] = {
         ["en"] = "Rewards",
-        ["de"] = "Rewards",
+        ["de"] = "Belohnungen",
         ["fr"] = "Récompenses"
       },
       ["normal"] = {

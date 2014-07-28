@@ -32,6 +32,7 @@ After making the contributions in your forked repository, please submit a [pull 
 Special thanks to:
 * [WildHeap](https://www.wildheap.com) for letting Catalog use their data.
 * [Tchao](http://www.curse.com/users/Tchao) for the French localization.
+* [W4r10rk](http://www.curse.com/users/W4r10rk) for the German localization.
 
 ## Who maintains this addon?
 

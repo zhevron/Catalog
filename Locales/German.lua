@@ -1,12 +1,12 @@
 Catalog.Locale["de"] = {
-  ["adventure"] = { "adventure", "adventures" },
-  ["dungeon"] = { "dungeon", "dungeons" },
-  ["raid"] = { "raid", "raids" },
+  ["adventure"] = { "Abenteuer", "Abenteuer" },
+  ["dungeon"] = { "Instanz", "Instanzen" },
+  ["raid"] = { "Raid", "Raids" },
   ["level"] = "Level",
-  ["veteran"] = "Veteran difficulty",
-  ["english"] = "English",
-  ["german"] = "German",
-  ["french"] = "French",
-  ["language"] = "Language",
-  ["lock"] = "Lock window"
+  ["veteran"] = "Veteranen Modus",
+  ["english"] = "Englisch",
+  ["german"] = "Deutsch",
+  ["french"] = "Französisch",
+  ["language"] = "Sprache",
+  ["lock"] = "Fenster sperren"
 }

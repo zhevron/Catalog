@@ -2,7 +2,7 @@
 Catalog.Database["MalgraveTrail"] = {
   ["name"] = {
     ["en"] = "The Malgrave Trail",
-    ["de"] = "The Malgrave Trail",
+    ["de"] = "Treck durch Jochgrab",
     ["fr"] = "La Piste de Maltombe"
   },
   ["type"] = "adventure",
@@ -10,7 +10,7 @@ Catalog.Database["MalgraveTrail"] = {
     {
       ["name"] = {
         ["en"] = "Rewards",
-        ["de"] = "Rewards",
+        ["de"] = "Belohnungen",
         ["fr"] = "Récompenses"
       },
       ["normal"] = {

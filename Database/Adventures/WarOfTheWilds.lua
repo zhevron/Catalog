@@ -2,7 +2,7 @@
 Catalog.Database["WarOfTheWilds"] = {
   ["name"] = {
     ["en"] = "War of the Wilds",
-    ["de"] = "War of the Wilds",
+    ["de"] = "Krieg der Wildnis",
     ["fr"] = "Guerre sauvage"
   },
   ["type"] = "adventure",
@@ -10,7 +10,7 @@ Catalog.Database["WarOfTheWilds"] = {
     {
       ["name"] = {
         ["en"] = "Rewards",
-        ["de"] = "Rewards",
+        ["de"] = "Belohnungen",
         ["fr"] = "Récompenses"
       },
       ["normal"] = {

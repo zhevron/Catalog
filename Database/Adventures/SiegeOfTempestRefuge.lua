@@ -2,7 +2,7 @@
 Catalog.Database["SiegeOfTempestRefuge"] = {
   ["name"] = {
     ["en"] = "The Siege of Tempest Refuge",
-    ["de"] = "The Siege of Tempest Refuge",
+    ["de"] = "Die Belagerung der Sturmzuflucht",
     ["fr"] = "Le siège du Refuge de la tempête"
   },
   ["type"] = "adventure",
@@ -10,7 +10,7 @@ Catalog.Database["SiegeOfTempestRefuge"] = {
     {
       ["name"] = {
         ["en"] = "Rewards",
-        ["de"] = "Rewards",
+        ["de"] = "Belohnungen",
         ["fr"] = "Récompenses"
       },
       ["normal"] = {
