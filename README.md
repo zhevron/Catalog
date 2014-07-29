@@ -21,7 +21,7 @@ Please report any bugs as a Github issue [here](https://github.com/zhevron/Catal
 
 ## I want to contribute to the addon. How do I start?
 
-The easiest way to contribute to the addon is to run the [WildHeap client](https://www.wildheap.com/client). Catalog exports it's database from [WildHeap](https://www.wildheap.com) and by providing data for them, you are helping to keep the loot tables accurate.
+The easiest way to contribute to the addon is to run the [Jabbithole client](http://www.jabbithole.com/pages/client) and/or the [WildHeap client](https://www.wildheap.com/client). Catalog exports it's database from [Jabbithole](http://www.jabbithole.com) and [WildHeap](https://www.wildheap.com) and by providing data for them, you are helping to keep the loot tables accurate.
 
 If you want to contribute to the development of the addon, start by [forking](https://github.com/zhevron/Catalog/fork) the main repository.
 
@@ -30,6 +30,7 @@ After making the contributions in your forked repository, please submit a [pull 
 ## Contributions
 
 Special thanks to:
+* [Jabbithole](http://www.jabbithole.com) for letting Catalog use their data.
 * [WildHeap](https://www.wildheap.com) for letting Catalog use their data.
 * [Tchao](http://www.curse.com/users/Tchao) for the French localization.
 * [W4r10rk](http://www.curse.com/users/W4r10rk) for the German localization.
@@ -37,4 +38,4 @@ Special thanks to:
 ## Who maintains this addon?
 
 The addon is currently maintained by the following:
-* [Zhevron @ Lightspire EU](https://www.curse.com/users/Zhevron)
+* [Zhevron @ Lightspire EU](https://www.curse.com/users/_Zhevron)
