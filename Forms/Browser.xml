@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Forms>
-    <Form Name="CatalogBrowser" Class="Window" Template="CRB_Default" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="0" RAnchorOffset="900" BAnchorPoint="0" BAnchorOffset="550" RelativeToClient="1" Font="Thick" TooltipType="OnCursor" Picture="1" SwallowMouseClicks="1" Escapable="1" Overlapped="1" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" Tooltip="" Moveable="1" UseTemplateBG="1">
+    <Form Name="CatalogBrowser" Class="Window" Template="CRB_Default" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="0" RAnchorPoint="0" RAnchorOffset="900" BAnchorPoint="0" BAnchorOffset="550" RelativeToClient="1" Font="Thick" TooltipType="OnCursor" Picture="1" SwallowMouseClicks="1" Escapable="1" Overlapped="1" BGColor="ffffffff" TextColor="ffffffff" TooltipColor="" Tooltip="" Moveable="1" UseTemplateBG="1" Visible="0">
         <Event Name="WindowClosed" Function="Close"/>
         <Event Name="WindowMove" Function="OnWindowMove"/>
         <Control Name="Background" Class="Window" Template="Metal_Primary_NoNav" LAnchorPoint="0" LAnchorOffset="0" TAnchorPoint="0" TAnchorOffset="-2" RAnchorPoint="1" RAnchorOffset="0" BAnchorPoint="1" BAnchorOffset="-2" RelativeToClient="1" TooltipType="OnCursor" IgnoreMouse="1" Picture="1" Sprite="" BGColor="white" TextColor="white" TooltipColor="" Border="1" UseTemplateBG="1" Tooltip="">
