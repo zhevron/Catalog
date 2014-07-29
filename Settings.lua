@@ -1,5 +1,9 @@
 require "Window"
 
+if not Catalog then
+  Catalog = {}
+end
+
 Catalog.Settings = {}
 
 function Catalog.Settings:Init()

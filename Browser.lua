@@ -2,6 +2,10 @@ require "GameLib"
 require "Item"
 require "Window"
 
+if not Catalog then
+  Catalog = {}
+end
+
 Catalog.Browser = {}
 
 Catalog.Browser.ItemColor = {

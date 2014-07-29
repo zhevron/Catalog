@@ -1,3 +1,7 @@
+if not Catalog then
+  Catalog = {}
+end
+
 Catalog.Utility = {}
 
 function Catalog.Utility:Capitalize(str)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Addon Author="Zhevron" APIVersion="9" Name="Catalog" Description="Dungeon and raid loot catalog">
-  <Script Name="Catalog.lua"/>
+  <Script Name="Utility.lua"/>
   <Script Name="Browser.lua"/>
   <Script Name="Settings.lua"/>
-  <Script Name="Utility.lua"/>
+  <Script Name="Catalog.lua"/>
 
   <!-- Locales -->
   <Script Name="Locales/English.lua"/>

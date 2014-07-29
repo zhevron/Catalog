@@ -1,6 +1,8 @@
 require "GameLib"
 
-Catalog = {}
+if not Catalog then
+  Catalog = {}
+end
 
 Catalog.Version = {
   ["Major"] = 0,
