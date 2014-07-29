@@ -1,9 +1,30 @@
 {
+  "name": {
+    "en": "Skullcano Island",
+    "de": "Feuerschädel",
+    "fr": "Volcrâno"
+  },
   "level": 35,
   "bosses": [
-    "Stew-Shaman Tugga",
-    "Thunderfoot",
-    "Bosun Octog",
-    "Mordechai Redmoon"
+    {
+      "en": "Stew-Shaman Tugga",
+      "de": "Suppenschamane Tugga",
+      "fr": "Chamiam Tugga"
+    },
+    {
+      "en": "Thunderfoot",
+      "de": "Donnerhuf",
+      "fr": "Fulguropied"
+    },
+    {
+      "en": "Bosun Octog",
+      "de": "Deckoffizier Octog",
+      "fr": "Bosco Octog"
+    },
+    {
+      "en": "Mordechai Redmoon",
+      "de": "Mordechai Rotmond",
+      "fr": "Mordechai Rougelune"
+    }
   ]
 }

@@ -1,8 +1,25 @@
 {
+  "name": {
+    "en": "Stormtalon's Lair",
+    "de": "Sturmklaues Unterschlupf",
+    "fr": "Antre d'Ouragriffe"
+  },
   "level": 21,
   "bosses": [
-    "Blade-Wind the Invoker",
-    "Aethros",
-    "Stormtalon"
+    {
+      "en": "Blade-Wind the Invoker",
+      "de": "Klingenwind der Beschwörer",
+      "fr": "Lamevent l'Invocateur"
+    },
+    {
+      "en": "Aethros",
+      "de": "Ätheros",
+      "fr": "Aethros"
+    },
+    {
+      "en": "Stormtalon",
+      "de": "Sturmklaue",
+      "fr": "Ouragriffe"
+    }
   ]
 }

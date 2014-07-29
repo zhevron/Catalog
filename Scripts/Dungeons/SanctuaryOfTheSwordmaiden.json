@@ -1,10 +1,35 @@
 {
+  "name": {
+    "en": "Sanctuary of the Swordmaiden",
+    "de": "Zuflucht der Schwertmaid",
+    "fr": "Sanctuaire de la Valkyrie"
+  },
   "level": 49,
   "bosses": [
-    "Deadringer Shallaos",
-    "Rayna Darkspeaker",
-    "Ondu Lifeweaver",
-    "Moldwood Overlord Skash",
-    "Spiritmother Selene the Corrupted"
+    {
+      "en": "Deadringer Shallaos",
+      "de": "Doppelgängerin Shallaos",
+      "fr": "Sosie Shallaos"
+    },
+    {
+      "en": "Rayna Darkspeaker",
+      "de": "Rayna Düsterbotin",
+      "fr": "Rayna Languenoire"
+    },
+    {
+      "en": "Ondu Lifeweaver",
+      "de": "Ondu Lebensflechter",
+      "fr": "Ondu Tisse-âme"
+    },
+    {
+      "en": "Moldwood Overlord Skash",
+      "de": "Moderwald-Overlord Skash",
+      "fr": "Seigneur de Putrebois Skash"
+    },
+    {
+      "en": "Spiritmother Selene the Corrupted",
+      "de": "Seelenmutter Selene",
+      "fr": "Mère spirituelle Sélène la Corrompue"
+    }
   ]
 }

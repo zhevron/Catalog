@@ -1,20 +1,85 @@
 {
+  "name": {
+    "en": "Genetic Archives",
+    "de": "Genarchive",
+    "fr": "Les Archives Génétiques"
+  },
   "level": 50,
   "bosses": [
-    "Genetic Monstrosity",
-    "Hideously Malformed Mutant",
-    "Gravitron Operator",
-    "Experiment X-89",
-    "Kuralak the Defiler",
-    "Fetid Miscreation",
-    "Phagetech Guardian",
-    "Phage Maw",
-    "Phagetech Prototypes",
-    "Phageborn Convergence",
-    "Malfunctioning Gear",
-    "Malfunctioning Dynamo",
-    "Malfunctioning Piston",
-    "Malfunctioning Battery",
-    "Dreadphage Ohmna"
+    {
+      "en": "Genetic Monstrosity",
+      "de": "Genetische Monstrosität",
+      "fr": "Monstruosité Génétique"
+    },
+    {
+      "en": "Hideously Malformed Mutant",
+      "de": "Entsetzlich missgebildeter Mutant",
+      "fr": "Mutant horriblement déformé"
+    },
+    {
+      "en": "Gravitron Operator",
+      "de": "Gravitionssingularität",
+      "fr": "Opérateur gravitron"
+    },
+    {
+      "en": "Experiment X-89",
+      "de": "Experiment X-89",
+      "fr": "Expérience X-89"
+    },
+    {
+      "en": "Kuralak the Defiler",
+      "de": "Kuralak die Schänderin",
+      "fr": "Kuralak le Profanateur"
+    },
+    {
+      "en": "Fetid Miscreation",
+      "de": "Stinkende Missgeburt",
+      "fr": "Malformation fétide"
+    },
+    {
+      "en": "Phagetech Guardian",
+      "de": "Phagentech-Wächter",
+      "fr": "Gardien de phagetech"
+    },
+    {
+      "en": "Phage Maw",
+      "de": "Phagenschlund",
+      "fr": "Phagegueule"
+    },
+    {
+      "en": "Phagetech Prototypes",
+      "de": "Phagentech-Prototypen",
+      "fr": "Prototypes phagetech"
+    },
+    {
+      "en": "Phageborn Convergence",
+      "de": "Phageborn Konvergenz",
+      "fr": "Convergence néophage"
+    },
+    {
+      "en": "Malfunctioning Gear",
+      "de": "Defekte Ausrüstung",
+      "fr": "Engrenage défectueux"
+    },
+    {
+      "en": "Malfunctioning Dynamo",
+      "de": "Defekter Dynamo",
+      "fr": "Dynamo défectueuse"
+    },
+    {
+      "en": "Malfunctioning Piston",
+      "de": "Defekter Kolben",
+      "fr": "Piston défectueux"
+    },
+    {
+      "en": "Malfunctioning Battery",
+      "de": "Defekte Batterie",
+      "fr": "Batterie défaillante"
+    },
+    {
+      "en": "Dreadphage Ohmna",
+      "de": "Schreckensphage Ohmna",
+      "fr": "Ohmna la Terriphage"
+    }
   ]
 }
