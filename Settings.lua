@@ -15,6 +15,7 @@ function Catalog.Settings:OnDocumentReady()
   self.Window = Apollo.LoadForm(self.Xml, "CatalogSettings", nil, self)
   self:Close()
   self:Localize()
+  self.Window:FindChild("AutoButton"):SetData("auto")
   self.Window:FindChild("EnglishButton"):SetData("en")
   self.Window:FindChild("GermanButton"):SetData("de")
   self.Window:FindChild("FrenchButton"):SetData("fr")
@@ -50,9 +51,17 @@ function Catalog.Settings:Position()
 end
 
 function Catalog.Settings:ApplyCurrent()
-  self.Window:FindChild("EnglishButton"):SetCheck(Catalog.Options.Locale == "en")
-  self.Window:FindChild("GermanButton"):SetCheck(Catalog.Options.Locale == "de")
-  self.Window:FindChild("FrenchButton"):SetCheck(Catalog.Options.Locale == "fr")
+  if Catalog.Options.AutoLocale then
+    self.Window:FindChild("AutoButton"):SetCheck(true)
+    self.Window:FindChild("EnglishButton"):SetCheck(false)
+    self.Window:FindChild("GermanButton"):SetCheck(false)
+    self.Window:FindChild("FrenchButton"):SetCheck(false)
+  else
+    self.Window:FindChild("AutoButton"):SetCheck(false)
+    self.Window:FindChild("EnglishButton"):SetCheck(Catalog.Options.Locale == "en")
+    self.Window:FindChild("GermanButton"):SetCheck(Catalog.Options.Locale == "de")
+    self.Window:FindChild("FrenchButton"):SetCheck(Catalog.Options.Locale == "fr")
+  end
   self.Window:FindChild("ScaleValueText"):SetText(tostring(Catalog.Options.Scale))
   self.Window:FindChild("ScaleSlider"):SetValue(Catalog.Options.Scale)
   self.Window:FindChild("LockedButton"):SetCheck(Catalog.Options.Locked)
@@ -70,7 +79,12 @@ function Catalog.Settings:OnChangeLocale(handler, control)
   self.Window:FindChild("LocaleButton"):SetText(control:GetText())
   self.Window:FindChild("LocaleButton"):SetCheck(false)
   self.Window:FindChild("LocaleList"):Show(false)
-  Catalog.Options.Locale = control:GetData()
+  if control:GetData() == "auto" then
+    Catalog.Options.AutoLocale = true
+  else
+    Catalog.Options.AutoLocale = false
+    Catalog.Options.Locale = control:GetData()
+  end
   Catalog.Settings:Localize()
   Catalog.Browser:BuildLocationList()
 end
