@@ -108,14 +108,14 @@ function Catalog.Browser:BuildItemList(boss)
     return
   end
   list:SetData(boss)
-  local veteran = boss.veteran and self.Window:FindChild("ModeButton"):IsChecked()
+  local veteran = self.Window:FindChild("ModeButton"):IsChecked()
   for i = Item.CodeEnumItemQuality.Legendary, Item.CodeEnumItemQuality.Good, -1 do
     for _, id in pairs(boss.drops) do
       local item = Item.GetDataFromId(id)
       if item ~= nil and item:GetItemQuality() == i then
-        if veteran and item:GetRequiredLevel() < 50 then
+        if boss.veteran and veteran and item:GetRequiredLevel() < 50 then
           -- Ignore it. Not a veteran drop.
-        elseif not veteran and item:GetRequiredLevel() >= 50 then
+        elseif boss.veteran and not veteran and item:GetRequiredLevel() >= 50 then
           --Ignore it. Not a normal drop.
         else
           local form = Apollo.LoadForm(self.Xml, "Item", list, self)
