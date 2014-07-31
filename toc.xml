@@ -3,6 +3,7 @@
   <Script Name="Catalog.lua"/>
   <Script Name="Browser.lua"/>
   <Script Name="Settings.lua"/>
+  <Script Name="Wishlist.lua"/>
   <Script Name="Utility.lua"/>
 
   <!-- Locales -->
@@ -13,6 +14,7 @@
   <!-- Forms -->
   <Form Name="Forms/Browser.xml"/>
   <Form Name="Forms/Settings.xml"/>
+  <Form Name="Forms/Wishlist.xml"/>
 
   <!-- Adventures -->
   <Script Name="Database/Adventures/RiotInTheVoid.lua"/>

@@ -37,6 +37,7 @@ end
 function Catalog:OnLoad()
   self.Browser:Init()
   self.Settings:Init()
+  self.Wishlist:Init()
   Apollo.RegisterSlashCommand("catalog", "Open", self.Browser)
   Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
   Apollo.RegisterEventHandler("Catalog_ToggleBrowser", "Toggle", self.Browser)
