@@ -108,21 +108,23 @@ function Catalog.Browser:BuildItemList(boss)
     return
   end
   list:SetData(boss)
-  local mode = "normal"
-  if boss.veteran ~= nil and self.Window:FindChild("ModeButton"):IsChecked() then
-    mode = "veteran"
-  end
+  local veteran = boss.veteran and self.Window:FindChild("ModeButton"):IsChecked()
   for i = Item.CodeEnumItemQuality.Legendary, Item.CodeEnumItemQuality.Inferior, -1 do
-    for _, id in ipairs(boss[mode]) do
+    for _, id in pairs(boss.drops) do
       local item = Item.GetDataFromId(id)
       if item ~= nil and item:GetItemQuality() == i then
-        local form = Apollo.LoadForm(self.Xml, "Item", list, self)
-        form:SetData(item)
-        form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
-        form:FindChild("ItemText"):SetText(item:GetName())
-        form:FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
-        form:FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
-        form:FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
+        if veteran and item:GetRequiredLevel() < 50 then
+          -- Ignore it. Not a veteran drop.
+        elseif not veteran and item:GetRequiredLevel() >= 50 then
+          --Ignore it. Not a normal drop.
+        else
+          local form = Apollo.LoadForm(self.Xml, "Item", list, self)
+          form:SetData(item)
+          form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
+          form:FindChild("ItemText"):SetText(item:GetName())
+          form:FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
+          form:FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
+          form:FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
       end
     end
   end
@@ -202,8 +204,8 @@ end
 function Catalog.Browser:OnBossSelect(handler, control)
   local boss = control:GetParent():GetData()
   self:BuildItemList(boss)
-  self.Window:FindChild("ModeText"):Show(boss.veteran ~= nil)
-  self.Window:FindChild("ModeButton"):Show(boss.veteran ~= nil)
+  self.Window:FindChild("ModeText"):Show(boss.veteran)
+  self.Window:FindChild("ModeButton"):Show(boss.veteran)
 end
 
 function Catalog.Browser:OnMouseButtonDown(handler, control, button)
