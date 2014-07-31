@@ -10,7 +10,7 @@ class Exporter:
       zone = self.get_zone_data("Adventures", data["name"]["en"])
       data["bosses"][0]["drops"] = []
       for k, v in zone.iteritems():
-        data["bosses"][0]["drops"].append(k)
+        data["bosses"][0]["drops"].append(int(k))
       return data
     except KeyError:
       print "  Not found in Jabbithole database!"
@@ -23,7 +23,7 @@ class Exporter:
         data["bosses"][k]["drops"] = []
         for k2, v2 in zone.iteritems():
           if v["name"]["en"] in v2:
-            data["bosses"][k]["drops"].append(k2)
+            data["bosses"][k]["drops"].append(int(k2))
       return data
     except KeyError:
       print "  Not found in Jabbithole database!"
@@ -36,7 +36,7 @@ class Exporter:
         data["bosses"][k]["drops"] = []
         for k2, v2 in zone.iteritems():
           if v["name"]["en"] in v2:
-            data["bosses"][k]["drops"].append(k2)
+            data["bosses"][k]["drops"].append(int(k2))
       return data
     except KeyError:
       print "  Not found in Jabbithole database!"

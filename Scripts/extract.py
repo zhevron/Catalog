@@ -79,7 +79,7 @@ def write_database_file(path, data, type):
       else:
         file.write("      [\"veteran\"] = false,\n")
       file.write("      [\"drops\"] = {\n")
-      for item in boss["drops"]:
+      for item in sorted(boss["drops"]):
         file.write("        {},\n".format(item))
       file.write("      },\n")
       file.write("    },\n")
