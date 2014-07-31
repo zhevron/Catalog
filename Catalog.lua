@@ -21,6 +21,7 @@ Catalog.Defaults = {
 
 Catalog.Locale = {}
 Catalog.Database = {}
+Catalog.WishlistItems = {}
 Catalog.Options = Catalog.Defaults
 
 function Catalog:new(o)
@@ -53,22 +54,25 @@ function Catalog:OnInterfaceMenuListHasLoaded()
 end
 
 function Catalog:OnSave(type)
-  if type ~= GameLib.CodeEnumAddonSaveLevel.Account then
-    return nil
+  if type == GameLib.CodeEnumAddonSaveLevel.Character then
+    return Catalog.Utility:TableCopyRecursive(self.WishlistItems)
+  elseif type == GameLib.CodeEnumAddonSaveLevel.Account then
+    return Catalog.Utility:TableCopyRecursive(self.Options)
   end
-  return Catalog.Utility:TableCopyRecursive(self.Options)
+  return nil
 end
 
-function Catalog:OnRestore(type, options)
-  if type ~= GameLib.CodeEnumAddonSaveLevel.Account then
-    return
-  end
-  for k, v in pairs(Catalog.Defaults) do
-    if options[k] == nil then
-      options[k] = v
+function Catalog:OnRestore(type, table)
+  if type == GameLib.CodeEnumAddonSaveLevel.Character then
+    self.WishlistItems = Catalog.Utility:TableCopyRecursive(table, self.WishlistItems)
+  elseif type == GameLib.CodeEnumAddonSaveLevel.Account then
+    for k, v in pairs(Catalog.Defaults) do
+      if table[k] == nil then
+        table[k] = v
+      end
     end
+    self.Options = Catalog.Utility:TableCopyRecursive(table, self.Options)
   end
-  self.Options = Catalog.Utility:TableCopyRecursive(options, self.Options)
 end
 
 function Catalog:OnConfigure()

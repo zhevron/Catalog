@@ -19,6 +19,7 @@ function Catalog.Wishlist:Open()
   if self.Window and self.Window:IsValid() then
     Catalog.Settings:Close()
     self:Position()
+    self:BuildItemList()
     self.Window:Show(true)
   end
 end
@@ -42,4 +43,34 @@ function Catalog.Wishlist:Position()
   form:Destroy()
   self.Window:SetAnchorOffsets(right - 15 - offset, top, right - 15 -offset + width, top + height)
   self.Window:SetScale(Catalog.Browser.Window:GetScale())
+end
+
+function Catalog.Wishlist:BuildItemList()
+  local list = self.Window:FindChild("ItemList")
+  list:DestroyChildren()
+  for _, id in pairs(Catalog.WishlistItems) do
+    local item = Item.GetDataFromId(id)
+    local form = Apollo.LoadForm(self.Xml, "Item", list, self)
+    form:SetData(item)
+    form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
+    form:FindChild("ItemText"):SetText(item:GetName())
+    form:FindChild("ItemText"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
+  end
+  list:ArrangeChildrenVert()
+end
+
+function Catalog.Wishlist:OnWishlistRemove(handler, control)
+  local item = control:GetParent():GetData()
+  local info = item:GetDetailedInfo()
+  for k, id in ipairs(Catalog.WishlistItems) do
+    if id == info.tPrimary.nId then
+      table.remove(Catalog.WishlistItems, k)
+    end
+  end
+  self:BuildItemList()
+  Catalog.Browser:BuildItemList(Catalog.Browser.Window:FindChild("ItemList"):GetData())
+end
+
+function Catalog.Wishlist:OnGenerateTooltip(handler, control)
+  Catalog.Browser:OnGenerateTooltip(handler, control)
 end

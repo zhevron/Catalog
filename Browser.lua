@@ -125,6 +125,13 @@ function Catalog.Browser:BuildItemList(boss)
           form:FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
           form:FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
           form:FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
+          local found = false
+          for _, id2 in ipairs(Catalog.WishlistItems) do
+            if id2 == id then
+              found = true
+            end
+          end
+          form:FindChild("WishlistButton"):SetCheck(found)
         end
       end
     end
@@ -163,6 +170,28 @@ end
 
 function Catalog.Browser:OnWishlistUncheck(handler, control)
   Catalog.Wishlist:Close()
+end
+
+function Catalog.Browser:OnWishlistAdd(handler, control)
+  local item = control:GetParent():GetData()
+  local info = item:GetDetailedInfo()
+  table.insert(Catalog.WishlistItems, info.tPrimary.nId)
+  if Catalog.Wishlist.Window:IsShown() then
+    Catalog.Wishlist:BuildItemList()
+  end
+end
+
+function Catalog.Browser:OnWishlistRemove(handler, control)
+  local item = control:GetParent():GetData()
+  local info = item:GetDetailedInfo()
+  for k, id in ipairs(Catalog.WishlistItems) do
+    if id == info.tPrimary.nId then
+      table.remove(Catalog.WishlistItems, k)
+    end
+  end
+  if Catalog.Wishlist.Window:IsShown() then
+    Catalog.Wishlist:BuildItemList()
+  end
 end
 
 function Catalog.Browser:OnCategoryListOpen(handler, control)
