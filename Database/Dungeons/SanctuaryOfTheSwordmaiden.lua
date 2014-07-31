@@ -1,165 +1,346 @@
 -- [Dungeon] Sanctuary of the Swordmaiden
 Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
   ["name"] = {
-    ["en"] = "Sanctuary of the Swordmaiden",
+    ["fr"] = "Sanctuaire de la Valkyrie",
     ["de"] = "Zuflucht der Schwertmaid",
-    ["fr"] = "Sanctuaire de la Valkyrie"
+    ["en"] = "Sanctuary of the Swordmaiden",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["en"] = "Deadringer Shallaos",
+        ["fr"] = "Sosie Shallaos",
         ["de"] = "Doppelgängerin Shallaos",
-        ["fr"] = "Sosie Shallaos"
+        ["en"] = "Deadringer Shallaos",
       },
-      ["normal"] = {
-        7691, -- Pearl Necklace
-        14520, -- Starloom Cloth
-        14628, -- Starloom Shirt
-        29604, -- Sign of Air
-        29606, -- Sign of Air - Major
-        31721, -- Pattern: Torine Traveling Bag
-        38769, -- Tarnished Eldan Gift
-        41847, -- Jungle Guardian Leggings
-        41850, -- Shatterdream Sandals
-        41858, -- Shadetouched Shoulder Pads
-        41897, -- Ornately Tooled Shoulder Guards
-        42688, -- The Dead Ringer
-        42689, -- Bulwark of Shallaos
-        42690, -- Deadringer's Core
-        42691, -- Swordmaiden's Combat Enhancer
-        42692, -- Shallaos's Foot Wraps
-        42693, -- Striders of the Deadringer
-        42694, -- Swordmaiden's Combat Augmentor
+      ["veteran"] = true,
+      ["drops"] = {
+        7691,
+        14520,
+        16060,
+        16066,
+        16073,
+        16078,
+        16080,
+        21637,
+        29604,
+        29606,
+        29607,
+        31721,
+        38209,
+        38214,
+        38215,
+        38216,
+        38219,
+        38223,
+        38225,
+        38232,
+        38234,
+        38235,
+        38769,
+        41847,
+        41850,
+        41857,
+        41858,
+        41862,
+        41897,
+        41902,
+        42078,
+        42688,
+        42689,
+        42690,
+        42691,
+        42692,
+        42693,
+        42694,
+        42874,
+        42875,
+        42876,
+        42877,
+        42878,
+        42879,
+        42880,
+        42881,
+        42882,
+        42883,
+        42884,
+        42885,
+        42888,
+        42897,
+        42898,
+        42899,
+        42900,
+        42901,
+        42902,
+        42903,
       },
-      ["veteran"] = {
-        14520, -- Starloom Cloth
-        21637, -- Treadmill
-        29604, -- Sign of Air
-        29607, -- Sign of Air - Eldan
-        38219, -- Death Wringers
-        42900, -- Woodwraith Jerkin
-        42902, -- Farseer's Guide
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Rayna Darkspeaker",
+        ["fr"] = "Rayna Languenoire",
         ["de"] = "Rayna Düsterbotin",
-        ["fr"] = "Rayna Languenoire"
+        ["en"] = "Rayna Darkspeaker",
       },
-      ["normal"] = {
-        7691, -- Pearl Necklace
-        16075, -- The Maidensguard
-        29604, -- Sign of Air
-        29605, -- Sign of Air - Greater
-        29606, -- Sign of Air - Major
-        41862, -- Junglesteel Helmet
-        41865, -- Forgotten Champion's Leg Guards
-        41894, -- Oakenrib Chest Guard
-        41900, -- Shieldbreaker's Chestplate
-        42705, -- Helm of the Darkspeaker
-        42706, -- Rayna's Jungle Striders
-        42707, -- Corrupted Boots of the Torine
-        42708, -- Corset of the Darkspeaker
-        42709, -- Word of the Darkspeaker
+      ["veteran"] = true,
+      ["drops"] = {
+        7691,
+        14520,
+        16073,
+        16075,
+        16076,
+        16080,
+        29604,
+        29605,
+        29606,
+        38212,
+        38215,
+        38216,
+        38222,
+        38224,
+        38234,
+        38769,
+        41847,
+        41850,
+        41857,
+        41862,
+        41865,
+        41889,
+        41894,
+        41900,
+        41902,
+        42078,
+        42705,
+        42706,
+        42707,
+        42708,
+        42709,
+        42874,
+        42875,
+        42877,
+        42878,
+        42879,
+        42880,
+        42882,
+        42883,
+        42885,
+        42888,
+        42920,
+        42921,
+        42922,
+        42923,
+        42924,
+        42925,
+        42926,
       },
-      ["veteran"] = {
-        7691, -- Pearl Necklace
-        14520, -- Starloom Cloth
-        38224, -- Resonating Helm of the Sisters
-        38769, -- Tarnished Eldan Gift
-        42920, -- Briarthorn Waders
-        42925, -- Chameleon Coat
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Ondu Lifeweaver",
+        ["fr"] = "Ondu Tisse-âme",
         ["de"] = "Ondu Lebensflechter",
-        ["fr"] = "Ondu Tisse-âme"
+        ["en"] = "Ondu Lifeweaver",
       },
-      ["normal"] = {
-        8397, -- Fluorescent Leaf
-        22018, -- The Sanguine Extinguisher 3000
-        29321, -- Sign of Life - Greater
-        37571, -- Sanctuary Breeches
-        41846, -- Robe of the Tested
-        41849, -- Tainted Silk Mantle
-        41852, -- Twisted Thorn Circlet
-        41888, -- Torine Acolyte's Tunic
-        41889, -- Pumera Hide Leggings
-        41895, -- Strain Survivor Leg Guards
-        41896, -- Breachmaker's Visor
-        42695, -- Ondu's Corrupted Spine
-        42696, -- Lifeweaver's Protection
-        42697, -- Lifeweaver's Shelter
-        42698, -- Lifeweaver's Aura
+      ["veteran"] = true,
+      ["drops"] = {
+        8397,
+        29321,
+        29322,
+        37571,
+        38213,
+        38228,
+        38232,
+        38769,
+        41846,
+        41848,
+        41849,
+        41850,
+        41852,
+        41862,
+        41888,
+        41889,
+        41891,
+        41895,
+        41896,
+        42695,
+        42696,
+        42697,
+        42698,
+        42874,
+        42875,
+        42878,
+        42879,
+        42880,
+        42904,
+        42905,
+        42906,
+        42907,
+        42908,
+        42909,
+        42910,
+        42911,
+        44296,
       },
-      ["veteran"] = {
-        38228, -- Rune Dancer's Mossy Boots
-        42905, -- Warchanter's Wave Field
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Moldwood Overlord Skash",
+        ["fr"] = "Seigneur de Putrebois Skash",
         ["de"] = "Moderwald-Overlord Skash",
-        ["fr"] = "Seigneur de Putrebois Skash"
+        ["en"] = "Moldwood Overlord Skash",
       },
-      ["normal"] = {
-        16069, -- Impure Growth
-        41859, -- Sabatons of the Corrupted
-        41861, -- Merciless Steel Chestplate
-        42699, -- Gaze of the Moldwood
-        42700, -- Crown of the Phage Lord
-        42703, -- Overlord's Binding
-        42704, -- Moldy Leg Wraps of the Torine
+      ["veteran"] = true,
+      ["drops"] = {
+        16060,
+        16066,
+        16069,
+        16073,
+        16078,
+        16080,
+        38202,
+        38214,
+        38215,
+        38217,
+        38218,
+        38231,
+        38232,
+        38234,
+        38235,
+        38769,
+        41857,
+        41859,
+        41861,
+        41862,
+        41878,
+        41880,
+        41898,
+        42078,
+        42699,
+        42700,
+        42701,
+        42702,
+        42703,
+        42704,
+        42717,
+        42721,
+        42722,
+        42723,
+        42874,
+        42875,
+        42876,
+        42877,
+        42879,
+        42881,
+        42883,
+        42884,
+        42885,
+        42886,
+        42887,
+        42888,
+        42912,
+        42913,
+        42914,
+        42915,
+        42916,
+        42917,
+        42918,
+        42919,
       },
-      ["veteran"] = {
-        38202, -- Phage Lord's Fingers
-        38769, -- Tarnished Eldan Gift
-        42917, -- Module of the Witherguard
-        42918, -- Whispering Hood
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Spiritmother Selene the Corrupted",
+        ["fr"] = "Mère spirituelle Sélène la Corrompue",
         ["de"] = "Seelenmutter Selene",
-        ["fr"] = "Mère spirituelle Sélène la Corrompue"
+        ["en"] = "Spiritmother Selene the Corrupted",
       },
-      ["normal"] = {
-        14520, -- Starloom Cloth
-        29604, -- Sign of Air
-        29606, -- Sign of Air - Major
-        30492, -- To the Pain AMP
-        30587, -- Display Case (Vase, Skull)
-        38769, -- Tarnished Eldan Gift
-        40436, -- Ground Mount Front Flair: Torine
-        41866, -- Thundering Boots
-        41869, -- Strangesteel Greatblade
-        41871, -- Alphatech Resonators
-        41883, -- Braced Heavy Cannon
-        41903, -- Earthwrought Shoulder Pads
-        41907, -- Conversation Pieces
-        41908, -- Phantom Blade
-        41909, -- Quillrenders
-        42710, -- Touch of the Torine
-        42711, -- Swordmaiden's Sanctuary
-        42712, -- Blessing of the Spiritmother
-        42713, -- Selene's Providence
+      ["veteran"] = true,
+      ["drops"] = {
+        7691,
+        14520,
+        16054,
+        16057,
+        16058,
+        16073,
+        16080,
+        19114,
+        34742,
+        36413,
+        37097,
+        38229,
+        38232,
+        38233,
+        38769,
+        40436,
+        41855,
+        41864,
+        41866,
+        41868,
+        41869,
+        41871,
+        41875,
+        41883,
+        41896,
+        41903,
+        41907,
+        41908,
+        41909,
+        41912,
+        42078,
+        42084,
+        42426,
+        42569,
+        42710,
+        42711,
+        42712,
+        42713,
+        42714,
+        42715,
+        42716,
+        42729,
+        42730,
+        42734,
+        42735,
+        42737,
+        42738,
+        42749,
+        42754,
+        42874,
+        42875,
+        42877,
+        42878,
+        42879,
+        42880,
+        42927,
+        42928,
+        42929,
+        42930,
+        42931,
+        42932,
+        42933,
+        42934,
+        42935,
+        42936,
+        42937,
+        42938,
+        42939,
+        42940,
+        42941,
+        42942,
+        42943,
+        42944,
+        42945,
+        42946,
+        42947,
+        42948,
+        42949,
+        42950,
+        42951,
+        42952,
+        42953,
+        42954,
+        42955,
+        42959,
+        42960,
+        42962,
+        42964,
       },
-      ["veteran"] = {
-        7691, -- Pearl Necklace
-        14520, -- Starloom Cloth
-        16057, -- Deathbringer's Footfalls
-        38229, -- Crown of Bramble
-        38769, -- Tarnished Eldan Gift
-        42569, -- Partial Primal Pattern
-        42928, -- Rune-Covered Barkhide Casing
-      }
-    }
-  }
+    },
+  },
 }

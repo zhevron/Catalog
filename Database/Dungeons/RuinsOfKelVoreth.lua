@@ -1,152 +1,220 @@
 -- [Dungeon] Ruins of Kel Voreth
 Catalog.Database["RuinsOfKelVoreth"] = {
   ["name"] = {
-    ["en"] = "Ruins of Kel Voreth",
+    ["fr"] = "Ruines de Kel Voreth",
     ["de"] = "Ruinen von Kel'Voreth",
-    ["fr"] = "Ruines de Kel Voreth"
+    ["en"] = "Ruins of Kel Voreth",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["en"] = "Grond the Corpsemaker",
+        ["fr"] = "Grond le Boucher",
         ["de"] = "Grond der Leichenmacher",
-        ["fr"] = "Grond le Boucher"
+        ["en"] = "Grond the Corpsemaker",
       },
-      ["normal"] = {
-        30716, -- Burst Power AMP
-        30723, -- Speed of the Void AMP
-        34494, -- Leggings of the Warhound
-        34497, -- Greaves of the Undefeated
-        34498, -- Grond's Studded Armor
-        34499, -- Osun Stranglers
-        34500, -- Grond's Collar
-        34501, -- The Corpsemaker's Chew Toy
-        34506, -- The Corpsemaker's Fractured Canines
-        34507, -- Corpsegrinder
-        36125, -- Guide: Corpsemaking Crushers
-        37106, -- Case of Coordinated Colors
-        38769, -- Tarnished Eldan Gift
+      ["veteran"] = true,
+      ["drops"] = {
+        34494,
+        34497,
+        34498,
+        34499,
+        34500,
+        34501,
+        34506,
+        34507,
+        38112,
+        38113,
+        38114,
+        38118,
+        38120,
+        38128,
+        38130,
+        38131,
+        38137,
+        38769,
+        42086,
+        42831,
+        42837,
+        42839,
+        42845,
+        42847,
+        42854,
+        42868,
       },
-      ["veteran"] = {
-        38112, -- Voreth Bloodplate
-        38113, -- Corpsemaker Treads
-        38114, -- Houndhide War Boots
-        38118, -- Hollowed Canines
-        38120, -- Bloodied Pelt of Grond
-        38131, -- Voreth TacHelm
-        38137, -- Radiating Core
-        38769, -- Tarnished Eldan Gift
-        42086, -- Voreth Enshrining Field
-        42839, -- Voreth Hound Coating
-        42845, -- Combatant's War Augmentor
-        42847, -- Warstrife Governor
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Darkwitch Gurka (optional)",
-        ["de"] = "Dämmerhexe Gurka (optional)",
-        ["fr"] = "Sorcîère ténébreuse Gurka (en option)"
+        ["fr"] = "Sorcîère ténébreuse Gurka",
+        ["de"] = "Dämmerhexe Gurka",
+        ["en"] = "Darkwitch Gurka",
       },
-      ["normal"] = {
-        34504, -- Saliva-Covered Assist Module
-        34533, -- Will of the Osun
-        34509, -- Flexweave Exanite Boots
-        34530, -- Foehunter Boots
-        34496, -- Osun-Forged Blood Armor
-        34515, -- Power Suit Shoulder Guards
-        37106, -- Case of Coordinated Colors
+      ["veteran"] = true,
+      ["drops"] = {
+        7691,
+        7782,
+        9435,
+        13564,
+        14185,
+        14520,
+        14845,
+        14963,
+        28281,
+        29590,
+        29596,
+        29597,
+        29598,
+        29599,
+        29602,
+        29609,
+        29612,
+        30463,
+        31717,
+        34496,
+        34504,
+        34509,
+        34515,
+        34530,
+        34533,
+        34553,
+        37097,
+        38126,
+        38137,
+        38201,
+        38258,
+        42384,
+        42469,
+        42508,
+        42832,
+        42843,
+        42871,
       },
-      ["veteran"] = {
-        38126, -- Voreth War Clogs
-        42843, -- Voreth Forged Crystal
-        42871, -- Osun Crusader's Resonators
-        42832, -- Bloodstrife Analyzer
-        38258, -- Lightning Capacitor
-        38201, -- Hyperpolling Sensor
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Slavemaster Drokk",
+        ["fr"] = "Maître d'esclaves Drokk",
         ["de"] = "Sklavenmeister Drokk",
-        ["fr"] = "Maître d'esclaves Drokk"
+        ["en"] = "Slavemaster Drokk",
       },
-      ["normal"] = {
-        30709, -- Vengeance AMP
-        34508, -- Sage Robes of the Voreth
-        34512, -- Master Drokk's Thermal Pants
-        34513, -- Osun Exanite Alloy Plating
-        34516, -- Spiked Boots of the Slavemaster
-        34517, -- Slavemaster's Holdout
-        34519, -- Drokk's Cruelty
-        34520, -- The Infinite Suppressor
-        34521, -- The Slavemaster's Subjugators
-        34722, -- Dash for Heals! AMP
-        35786, -- Design: Voreth-Forged War Greaves
-        36126, -- Guide: Drokk's Willbreaking Boots
-        42535, -- Spiked Osun Overcoat
+      ["veteran"] = true,
+      ["drops"] = {
+        21786,
+        34502,
+        34505,
+        34508,
+        34512,
+        34513,
+        34516,
+        34517,
+        34519,
+        34520,
+        34521,
+        34554,
+        34556,
+        34722,
+        36126,
+        38119,
+        38122,
+        38123,
+        38127,
+        38128,
+        38129,
+        38138,
+        38769,
+        42074,
+        42535,
+        42831,
+        42841,
+        42842,
+        42848,
+        42851,
+        42854,
       },
-      ["veteran"] = {
-        38119, -- The Master's Leg Plates
-        38138, -- Powered Osun Pauldrons
-        38769, -- Tarnished Eldan Gift
-        42074, -- Slavemaster's Bloodied Pants
-        42842, -- Blitz Carnage Microgrips
-        42851, -- Raze Ruin Regulator
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Forgemaster Trogun",
+        ["fr"] = "Maître-forgeron Trogun",
         ["de"] = "Schmiedemeister Trogun",
-        ["fr"] = "Maître-forgeron Trogun"
+        ["en"] = "Forgemaster Trogun",
       },
-      ["normal"] = {
-        7782, -- Filled Flask
-        14517, -- Silk Cloth
-        27577, -- Silk Shoes
-        29596, -- Sign of Fire
-        30491, -- MKII Battle Suit AMP
-        30708, -- Overpower AMP
-        30709, -- Vengeance AMP
-        30716, -- Burst Power AMP
-        30723, -- Speed of the Void AMP
-        31378, -- EXPEDITION: Kel Voreth Underforge FABkit
-        34029, -- The Humanity AMP
-        34046, -- Tactician AMP
-        34522, -- Echoes of the Fallen
-        34523, -- Flame-forged Rending Claws
-        34524, -- Forgemaster's Mantle
-        34525, -- Apron of the Grand Master
-        34526, -- Gleaming Exanite Pauldrons
-        34528, -- The Master's Wrist Guards
-        34529, -- Trogun's Grand Pauldrons
-        34531, -- Forgemaster's Fury
-        34532, -- Osun Mantle of Supremacy
-        34534, -- Persecutor's Grips
-        34536, -- Master-Crafted Exanite Gauntlets
-        34538, -- Forgemaster's Glorious Boots
-        34541, -- Protectorate's Flexsteel Vest
-        36065, -- Schematic: Warmonger Breaker
-        36066, -- Schematic: Warmonger Dicers
-        36067, -- Schematic: Warmonger Shockers
-        36127, -- Guide: Forgemaster Shoulder Brace
-        37097, -- Duffel Bag of Distinguished Dyes
-        37106, -- Case of Coordinated Colors
+      ["veteran"] = true,
+      ["drops"] = {
+        7691,
+        7782,
+        14517,
+        29596,
+        29597,
+        29599,
+        31378,
+        33018,
+        34518,
+        34522,
+        34523,
+        34524,
+        34525,
+        34526,
+        34527,
+        34528,
+        34529,
+        34531,
+        34532,
+        34539,
+        34543,
+        34544,
+        34545,
+        34553,
+        34671,
+        36066,
+        36067,
+        37097,
+        37485,
+        38030,
+        38082,
+        38091,
+        38115,
+        38121,
+        38124,
+        38125,
+        38132,
+        38134,
+        38136,
+        38139,
+        38140,
+        38769,
+        42096,
+        42385,
+        42423,
+        42424,
+        42425,
+        42426,
+        42427,
+        42428,
+        42429,
+        42569,
+        42830,
+        42834,
+        42835,
+        42840,
+        42844,
+        42849,
+        42852,
+        42853,
+        42854,
+        42856,
+        42857,
+        42858,
+        42860,
+        42862,
+        42863,
+        42864,
+        42865,
+        42866,
+        42867,
+        42868,
+        42870,
+        42872,
+        42873,
       },
-      ["veteran"] = {
-        7691, -- Pearl Necklace
-        14520, -- Starloom Cloth
-        30491, -- MKII Battle Suit AMP
-        38121, -- The Slavemaster's Shoulders
-        38769, -- Tarnished Eldan Gift
-        42569, -- Partial Primal Pattern
-        42830, -- Grond's Blood Link
-        42858, -- Voreth Carnage Field
-        42867, -- Arena Master Bangles
-      }
-    }
-  }
+    },
+  },
 }

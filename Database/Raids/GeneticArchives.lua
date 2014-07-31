@@ -1,190 +1,295 @@
 -- [Raid] Genetic Archives
 Catalog.Database["GeneticArchives"] = {
   ["name"] = {
-    ["en"] = "Genetic Archives",
+    ["fr"] = "Les Archives Génétiques",
     ["de"] = "Genarchive",
-    ["fr"] = "Les Archives Génétiques"
+    ["en"] = "Genetic Archives",
   },
   ["type"] = "raid",
   ["bosses"] = {
     {
       ["name"] = {
-        ["en"] = "Genetic Monstrosity",
+        ["fr"] = "Monstruosité Génétique",
         ["de"] = "Genetische Monstrosität",
-        ["fr"] = "Monstruosité Génétique"
+        ["en"] = "Genetic Monstrosity",
       },
-      ["normal"] = {
-        29603, -- Sign of Logic - Eldan
-        38769, -- Tarnished Eldan Gift
-        39510, -- Foul Bioplated Cuirass
-        42569, -- Partial Primal Pattern
+      ["veteran"] = false,
+      ["drops"] = {
+        29587,
+        38769,
+        39510,
+        39525,
+        39535,
+        39541,
+        39545,
+        42569,
+        42974,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Hideously Malformed Mutant",
+        ["fr"] = "Mutant horriblement déformé",
         ["de"] = "Entsetzlich missgebildeter Mutant",
-        ["fr"] = "Mutant horriblement déformé"
+        ["en"] = "Hideously Malformed Mutant",
       },
-      ["normal"] = {
-        29603, -- Sign of Logic - Eldan
-        39529, -- Malformed Magnicite Workpants
-        42569, -- Partial Primal Pattern
+      ["veteran"] = false,
+      ["drops"] = {
+        29319,
+        38769,
+        39507,
+        39514,
+        39520,
+        39529,
+        39551,
+        42569,
+        44534,
+        47707,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Gravitron Operator",
+        ["fr"] = "Opérateur gravitron",
         ["de"] = "Gravitionssingularität",
-        ["fr"] = "Opérateur gravitron"
+        ["en"] = "Gravitron Operator",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39509,
+        39512,
+        39524,
+        39534,
+        39544,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Experiment X-89",
+        ["fr"] = "Expérience X-89",
         ["de"] = "Experiment X-89",
-        ["fr"] = "Expérience X-89"
+        ["en"] = "Experiment X-89",
       },
-      ["normal"] = {
-        29599, -- Sign of Fire - Eldan
-        29607, -- Sign of Air - Eldan
-        38769, -- Tarnished Eldan Gift
-        39350, -- Demolitionist's Phageborn Boots
-        39474, -- Heliotropic Forcefield
-        39486, -- Necrotic Aura
-        42569, -- Partial Primal Pattern
+      ["veteran"] = false,
+      ["drops"] = {
+        29319,
+        29591,
+        38769,
+        39350,
+        39354,
+        39363,
+        39369,
+        39375,
+        39384,
+        39389,
+        39399,
+        39402,
+        39408,
+        39419,
+        39424,
+        39469,
+        39474,
+        39481,
+        39486,
+        39495,
+        39502,
+        39548,
+        39614,
+        42569,
+        42969,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Kuralak the Defiler",
+        ["fr"] = "Kuralak le Profanateur",
         ["de"] = "Kuralak die Schänderin",
-        ["fr"] = "Kuralak le Profanateur"
+        ["en"] = "Kuralak the Defiler",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39347,
+        39357,
+        39362,
+        39370,
+        39373,
+        39383,
+        39388,
+        39397,
+        39406,
+        39411,
+        39420,
+        39423,
+        39471,
+        39479,
+        39480,
+        39485,
+        39490,
+        39491,
+        39499,
+        39594,
+        39608,
+        42972,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Fetid Miscreation",
+        ["fr"] = "Malformation fétide",
         ["de"] = "Stinkende Missgeburt",
-        ["fr"] = "Malformation fétide"
+        ["en"] = "Fetid Miscreation",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39508,
+        39515,
+        39531,
+        39536,
+        39550,
+        39613,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Phagetech Guardian",
-        ["de"] = "Phagentech-Wächter",
-        ["fr"] = "Gardien de phagetech"
+        ["fr"] = "Gardien de phagetech C-148",
+        ["de"] = "Phagentech-Wächter C-148",
+        ["en"] = "Phagetech Guardian C-148",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39516,
+        39519,
+        39526,
+        39539,
+        39549,
+        42975,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Phage Maw",
+        ["fr"] = "Gardien de phagetech C-432",
+        ["de"] = "Phagentech-Wächter C-432",
+        ["en"] = "Phagetech Guardian C-432",
+      },
+      ["veteran"] = false,
+      ["drops"] = {
+        29319,
+        38769,
+        39505,
+        39522,
+        39530,
+        39546,
+        39554,
+        39569,
+      },
+    },
+    {
+      ["name"] = {
+        ["fr"] = "Phagegueule",
         ["de"] = "Phagenschlund",
-        ["fr"] = "Phagegueule"
+        ["en"] = "Phage Maw",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39361,
+        39378,
+        39392,
+        39396,
+        39404,
+        39412,
+        39417,
+        39425,
+        39470,
+        39478,
+        39482,
+        39484,
+        39500,
+        39504,
+        39563,
+        39607,
+        42973,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Phagetech Prototypes",
+        ["fr"] = "Prototypes phagetech",
         ["de"] = "Phagentech-Prototypen",
-        ["fr"] = "Prototypes phagetech"
+        ["en"] = "Phagetech Prototypes",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Phageborn Convergence",
+        ["fr"] = "Convergence néophage",
         ["de"] = "Phageborn Konvergenz",
-        ["fr"] = "Convergence néophage"
+        ["en"] = "Phageborn Convergence",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Malfunctioning Gear",
+        ["fr"] = "Engrenage défectueux",
         ["de"] = "Defekte Ausrüstung",
-        ["fr"] = "Engrenage défectueux"
+        ["en"] = "Malfunctioning Gear",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39513,
+        39521,
+        39542,
+        42978,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Malfunctioning Dynamo",
+        ["fr"] = "Dynamo défectueuse",
         ["de"] = "Defekter Dynamo",
-        ["fr"] = "Dynamo défectueuse"
+        ["en"] = "Malfunctioning Dynamo",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39511,
+        39527,
+        39540,
+        39586,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Malfunctioning Piston",
+        ["fr"] = "Piston défectueux",
         ["de"] = "Defekter Kolben",
-        ["fr"] = "Piston défectueux"
+        ["en"] = "Malfunctioning Piston",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39517,
+        42979,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Malfunctioning Battery",
+        ["fr"] = "Batterie défaillante",
         ["de"] = "Defekte Batterie",
-        ["fr"] = "Batterie défaillante"
+        ["en"] = "Malfunctioning Battery",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39506,
+        39547,
       },
-      ["veteran"] = {
-      }
     },
     {
       ["name"] = {
-        ["en"] = "Dreadphage Ohmna",
+        ["fr"] = "Ohmna la Terriphage",
         ["de"] = "Schreckensphage Ohmna",
-        ["fr"] = "Ohmna la Terriphage"
+        ["en"] = "Dreadphage Ohmna",
       },
-      ["normal"] = {
+      ["veteran"] = false,
+      ["drops"] = {
+        39335,
+        39341,
+        39352,
+        39372,
       },
-      ["veteran"] = {
-      }
-    }
-  }
+    },
+  },
 }
