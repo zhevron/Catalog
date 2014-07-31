@@ -1,0 +1,15 @@
+{
+  "name": {
+    "en": "Riot in the Void",
+    "de": "Viel Lärm im Nichts",
+    "fr": "L'Émeute sidérale"
+  },
+  "level": 15,
+  "bosses": [
+    {
+      "en": "Rewards",
+      "de": "Belohnungen",
+      "fr": "Récompenses"
+    }
+  ]
+}

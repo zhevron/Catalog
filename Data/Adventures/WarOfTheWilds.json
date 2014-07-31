@@ -1,0 +1,15 @@
+{
+  "name": {
+    "en": "War of the Wilds",
+    "de": "Krieg der Wildnis",
+    "fr": "Guerre sauvage"
+  },
+  "level": 25,
+  "bosses": [
+    {
+      "en": "Rewards",
+      "de": "Belohnungen",
+      "fr": "Récompenses"
+    }
+  ]
+}

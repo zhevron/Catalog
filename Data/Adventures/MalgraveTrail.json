@@ -1,0 +1,15 @@
+{
+  "name": {
+    "en": "The Malgrave Trail",
+    "de": "Treck durch Jochgrab",
+    "fr": "La Piste de Maltombe"
+  },
+  "level": 45,
+  "bosses": [
+    {
+      "en": "Rewards",
+      "de": "Belohnungen",
+      "fr": "Récompenses"
+    }
+  ]
+}

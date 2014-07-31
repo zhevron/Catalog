@@ -1,0 +1,15 @@
+{
+  "name": {
+    "en": "The Siege of Tempest Refuge",
+    "de": "Die Belagerung der Sturmzuflucht",
+    "fr": "Le siège du Refuge de la tempête"
+  },
+  "level": 30,
+  "bosses": [
+    {
+      "en": "Rewards",
+      "de": "Belohnungen",
+      "fr": "Récompenses"
+    }
+  ]
+}

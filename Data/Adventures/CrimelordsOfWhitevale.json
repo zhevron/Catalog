@@ -1,0 +1,15 @@
+{
+  "name": {
+    "en": "Crimelords of Whitevale",
+    "de": "Banden vom Weißtal",
+    "fr": "Seigneurs du crime de Valblanc"
+  },
+  "level": 45,
+  "bosses": [
+    {
+      "en": "Rewards",
+      "de": "Belohnungen",
+      "fr": "Récompenses"
+    }
+  ]
+}
