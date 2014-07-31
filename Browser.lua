@@ -109,7 +109,7 @@ function Catalog.Browser:BuildItemList(boss)
   end
   list:SetData(boss)
   local veteran = boss.veteran and self.Window:FindChild("ModeButton"):IsChecked()
-  for i = Item.CodeEnumItemQuality.Legendary, Item.CodeEnumItemQuality.Inferior, -1 do
+  for i = Item.CodeEnumItemQuality.Legendary, Item.CodeEnumItemQuality.Good, -1 do
     for _, id in pairs(boss.drops) do
       local item = Item.GetDataFromId(id)
       if item ~= nil and item:GetItemQuality() == i then
