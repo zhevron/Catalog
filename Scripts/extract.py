@@ -67,6 +67,7 @@ def write_database_file(path, data, type):
       file.write("    [\"{}\"] = \"{}\",\n".format(k, v.encode("utf8")))
     file.write("  },\n")
     file.write("  [\"type\"] = \"{}\",\n".format(type))
+    file.write("  [\"level\"] = {},\n".format(data["level"]))
     file.write("  [\"bosses\"] = {\n")
     for boss in data["bosses"]:
       file.write("    {\n")
