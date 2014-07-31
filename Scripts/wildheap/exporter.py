@@ -28,8 +28,5 @@ class Exporter:
     data = json.load(urllib2.urlopen(req))
     if data["total"] > 0:
       for iteminfo in data["items"]:
-        item = {}
-        item["id"] = iteminfo["id"]
-        item["name"] = iteminfo["name"]
-        items.append(item)
+        items.append(iteminfo["id"])
     return items

@@ -9,7 +9,7 @@ data_path = os.path.join(root_path, "Data")
 database_path = os.path.join(root_path, "Database")
 
 exporters = {}
-exporters["jabbithole"] = JabbitholeExporter()
+exporters["jabbithole"] = JabbitholeExporter(data_path)
 exporters["wildheap"] = WildheapExporter()
 
 def parse_data(name, data, folder, type):
@@ -37,7 +37,7 @@ def boss_has_item(data, boss, item):
   for k, v in enumerate(data["bosses"]):
     if v["en"] == boss["en"]:
       for k2, v2 in enumerate(v["drops"]):
-        if v2["id"] == item["id"]:
+        if int(v2) == int(item):
           return True
   return False
 
@@ -77,7 +77,7 @@ def write_database_file(path, data, type):
       file.write("      },\n")
       file.write("      [\"drops\"] = {\n")
       for item in boss["drops"]:
-        file.write("        {}, -- {}\n".format(item["id"], item["name"]))
+        file.write("        {},\n".format(item))
       file.write("      },\n")
       file.write("    },\n")
     file.write("  },\n")
