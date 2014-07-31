@@ -4,12 +4,12 @@
     "de": "Kronfelder Aufstand",
     "fr": "L'Insurrection de Hautecrête"
   },
-  "level": 15,
   "bosses": [
     {
       "en": "Rewards",
       "de": "Belohnungen",
-      "fr": "Récompenses"
+      "fr": "Récompenses",
+      "veteran": true
     }
   ]
 }

@@ -4,12 +4,12 @@
     "de": "Treck durch Jochgrab",
     "fr": "La Piste de Maltombe"
   },
-  "level": 45,
   "bosses": [
     {
       "en": "Rewards",
       "de": "Belohnungen",
-      "fr": "Récompenses"
+      "fr": "Récompenses",
+      "veteran": true
     }
   ]
 }

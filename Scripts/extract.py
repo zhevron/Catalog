@@ -67,7 +67,6 @@ def write_database_file(path, data, type):
       file.write("    [\"{}\"] = \"{}\",\n".format(k, v.encode("utf8")))
     file.write("  },\n")
     file.write("  [\"type\"] = \"{}\",\n".format(type))
-    file.write("  [\"level\"] = {},\n".format(data["level"]))
     file.write("  [\"bosses\"] = {\n")
     for boss in data["bosses"]:
       file.write("    {\n")
@@ -76,6 +75,10 @@ def write_database_file(path, data, type):
       file.write("        [\"de\"] = \"{}\",\n".format(boss["de"].encode("utf8")))
       file.write("        [\"fr\"] = \"{}\",\n".format(boss["fr"].encode("utf8")))
       file.write("      },\n")
+      if boss["veteran"]:
+        file.write("      [\"veteran\"] = true,\n")
+      else:
+        file.write("      [\"veteran\"] = false,\n")
       file.write("      [\"drops\"] = {\n")
       for item in boss["drops"]:
         file.write("        {},\n".format(item))

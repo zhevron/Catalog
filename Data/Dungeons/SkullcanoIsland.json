@@ -4,27 +4,30 @@
     "de": "Feuerschädel",
     "fr": "Volcrâno"
   },
-  "level": 35,
   "bosses": [
     {
       "en": "Stew-Shaman Tugga",
       "de": "Suppenschamane Tugga",
-      "fr": "Chamiam Tugga"
+      "fr": "Chamiam Tugga",
+      "veteran": true
     },
     {
       "en": "Thunderfoot",
       "de": "Donnerhuf",
-      "fr": "Fulguropied"
+      "fr": "Fulguropied",
+      "veteran": true
     },
     {
       "en": "Bosun Octog",
       "de": "Deckoffizier Octog",
-      "fr": "Bosco Octog"
+      "fr": "Bosco Octog",
+      "veteran": true
     },
     {
       "en": "Mordechai Redmoon",
       "de": "Mordechai Rotmond",
-      "fr": "Mordechai Rougelune"
+      "fr": "Mordechai Rougelune",
+      "veteran": true
     }
   ]
 }

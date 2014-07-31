@@ -4,27 +4,30 @@
     "de": "Ruinen von Kel'Voreth",
     "fr": "Ruines de Kel Voreth"
   },
-  "level": 21,
   "bosses": [
     {
       "en": "Grond the Corpsemaker",
       "de": "Grond der Leichenmacher",
-      "fr": "Grond le Boucher"
+      "fr": "Grond le Boucher",
+      "veteran": true
     },
     {
       "en": "Darkwitch Gurka",
       "de": "Dämmerhexe Gurka",
-      "fr": "Sorcîère ténébreuse Gurka"
+      "fr": "Sorcîère ténébreuse Gurka",
+      "veteran": true
     },
     {
       "en": "Slavemaster Drokk",
       "de": "Sklavenmeister Drokk",
-      "fr": "Maître d'esclaves Drokk"
+      "fr": "Maître d'esclaves Drokk",
+      "veteran": true
     },
     {
       "en": "Forgemaster Trogun",
       "de": "Schmiedemeister Trogun",
-      "fr": "Maître-forgeron Trogun"
+      "fr": "Maître-forgeron Trogun",
+      "veteran": true
     }
   ]
 }

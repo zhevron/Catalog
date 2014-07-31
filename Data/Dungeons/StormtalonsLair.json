@@ -4,22 +4,24 @@
     "de": "Sturmklaues Unterschlupf",
     "fr": "Antre d'Ouragriffe"
   },
-  "level": 21,
   "bosses": [
     {
       "en": "Blade-Wind the Invoker",
       "de": "Klingenwind der Beschwörer",
-      "fr": "Lamevent l'Invocateur"
+      "fr": "Lamevent l'Invocateur",
+      "veteran": true
     },
     {
       "en": "Aethros",
       "de": "Ätheros",
-      "fr": "Aethros"
+      "fr": "Aethros",
+      "veteran": true
     },
     {
       "en": "Stormtalon",
       "de": "Sturmklaue",
-      "fr": "Ouragriffe"
+      "fr": "Ouragriffe",
+      "veteran": true
     }
   ]
 }

@@ -4,12 +4,12 @@
     "de": "Viel Lärm im Nichts",
     "fr": "L'Émeute sidérale"
   },
-  "level": 15,
   "bosses": [
     {
       "en": "Rewards",
       "de": "Belohnungen",
-      "fr": "Récompenses"
+      "fr": "Récompenses",
+      "veteran": true
     }
   ]
 }

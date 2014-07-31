@@ -4,12 +4,12 @@
     "de": "Krieg der Wildnis",
     "fr": "Guerre sauvage"
   },
-  "level": 25,
   "bosses": [
     {
       "en": "Rewards",
       "de": "Belohnungen",
-      "fr": "Récompenses"
+      "fr": "Récompenses",
+      "veteran": true
     }
   ]
 }
