@@ -6,33 +6,43 @@
   },
   "bosses": [
     {
-      "en": "Deadringer Shallaos",
-      "de": "Doppelgängerin Shallaos",
-      "fr": "Sosie Shallaos",
+      "name": {
+        "en": "Deadringer Shallaos",
+        "de": "Doppelgängerin Shallaos",
+        "fr": "Sosie Shallaos"
+      },
       "veteran": true
     },
     {
-      "en": "Rayna Darkspeaker",
-      "de": "Rayna Düsterbotin",
-      "fr": "Rayna Languenoire",
+      "name": {
+        "en": "Rayna Darkspeaker",
+        "de": "Rayna Düsterbotin",
+        "fr": "Rayna Languenoire"
+      },
       "veteran": true
     },
     {
-      "en": "Ondu Lifeweaver",
-      "de": "Ondu Lebensflechter",
-      "fr": "Ondu Tisse-âme",
+      "name": {
+        "en": "Ondu Lifeweaver",
+        "de": "Ondu Lebensflechter",
+        "fr": "Ondu Tisse-âme"
+      },
       "veteran": true
     },
     {
-      "en": "Moldwood Overlord Skash",
-      "de": "Moderwald-Overlord Skash",
-      "fr": "Seigneur de Putrebois Skash",
+      "name": {
+        "en": "Moldwood Overlord Skash",
+        "de": "Moderwald-Overlord Skash",
+        "fr": "Seigneur de Putrebois Skash"
+      },
       "veteran": true
     },
     {
-      "en": "Spiritmother Selene the Corrupted",
-      "de": "Seelenmutter Selene",
-      "fr": "Mère spirituelle Sélène la Corrompue",
+      "name": {
+        "en": "Spiritmother Selene the Corrupted",
+        "de": "Seelenmutter Selene",
+        "fr": "Mère spirituelle Sélène la Corrompue"
+      },
       "veteran": true
     }
   ]

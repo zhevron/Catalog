@@ -6,9 +6,11 @@
   },
   "bosses": [
     {
-      "en": "Rewards",
-      "de": "Belohnungen",
-      "fr": "Récompenses",
+      "name": {
+        "en": "Rewards",
+        "de": "Belohnungen",
+        "fr": "Récompenses"
+      },
       "veteran": true
     }
   ]

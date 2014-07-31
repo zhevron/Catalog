@@ -22,7 +22,7 @@ class Exporter:
       for k, v in enumerate(data["bosses"]):
         data["bosses"][k]["drops"] = []
         for k2, v2 in zone.iteritems():
-          if v["en"] in v2:
+          if v["name"]["en"] in v2:
             data["bosses"][k]["drops"].append(k2)
       return data
     except KeyError:
@@ -35,7 +35,7 @@ class Exporter:
       for k, v in enumerate(data["bosses"]):
         data["bosses"][k]["drops"] = []
         for k2, v2 in zone.iteritems():
-          if v["en"] in v2:
+          if v["name"]["en"] in v2:
             data["bosses"][k]["drops"].append(k2)
       return data
     except KeyError:

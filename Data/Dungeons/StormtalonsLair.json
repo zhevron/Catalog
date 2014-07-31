@@ -6,21 +6,27 @@
   },
   "bosses": [
     {
-      "en": "Blade-Wind the Invoker",
-      "de": "Klingenwind der Beschwörer",
-      "fr": "Lamevent l'Invocateur",
+      "name": {
+        "en": "Blade-Wind the Invoker",
+        "de": "Klingenwind der Beschwörer",
+        "fr": "Lamevent l'Invocateur"
+      },
       "veteran": true
     },
     {
-      "en": "Aethros",
-      "de": "Ätheros",
-      "fr": "Aethros",
+      "name": {
+        "en": "Aethros",
+        "de": "Ätheros",
+        "fr": "Aethros"
+      },
       "veteran": true
     },
     {
-      "en": "Stormtalon",
-      "de": "Sturmklaue",
-      "fr": "Ouragriffe",
+      "name": {
+        "en": "Stormtalon",
+        "de": "Sturmklaue",
+        "fr": "Ouragriffe"
+      },
       "veteran": true
     }
   ]

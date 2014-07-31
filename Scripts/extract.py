@@ -35,7 +35,7 @@ def parse_data(name, data, folder, type):
 # Check if a given boss table already contains an item
 def boss_has_item(data, boss, item):
   for k, v in enumerate(data["bosses"]):
-    if v["en"] == boss["en"]:
+    if v["name"]["en"] == boss["name"]["en"]:
       for k2, v2 in enumerate(v["drops"]):
         if int(v2) == int(item):
           return True
@@ -45,7 +45,7 @@ def boss_has_item(data, boss, item):
 def boss_add_item(data, boss, item):
   if not boss_has_item(data, boss, item):
     for k, v in enumerate(data["bosses"]):
-      if v["en"] == boss["en"]:
+      if v["name"]["en"] == boss["name"]["en"]:
         data["bosses"][k]["drops"].append(item)
   return data
 
@@ -71,9 +71,8 @@ def write_database_file(path, data, type):
     for boss in data["bosses"]:
       file.write("    {\n")
       file.write("      [\"name\"] = {\n")
-      file.write("        [\"en\"] = \"{}\",\n".format(boss["en"].encode("utf8")))
-      file.write("        [\"de\"] = \"{}\",\n".format(boss["de"].encode("utf8")))
-      file.write("        [\"fr\"] = \"{}\",\n".format(boss["fr"].encode("utf8")))
+      for k, v in boss["name"].iteritems():
+        file.write("        [\"{}\"] = \"{}\",\n".format(k, v.encode("utf8")))
       file.write("      },\n")
       if boss["veteran"]:
         file.write("      [\"veteran\"] = true,\n")

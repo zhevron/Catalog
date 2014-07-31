@@ -6,27 +6,35 @@
   },
   "bosses": [
     {
-      "en": "Grond the Corpsemaker",
-      "de": "Grond der Leichenmacher",
-      "fr": "Grond le Boucher",
+      "name": {
+        "en": "Grond the Corpsemaker",
+        "de": "Grond der Leichenmacher",
+        "fr": "Grond le Boucher"
+      },
       "veteran": true
     },
     {
-      "en": "Darkwitch Gurka",
-      "de": "Dämmerhexe Gurka",
-      "fr": "Sorcîère ténébreuse Gurka",
+      "name": {
+        "en": "Darkwitch Gurka",
+        "de": "Dämmerhexe Gurka",
+        "fr": "Sorcîère ténébreuse Gurka"
+      },
       "veteran": true
     },
     {
-      "en": "Slavemaster Drokk",
-      "de": "Sklavenmeister Drokk",
-      "fr": "Maître d'esclaves Drokk",
+      "name": {
+        "en": "Slavemaster Drokk",
+        "de": "Sklavenmeister Drokk",
+        "fr": "Maître d'esclaves Drokk"
+      },
       "veteran": true
     },
     {
-      "en": "Forgemaster Trogun",
-      "de": "Schmiedemeister Trogun",
-      "fr": "Maître-forgeron Trogun",
+      "name": {
+        "en": "Forgemaster Trogun",
+        "de": "Schmiedemeister Trogun",
+        "fr": "Maître-forgeron Trogun"
+      },
       "veteran": true
     }
   ]

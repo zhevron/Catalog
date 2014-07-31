@@ -21,9 +21,9 @@ class Exporter:
     return data
 
   # Uses the WildHeap API to get item drops from a specified NPC name.
-  def get_items_by_npc(self, name):
+  def get_items_by_npc(self, npc):
     items = []
-    url = "https://api.wildheap.com/items?droppedby=" + name["en"].replace(" ", "%20")
+    url = "https://api.wildheap.com/items?droppedby=" + npc["name"]["en"].replace(" ", "%20")
     req = urllib2.Request(url, headers = http_headers)
     data = json.load(urllib2.urlopen(req))
     if data["total"] > 0:
