@@ -116,7 +116,7 @@ function Catalog.Browser:BuildItemList(boss)
         if boss.veteran and veteran and item:GetRequiredLevel() < 50 then
           -- Ignore it. Not a veteran drop.
         elseif boss.veteran and not veteran and item:GetRequiredLevel() >= 50 then
-          --Ignore it. Not a normal drop.
+          -- Ignore it. Not a normal drop.
         else
           local form = Apollo.LoadForm(self.Xml, "Item", list, self)
           form:SetData(item)
@@ -125,6 +125,7 @@ function Catalog.Browser:BuildItemList(boss)
           form:FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
           form:FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
           form:FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
+        end
       end
     end
   end
