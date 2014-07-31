@@ -23,6 +23,7 @@ end
 
 function Catalog.Settings:Open()
   if self.Window and self.Window:IsValid() then
+    Catalog.Wishlist:Close()
     self:Position()
     self:ApplyCurrent()
     self.Window:Show(true)
@@ -31,6 +32,7 @@ end
 
 function Catalog.Settings:Close()
   if self.Window and self.Window:IsValid() then
+    Catalog.Browser.Window:FindChild("SettingsButton"):SetCheck(false)
     self.Window:Show(false)
   end
 end

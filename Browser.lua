@@ -51,7 +51,7 @@ end
 function Catalog.Browser:Close()
   if self.Window and self.Window:IsValid() then
     Catalog.Settings:Close()
-    self.Window:FindChild("SettingsButton"):SetCheck(false)
+    Catalog.Wishlist:Close()
     self.Window:Show(false)
   end
 end
@@ -155,6 +155,14 @@ function Catalog.Browser:Collapse(list, sublist)
   local left, top, right, bottom = list:GetAnchorOffsets()
   local _, _, _, height = sublist:GetAnchorOffsets()
   list:SetAnchorOffsets(left, top, right, bottom - height)
+end
+
+function Catalog.Browser:OnWishlistCheck(handler, control)
+  Catalog.Wishlist:Open()
+end
+
+function Catalog.Browser:OnWishlistUncheck(handler, control)
+  Catalog.Wishlist:Close()
 end
 
 function Catalog.Browser:OnCategoryListOpen(handler, control)
