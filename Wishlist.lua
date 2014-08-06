@@ -41,7 +41,7 @@ function Catalog.Wishlist:Position()
   local form = Apollo.LoadForm(self.Xml, "CatalogWishlist", nil, self)
   local _, _, width, height = form:GetAnchorOffsets()
   form:Destroy()
-  self.Window:SetAnchorOffsets(right - 15 - offset, top, right - 15 -offset + width, top + height)
+  self.Window:SetAnchorOffsets(right - 15 - offset, top, right - 15 - offset + width, top + height)
   self.Window:SetScale(Catalog.Browser.Window:GetScale())
 end
 
