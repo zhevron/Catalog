@@ -150,6 +150,9 @@ function Catalog.Browser:BuildItemList(boss)
             end
           end
           form:FindChild("Item"..i):FindChild("WishlistButton"):SetCheck(found)
+          form:FindChild("Item"..i):Show(true)
+        else
+          form:FindChild("Item"..i):Show(false)
         end
       end
     end
