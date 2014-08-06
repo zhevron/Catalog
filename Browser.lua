@@ -129,6 +129,7 @@ function Catalog.Browser:BuildItemList(boss)
   end
   for type, tbl in pairs(items) do
     local formType = Apollo.LoadForm(self.Xml, "ItemType", list, self)
+    formType:SetData({})
     local rows = math.ceil(#tbl / 2)
     for row = 1, rows do
       local form = Apollo.LoadForm(self.Xml, "ItemRow", list, self)
@@ -137,7 +138,9 @@ function Catalog.Browser:BuildItemList(boss)
         if num <= #tbl then
           local item = tbl[num]
           local info = item:GetDetailedInfo()
-          formType:SetText(item:GetItemTypeName())
+          formType:FindChild("ItemTypeButton"):SetText(item:GetItemTypeName())
+          formType:FindChild("StatusIcon"):SetData(true)
+          form:SetName("CatalogItems_"..item:GetItemType().."_"..row)
           form:FindChild("Item"..i):SetData(item)
           form:FindChild("Item"..i):FindChild("ItemIcon"):SetSprite(item:GetIcon())
           form:FindChild("Item"..i):FindChild("ItemText"):SetText(item:GetName())
@@ -154,6 +157,9 @@ function Catalog.Browser:BuildItemList(boss)
           form:FindChild("Item"..i):Show(false)
         end
       end
+      local forms = formType:GetData()
+      table.insert(forms, form:GetName())
+      formType:SetData(forms)
     end
   end
   list:ArrangeChildrenVert()
@@ -182,6 +188,20 @@ function Catalog.Browser:Collapse(list, sublist)
   local left, top, right, bottom = list:GetAnchorOffsets()
   local _, _, _, height = sublist:GetAnchorOffsets()
   list:SetAnchorOffsets(left, top, right, bottom - height)
+end
+
+function Catalog.Browser:OnToggleItemType(handler, control)
+  local status = not control:GetParent():FindChild("StatusIcon"):GetData()
+  control:GetParent():FindChild("StatusIcon"):SetData(status)
+  for _, name in pairs(control:GetParent():GetData()) do
+    self.Window:FindChild(name):Show(status)
+  end
+  self.Window:FindChild("ItemList"):ArrangeChildrenVert()
+  if status then
+    control:GetParent():FindChild("StatusIcon"):SetSprite("achievements:sprAchievements_Icon_Complete")
+  else
+    control:GetParent():FindChild("StatusIcon"):SetSprite("ClientSprites:LootCloseBox_Holo")
+  end
 end
 
 function Catalog.Browser:OnWishlistCheck(handler, control)
