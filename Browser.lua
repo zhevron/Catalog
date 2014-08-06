@@ -147,8 +147,8 @@ function Catalog.Browser:BuildItemList(boss)
           form:FindChild("Item"..i):FindChild("ItemText"):SetText(item:GetName())
           form:FindChild("Item"..i):FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
           local found = false
-          for _, id in ipairs(Catalog.WishlistItems) do
-            if id == info.tPrimary.nId then
+          for _, i in pairs(Catalog.WishlistItems) do
+            if i["Id"] == info.tPrimary.nId then
               found = true
             end
           end
@@ -228,7 +228,10 @@ end
 function Catalog.Browser:OnWishlistAdd(handler, control)
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
-  table.insert(Catalog.WishlistItems, info.tPrimary.nId)
+  table.insert(Catalog.WishlistItems, {
+    ["Id"] = info.tPrimary.nId,
+    ["Alert"] = true
+  })
   if Catalog.Wishlist.Window:IsShown() then
     Catalog.Wishlist:BuildItemList()
   end
@@ -237,8 +240,8 @@ end
 function Catalog.Browser:OnWishlistRemove(handler, control)
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
-  for k, id in ipairs(Catalog.WishlistItems) do
-    if id == info.tPrimary.nId then
+  for k, i in pairs(Catalog.WishlistItems) do
+    if i["Id"] == info.tPrimary.nId then
       table.remove(Catalog.WishlistItems, k)
     end
   end

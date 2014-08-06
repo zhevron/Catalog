@@ -48,15 +48,15 @@ end
 function Catalog.Wishlist:BuildItemList()
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
-  for _, id in pairs(Catalog.WishlistItems) do
-    local item = Item.GetDataFromId(id)
+  for _, i in pairs(Catalog.WishlistItems) do
+    local item = Item.GetDataFromId(i["Id"])
     local form = Apollo.LoadForm(self.Xml, "Item", list, self)
     form:SetData(item)
     form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
     form:FindChild("ItemText"):SetText(item:GetName())
     form:FindChild("ItemText"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
     local tooltip = ""
-    for _, drop in pairs(Catalog.Utility:FindDropLocations(id)) do
+    for _, drop in pairs(Catalog.Utility:FindDropLocations(i["Id"])) do
       tooltip = tooltip..drop["Boss"].."\n"..drop["Location"].."\n\n"
     end
     form:FindChild("InfoButton"):SetTooltip(tooltip)
@@ -67,13 +67,28 @@ end
 function Catalog.Wishlist:OnWishlistRemove(handler, control)
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
-  for k, id in ipairs(Catalog.WishlistItems) do
-    if id == info.tPrimary.nId then
+  for k, i in ipairs(Catalog.WishlistItems) do
+    if i["Id"] == info.tPrimary.nId then
       table.remove(Catalog.WishlistItems, k)
     end
   end
   self:BuildItemList()
   Catalog.Browser:BuildItemList(Catalog.Browser.Window:FindChild("ItemList"):GetData())
+end
+
+function Catalog.Wishlist:OnItemLooted(item, count)
+  if item ~= nil and count > 0 then
+    local info = item:GetDetailedInfo()
+    local found = nil
+    for _, i in pairs(Catalog.WishlistItems) do
+      if i["Id"] == info.tPrimary.nId then
+        found = i
+      end
+    end
+    if found ~= nil and found["Alert"] then
+      -- trigger alert
+    end
+  end
 end
 
 function Catalog.Wishlist:OnGenerateTooltip(handler, control)
