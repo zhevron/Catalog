@@ -139,6 +139,7 @@ function Catalog.Browser:BuildItemList(boss)
           local item = tbl[num]
           local info = item:GetDetailedInfo()
           formType:FindChild("ItemTypeButton"):SetText(item:GetItemTypeName())
+          formType:FindChild("ItemTypeButton"):SetData(item:GetItemType())
           formType:FindChild("StatusIcon"):SetData(true)
           form:SetName("CatalogItems_"..item:GetItemType().."_"..row)
           form:FindChild("Item"..i):SetData(item)
@@ -160,6 +161,16 @@ function Catalog.Browser:BuildItemList(boss)
       local forms = formType:GetData()
       table.insert(forms, form:GetName())
       formType:SetData(forms)
+      local status = Catalog.Options.ItemTypes[tostring(formType:FindChild("ItemTypeButton"):GetData())]
+      if status ~= nil then
+        form:Show(status)
+        formType:FindChild("StatusIcon"):SetData(status)
+        if status then
+          formType:FindChild("StatusIcon"):SetSprite("achievements:sprAchievements_Icon_Complete")
+        else
+          formType:FindChild("StatusIcon"):SetSprite("ClientSprites:LootCloseBox_Holo")
+        end
+      end
     end
   end
   list:ArrangeChildrenVert()
@@ -192,7 +203,9 @@ end
 
 function Catalog.Browser:OnToggleItemType(handler, control)
   local status = not control:GetParent():FindChild("StatusIcon"):GetData()
+  local type = tostring(control:GetParent():FindChild("ItemTypeButton"):GetData())
   control:GetParent():FindChild("StatusIcon"):SetData(status)
+  Catalog.Options.ItemTypes[type] = status
   for _, name in pairs(control:GetParent():GetData()) do
     self.Window:FindChild(name):Show(status)
   end
