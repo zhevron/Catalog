@@ -26,7 +26,7 @@ end
 
 function Catalog.Wishlist:Close()
   if self.Window and self.Window:IsValid() then
-    Catalog.Browser.Window:FindChild("WishlistButton"):SetCheck(false)
+    Catalog.Browser.Window:FindChild("OpenWishlistButton"):SetCheck(false)
     self.Window:Show(false)
   end
 end
