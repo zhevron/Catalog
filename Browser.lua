@@ -142,7 +142,6 @@ function Catalog.Browser:BuildItemList(boss)
           form:FindChild("Item"..i):FindChild("ItemIcon"):SetSprite(item:GetIcon())
           form:FindChild("Item"..i):FindChild("ItemText"):SetText(item:GetName())
           form:FindChild("Item"..i):FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
-          form:FindChild("Item"..i):FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
           local found = false
           for _, id in ipairs(Catalog.WishlistItems) do
             if id == info.tPrimary.nId then
