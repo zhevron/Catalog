@@ -109,6 +109,7 @@ function Catalog.Browser:BuildItemList(boss)
   end
   list:SetData(boss)
   local veteran = self.Window:FindChild("ModeButton"):IsChecked()
+  local items = {}
   for i = Item.CodeEnumItemQuality.Legendary, Item.CodeEnumItemQuality.Good, -1 do
     for _, id in pairs(boss.drops) do
       local item = Item.GetDataFromId(id)
@@ -118,21 +119,36 @@ function Catalog.Browser:BuildItemList(boss)
         elseif boss.veteran and not veteran and item:GetRequiredLevel() >= 50 then
           -- Ignore it. Not a normal drop.
         else
-          local form = Apollo.LoadForm(self.Xml, "Item", list, self)
-          form:SetData(item)
-          form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
-          form:FindChild("ItemText"):SetText(item:GetName())
-          form:FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
-          form:FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
-          form:FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
-          local found = false
-          for _, id2 in ipairs(Catalog.WishlistItems) do
-            if id2 == id then
-              found = true
-            end
+          if items[item:GetItemType()] == nil then
+            items[item:GetItemType()] = {}
           end
-          form:FindChild("WishlistButton"):SetCheck(found)
+          table.insert(items[item:GetItemType()], item)
         end
+      end
+    end
+  end
+  for type, tbl in pairs(items) do
+    local formType = Apollo.LoadForm(self.Xml, "ItemType", list, self)
+    local rows = math.ceil(#tbl / 2)
+    for row = 1, rows do
+      local form = Apollo.LoadForm(self.Xml, "ItemRow", list, self)
+      for i = 1, 2 do
+        local item = tbl[(row * 2) - 1 + i]
+        local info = item:GetDetailedInfo()
+        formType:SetText(item:GetItemTypeName())
+        form:FindChild("Item"..i):SetData(item)
+        form:FindChild("Item"..i):FindChild("ItemIcon"):SetSprite(item:GetIcon())
+        form:FindChild("Item"..i):FindChild("ItemText"):SetText(item:GetName())
+        form:FindChild("Item"..i):FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
+        form:FindChild("Item"..i):FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
+        form:FindChild("Item"..i):FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
+        local found = false
+        for _, id in ipairs(Catalog.WishlistItems) do
+          if id == info.tPrimary.nId then
+            found = true
+          end
+        end
+        form:FindChild("Item"..i):FindChild("WishlistButton"):SetCheck(found)
       end
     end
   end
