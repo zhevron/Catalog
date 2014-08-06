@@ -56,7 +56,7 @@ function Catalog.Wishlist:BuildItemList()
     form:FindChild("ItemText"):SetText(item:GetName())
     form:FindChild("ItemText"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
     local tooltip = ""
-    for _, drop in pairs(Catalog.Utility.FindDropLocations(id)) do
+    for _, drop in pairs(Catalog.Utility:FindDropLocations(id)) do
       tooltip = tooltip..drop["Boss"].."\n"..drop["Location"].."\n\n"
     end
     form:FindChild("InfoButton"):SetTooltip(tooltip)
