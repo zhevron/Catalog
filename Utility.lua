@@ -46,3 +46,24 @@ function Catalog.Utility:TableCopyRecursive(source, destination)
   end
   return destination
 end
+
+function Catalog.Utility:FindDropLocations(id)
+  local drops = {}
+  for _, location in pairs(Catalog.Database) do
+    for _, boss in pairs(location.bosses) do
+      local found = false
+      for _, item in pairs(boss.drops) do
+        if item == id then
+          found = true
+        end
+      end
+      if found then
+        table.insert(drops, {
+          ["Location"] = location.name[Catalog.Options.Locale],
+          ["Boss"] = boss.name[Catalog.Options.Locale]
+        })
+      end
+    end
+  end
+  return drops
+end
