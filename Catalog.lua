@@ -43,6 +43,7 @@ function Catalog:OnLoad()
   Apollo.RegisterSlashCommand("catalog", "Open", self.Browser)
   Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
   Apollo.RegisterEventHandler("Catalog_ToggleBrowser", "Toggle", self.Browser)
+  Apollo.RegisterEventHandler("LootRollUpdate", "OnGroupLoot", self.Wishlist)
   Apollo.RegisterEventHandler("LootedItem", "OnItemLooted", self.Wishlist)
   Apollo.RegisterEventHandler("InterfaceMenuListHasLoaded", "OnInterfaceMenuListHasLoaded", self)
 end

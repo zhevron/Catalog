@@ -76,8 +76,17 @@ function Catalog.Wishlist:OnWishlistRemove(handler, control)
   Catalog.Browser:BuildItemList(Catalog.Browser.Window:FindChild("ItemList"):GetData())
 end
 
+function Catalog.Wishlist:OnGroupLoot()
+  for _, roll in pairs(GameLib.GetLootRolls()) do
+    self:OnItemLooted(roll.itemDrop, 1)
+  end
+end
+
 function Catalog.Wishlist:OnItemLooted(item, count)
   if item ~= nil and count > 0 then
+    if item:GetItemQuality() >= Item.CodeEnumItemQuality.Good then
+      Print("Catalog: Looted "..item:GetName().." x"..count)
+    end
     local info = item:GetDetailedInfo()
     local found = nil
     for _, i in pairs(Catalog.WishlistItems) do
