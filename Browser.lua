@@ -133,22 +133,24 @@ function Catalog.Browser:BuildItemList(boss)
     for row = 1, rows do
       local form = Apollo.LoadForm(self.Xml, "ItemRow", list, self)
       for i = 1, 2 do
-        local item = tbl[(row * 2) - 1 + i]
-        local info = item:GetDetailedInfo()
-        formType:SetText(item:GetItemTypeName())
-        form:FindChild("Item"..i):SetData(item)
-        form:FindChild("Item"..i):FindChild("ItemIcon"):SetSprite(item:GetIcon())
-        form:FindChild("Item"..i):FindChild("ItemText"):SetText(item:GetName())
-        form:FindChild("Item"..i):FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
-        form:FindChild("Item"..i):FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
-        form:FindChild("Item"..i):FindChild("ItemTypeText"):SetText(item:GetItemTypeName())
-        local found = false
-        for _, id in ipairs(Catalog.WishlistItems) do
-          if id == info.tPrimary.nId then
-            found = true
+        local num = ((row - 1) * 2) + i
+        if num <= #tbl then
+          local item = tbl[num]
+          local info = item:GetDetailedInfo()
+          formType:SetText(item:GetItemTypeName())
+          form:FindChild("Item"..i):SetData(item)
+          form:FindChild("Item"..i):FindChild("ItemIcon"):SetSprite(item:GetIcon())
+          form:FindChild("Item"..i):FindChild("ItemText"):SetText(item:GetName())
+          form:FindChild("Item"..i):FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
+          form:FindChild("Item"..i):FindChild("ItemLevelText"):SetText(locale["level"].." "..item:GetRequiredLevel())
+          local found = false
+          for _, id in ipairs(Catalog.WishlistItems) do
+            if id == info.tPrimary.nId then
+              found = true
+            end
           end
+          form:FindChild("Item"..i):FindChild("WishlistButton"):SetCheck(found)
         end
-        form:FindChild("Item"..i):FindChild("WishlistButton"):SetCheck(found)
       end
     end
   end
