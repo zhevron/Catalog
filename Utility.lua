@@ -53,7 +53,7 @@ function Catalog.Utility:FindDropLocations(id)
     for _, boss in pairs(location.bosses) do
       local found = false
       for _, item in pairs(boss.drops) do
-        if item == id then
+        if tostring(item) == tostring(id) then
           found = true
         end
       end
