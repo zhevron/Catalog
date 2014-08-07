@@ -169,6 +169,7 @@ function Catalog.Browser:BuildItemList(boss)
           formType:FindChild("StatusIcon"):SetSprite("achievements:sprAchievements_Icon_Complete")
         else
           formType:FindChild("StatusIcon"):SetSprite("ClientSprites:LootCloseBox_Holo")
+          formType:Show(self.Window:FindChild("ShowHiddenButton"):IsChecked())
         end
       end
     end
@@ -316,6 +317,10 @@ function Catalog.Browser:OnMouseButtonDown(handler, control, button)
   elseif Apollo.IsShiftKeyDown() then
     Event_FireGenericEvent("ItemLink", item)
   end
+end
+
+function Catalog.Browser:OnToggleHidden(handler, control)
+  self:BuildItemList(self.Window:FindChild("ItemList"):GetData())
 end
 
 function Catalog.Browser:OnToggleSettings(handler, control)
