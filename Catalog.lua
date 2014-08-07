@@ -42,6 +42,7 @@ function Catalog:OnLoad()
   self.Wishlist:Init()
   Apollo.RegisterSlashCommand("catalog", "Open", self.Browser)
   Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
+  Apollo.RegisterSlashCommand("catalogreset", "Reset", self)
   Apollo.RegisterEventHandler("Catalog_ToggleBrowser", "Toggle", self.Browser)
   Apollo.RegisterEventHandler("LootRollUpdate", "OnGroupLoot", self.Wishlist)
   Apollo.RegisterEventHandler("LootedItem", "OnItemLooted", self.Wishlist)
@@ -100,6 +101,13 @@ function Catalog:GetLocale()
   else
     return self.Locale["en"]
   end
+end
+
+function Catalog:Reset()
+  self.Options.Position = self.Defaults.Position
+  self.Options.Scale = self.Defaults.Scale
+  self.Browser:Close()
+  self.Browser:Open()
 end
 
 local CatalogInst = Catalog:new()
