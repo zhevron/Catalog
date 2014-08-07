@@ -99,7 +99,11 @@ function Catalog.Wishlist:OnItemLooted(item, count)
     if found ~= nil and found["Alert"] then
       local last = self.RecentAlerts[tostring(found["Id"])]
       if last ~= nil and (last + 300) < os.time() then
-        -- trigger alert
+        -- local form = Apollo.LoadForm(self.Xml, "ItemDropAlert", nil, self)
+        -- form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
+        -- form:FindChild("ItemName"):SetText(item:GetName())
+        -- form:FindChild("ItemName"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
+        -- ApolloTimer.Create(5, false, "Close", form)
         self.RecentAlerts[tostring(found["Id"])] = os.time()
       end
     end
