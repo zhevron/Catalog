@@ -1,5 +1,7 @@
 Catalog.Wishlist = {}
 
+Catalog.Wishlist.RecentAlerts = {}
+
 function Catalog.Wishlist:Init()
   self.Xml = XmlDoc.CreateFromFile("Forms/Wishlist.xml")
   self.Xml:RegisterCallback("OnDocumentReady", self)
@@ -95,7 +97,11 @@ function Catalog.Wishlist:OnItemLooted(item, count)
       end
     end
     if found ~= nil and found["Alert"] then
-      -- trigger alert
+      local last = self.RecentAlerts[tostring(found["Id"])]
+      if last ~= nil and (last + 300) < os.time() then
+        -- trigger alert
+        self.RecentAlerts[tostring(found["Id"])] = os.time()
+      end
     end
   end
 end
