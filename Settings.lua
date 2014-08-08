@@ -87,8 +87,9 @@ function Catalog.Settings:OnChangeLocale(handler, control)
     Catalog.Options.AutoLocale = false
     Catalog.Options.Locale = control:GetData()
   end
+  Catalog.Browser:Localize()
   Catalog.Settings:Localize()
-  Catalog.Browser:BuildLocationList()
+  Catalog.Wishlist:Localize()
 end
 
 function Catalog.Settings:OnScaleChanged(handler, control, scale)

@@ -44,6 +44,7 @@ function Catalog.Browser:Open()
     if Catalog.Options.Locked then
       self.Window:RemoveStyle("Moveable")
     end
+    self:Localize()
     self.Window:Show(true)
   end
 end
@@ -64,6 +65,14 @@ function Catalog.Browser:Toggle()
       self:Open()
     end
   end
+end
+
+function Catalog.Browser:Localize()
+  local locale = Catalog:GetLocale()
+  self.Window:FindChild("ShowHiddenText"):SetText(locale["showHidden"])
+  self:BuildSubcategoryList()
+  self:BuildBossList(self.Window:FindChild("SubcategoryButton"):GetData())
+  self:BuildItemList(nil)
 end
 
 function Catalog.Browser:BuildSubcategoryList()

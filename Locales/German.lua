@@ -1,3 +1,4 @@
 Catalog.Locale["de"] = {
-  ["lock"] = "Fenster sperren"
+  ["lock"] = "Fenster sperren",
+  ["showHidden"] = "Show hidden"
 }
