@@ -71,6 +71,7 @@ end
 function Catalog.Browser:Localize()
   local locale = Catalog:GetLocale()
   self.Window:FindChild("ShowHiddenText"):SetText(locale["showHidden"])
+  self.Window:FindChild("OpenWishlistButton"):SetText(locale["wishlist"])
   self:BuildSubcategoryList()
   self:BuildBossList(self.Window:FindChild("SubcategoryButton"):GetData())
   self:BuildItemList(nil)
@@ -162,6 +163,7 @@ function Catalog.Browser:BuildItemList(boss)
               found = true
             end
           end
+          form:FindChild("Item"..i):FindChild("WishlistButton"):SetText(locale["addWishlist"])
           form:FindChild("Item"..i):FindChild("WishlistButton"):SetCheck(found)
           form:FindChild("Item"..i):Show(true)
         else

@@ -14,13 +14,13 @@ function Catalog.Wishlist:OnDocumentReady()
   end
   self.Window = Apollo.LoadForm(self.Xml, "CatalogWishlist", nil, self)
   self:Close()
-  self:Localize()
 end
 
 function Catalog.Wishlist:Open()
   if self.Window and self.Window:IsValid() then
     Catalog.Settings:Close()
     self:Position()
+    self:Localize()
     self:BuildItemList()
     self.Window:Show(true)
   end
@@ -35,6 +35,7 @@ end
 
 function Catalog.Wishlist:Localize()
   local locale = Catalog:GetLocale()
+  self.Window:FindChild("Header"):SetText(locale["wishlist"])
 end
 
 function Catalog.Wishlist:Position()
