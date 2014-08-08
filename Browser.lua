@@ -34,16 +34,17 @@ end
 
 function Catalog.Browser:Open()
   if self.Window and self.Window:IsValid() then
-    local left = Catalog.Options.Position.X
-    local top = Catalog.Options.Position.Y
+    local left = Catalog.Options.Account.Position.X
+    local top = Catalog.Options.Account.Position.Y
     local form = Apollo.LoadForm(self.Xml, "CatalogBrowser", nil, self)
     local _, _, right, bottom = form:GetAnchorOffsets()
     form:Destroy()
     self.Window:SetAnchorOffsets(left, top, left + right, top + bottom)
-    self.Window:SetScale(Catalog.Options.Scale)
-    if Catalog.Options.Locked then
+    self.Window:SetScale(Catalog.Options.Account.Scale)
+    if Catalog.Options.Account.Locked then
       self.Window:RemoveStyle("Moveable")
     end
+    self.Window:FindChild("ShowHiddenButton"):SetCheck(Catalog.Options.Character.ShowHidden)
     self:Localize()
     self.Window:Show(true)
   end
@@ -82,7 +83,7 @@ function Catalog.Browser:BuildSubcategoryList()
   for _, entry in pairs(Catalog.Database) do
     if entry.type == self.Window:FindChild("CategoryButton"):GetData() then
       local tbl = Catalog.Utility:TableCopyRecursive(entry)
-      tbl.name = entry.name[Catalog.Options.Locale]
+      tbl.name = entry.name[Catalog.Options.Account.Locale]
       table.insert(entries, tbl)
     end
   end
@@ -104,7 +105,7 @@ function Catalog.Browser:BuildBossList(subcategory)
   for _, boss in ipairs(subcategory.bosses) do
     local form = Apollo.LoadForm(self.Xml, "Boss", list, self)
     form:SetData(boss)
-    form:FindChild("BossText"):SetText(boss.name[Catalog.Options.Locale])
+    form:FindChild("BossText"):SetText(boss.name[Catalog.Options.Account.Locale])
   end
   list:ArrangeChildrenVert()
 end
@@ -156,7 +157,7 @@ function Catalog.Browser:BuildItemList(boss)
           form:FindChild("Item"..i):FindChild("ItemText"):SetText(item:GetName())
           form:FindChild("Item"..i):FindChild("ItemText"):SetTextColor(self.ItemColor[item:GetItemQuality()])
           local found = false
-          for _, i in pairs(Catalog.WishlistItems) do
+          for _, i in pairs(Catalog.Options.Character.Wishlist) do
             if i["Id"] == info.tPrimary.nId then
               found = true
             end
@@ -170,7 +171,7 @@ function Catalog.Browser:BuildItemList(boss)
       local forms = formType:GetData()
       table.insert(forms, form:GetName())
       formType:SetData(forms)
-      local status = Catalog.Options.ItemTypes[tostring(formType:FindChild("ItemTypeButton"):GetData())]
+      local status = Catalog.Options.Character.ItemTypes[tostring(formType:FindChild("ItemTypeButton"):GetData())]
       if status ~= nil then
         form:Show(status)
         formType:FindChild("StatusIcon"):SetData(status)
@@ -215,7 +216,7 @@ function Catalog.Browser:OnToggleItemType(handler, control)
   local status = not control:GetParent():FindChild("StatusIcon"):GetData()
   local type = tostring(control:GetParent():FindChild("ItemTypeButton"):GetData())
   control:GetParent():FindChild("StatusIcon"):SetData(status)
-  Catalog.Options.ItemTypes[type] = status
+  Catalog.Options.Character.ItemTypes[type] = status
   for _, name in pairs(control:GetParent():GetData()) do
     self.Window:FindChild(name):Show(status)
   end
@@ -238,7 +239,7 @@ end
 function Catalog.Browser:OnWishlistAdd(handler, control)
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
-  table.insert(Catalog.WishlistItems, {
+  table.insert(Catalog.Options.Character.Wishlist, {
     ["Id"] = info.tPrimary.nId,
     ["Alert"] = true
   })
@@ -250,9 +251,9 @@ end
 function Catalog.Browser:OnWishlistRemove(handler, control)
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
-  for k, i in pairs(Catalog.WishlistItems) do
+  for k, i in pairs(Catalog.Options.Character.Wishlist) do
     if i["Id"] == info.tPrimary.nId then
-      table.remove(Catalog.WishlistItems, k)
+      table.remove(Catalog.Options.Character.Wishlist, k)
     end
   end
   if Catalog.Wishlist.Window:IsShown() then
@@ -330,6 +331,7 @@ end
 
 function Catalog.Browser:OnToggleHidden(handler, control)
   self:BuildItemList(self.Window:FindChild("ItemList"):GetData())
+  Catalog.Options.Character.ShowHidden = control:IsChecked()
 end
 
 function Catalog.Browser:OnToggleSettings(handler, control)
@@ -342,8 +344,8 @@ end
 
 function Catalog.Browser:OnWindowMove(handler, control)
   local left, top = self.Window:GetAnchorOffsets()
-  Catalog.Options.Position.X = left
-  Catalog.Options.Position.Y = top
+  Catalog.Options.Account.Position.X = left
+  Catalog.Options.Account.Position.Y = top
   Catalog.Settings:Position()
 end
 

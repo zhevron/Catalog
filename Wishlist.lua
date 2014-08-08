@@ -50,7 +50,7 @@ end
 function Catalog.Wishlist:BuildItemList()
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
-  for _, i in pairs(Catalog.WishlistItems) do
+  for _, i in pairs(Catalog.Options.Character.Wishlist) do
     local item = Item.GetDataFromId(i["Id"])
     local form = Apollo.LoadForm(self.Xml, "Item", list, self)
     form:SetData(item)
@@ -69,9 +69,9 @@ end
 function Catalog.Wishlist:OnWishlistRemove(handler, control)
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
-  for k, i in ipairs(Catalog.WishlistItems) do
+  for k, i in ipairs(Catalog.Options.Character.Wishlist) do
     if i["Id"] == info.tPrimary.nId then
-      table.remove(Catalog.WishlistItems, k)
+      table.remove(Catalog.Options.Character.Wishlist, k)
     end
   end
   self:BuildItemList()
@@ -91,7 +91,7 @@ function Catalog.Wishlist:OnItemLooted(item, count)
     end
     local info = item:GetDetailedInfo()
     local found = nil
-    for _, i in pairs(Catalog.WishlistItems) do
+    for _, i in pairs(Catalog.Options.Character.Wishlist) do
       if i["Id"] == info.tPrimary.nId then
         found = i
       end

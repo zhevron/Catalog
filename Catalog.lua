@@ -9,20 +9,25 @@ Catalog.Version = {
 }
 
 Catalog.Defaults = {
-  ["Locale"] = "en",
-  ["AutoLocale"] = true,
-  ["Locked"] = false,
-  ["Position"] = {
-    ["X"] = 100,
-    ["Y"] = 100
+  ["Account"] = {
+    ["Locale"] = "en",
+    ["AutoLocale"] = true,
+    ["Locked"] = false,
+    ["Position"] = {
+      ["X"] = 100,
+      ["Y"] = 100
+    },
+    ["Scale"] = 1.0
   },
-  ["Scale"] = 1.0,
-  ["ItemTypes"] = {}
+  ["Character"] = {
+    ["ItemTypes"] = {},
+    ["ShowHidden"] = true,
+    ["Wishlist"] = {}
+  }
 }
 
 Catalog.Locale = {}
 Catalog.Database = {}
-Catalog.WishlistItems = {}
 Catalog.Options = Catalog.Defaults
 
 function Catalog:new(o)
@@ -59,23 +64,28 @@ end
 
 function Catalog:OnSave(type)
   if type == GameLib.CodeEnumAddonSaveLevel.Character then
-    return Catalog.Utility:TableCopyRecursive(self.WishlistItems)
+    return Catalog.Utility:TableCopyRecursive(self.Options.Character)
   elseif type == GameLib.CodeEnumAddonSaveLevel.Account then
-    return Catalog.Utility:TableCopyRecursive(self.Options)
+    return Catalog.Utility:TableCopyRecursive(self.Options.Account)
   end
   return nil
 end
 
 function Catalog:OnRestore(type, table)
   if type == GameLib.CodeEnumAddonSaveLevel.Character then
-    self.WishlistItems = Catalog.Utility:TableCopyRecursive(table, self.WishlistItems)
-  elseif type == GameLib.CodeEnumAddonSaveLevel.Account then
-    for k, v in pairs(Catalog.Defaults) do
+    for k, v in pairs(Catalog.Defaults.Character) do
       if table[k] == nil then
         table[k] = v
       end
     end
-    self.Options = Catalog.Utility:TableCopyRecursive(table, self.Options)
+    self.Options.Character = Catalog.Utility:TableCopyRecursive(table, self.Options.Character)
+  elseif type == GameLib.CodeEnumAddonSaveLevel.Account then
+    for k, v in pairs(Catalog.Defaults.Account) do
+      if table[k] == nil then
+        table[k] = v
+      end
+    end
+    self.Options.Account = Catalog.Utility:TableCopyRecursive(table, self.Options.Account)
   end
 end
 
@@ -84,7 +94,7 @@ function Catalog:OnConfigure()
 end
 
 function Catalog:GetLocale()
-  if self.Options.AutoLocale then
+  if self.Options.Account.AutoLocale then
     local locale = Apollo.GetConsoleVariable("locale.languageId")
     if locale == 1 then
       return self.Locale["en"]
@@ -96,16 +106,16 @@ function Catalog:GetLocale()
       return self.Locale["en"]
     end
   end
-  if self.Locale[self.Options.Locale] then
-    return self.Locale[self.Options.Locale]
+  if self.Locale[self.Options.Account.Locale] then
+    return self.Locale[self.Options.Account.Locale]
   else
     return self.Locale["en"]
   end
 end
 
 function Catalog:Reset()
-  self.Options.Position = self.Defaults.Position
-  self.Options.Scale = self.Defaults.Scale
+  self.Options.Account.Position = self.Defaults.Account.Position
+  self.Options.Account.Scale = self.Defaults.Account.Scale
   self.Browser:Close()
   self.Browser:Open()
 end

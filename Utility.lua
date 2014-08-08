@@ -59,8 +59,8 @@ function Catalog.Utility:FindDropLocations(id)
       end
       if found then
         table.insert(drops, {
-          ["Location"] = location.name[Catalog.Options.Locale],
-          ["Boss"] = boss.name[Catalog.Options.Locale]
+          ["Location"] = location.name[Catalog.Options.Account.Locale],
+          ["Boss"] = boss.name[Catalog.Options.Account.Locale]
         })
       end
     end

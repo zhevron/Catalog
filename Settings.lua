@@ -53,20 +53,20 @@ function Catalog.Settings:Position()
 end
 
 function Catalog.Settings:ApplyCurrent()
-  if Catalog.Options.AutoLocale then
+  if Catalog.Options.Account.AutoLocale then
     self.Window:FindChild("AutoButton"):SetCheck(true)
     self.Window:FindChild("EnglishButton"):SetCheck(false)
     self.Window:FindChild("GermanButton"):SetCheck(false)
     self.Window:FindChild("FrenchButton"):SetCheck(false)
   else
     self.Window:FindChild("AutoButton"):SetCheck(false)
-    self.Window:FindChild("EnglishButton"):SetCheck(Catalog.Options.Locale == "en")
-    self.Window:FindChild("GermanButton"):SetCheck(Catalog.Options.Locale == "de")
-    self.Window:FindChild("FrenchButton"):SetCheck(Catalog.Options.Locale == "fr")
+    self.Window:FindChild("EnglishButton"):SetCheck(Catalog.Options.Account.Locale == "en")
+    self.Window:FindChild("GermanButton"):SetCheck(Catalog.Options.Account.Locale == "de")
+    self.Window:FindChild("FrenchButton"):SetCheck(Catalog.Options.Account.Locale == "fr")
   end
-  self.Window:FindChild("ScaleValueText"):SetText(tostring(Catalog.Options.Scale))
-  self.Window:FindChild("ScaleSlider"):SetValue(Catalog.Options.Scale)
-  self.Window:FindChild("LockedButton"):SetCheck(Catalog.Options.Locked)
+  self.Window:FindChild("ScaleValueText"):SetText(tostring(Catalog.Options.Account.Scale))
+  self.Window:FindChild("ScaleSlider"):SetValue(Catalog.Options.Account.Scale)
+  self.Window:FindChild("LockedButton"):SetCheck(Catalog.Options.Account.Locked)
 end
 
 function Catalog.Settings:OnLocaleListOpen(handler, control)
@@ -82,10 +82,10 @@ function Catalog.Settings:OnChangeLocale(handler, control)
   self.Window:FindChild("LocaleButton"):SetCheck(false)
   self.Window:FindChild("LocaleList"):Show(false)
   if control:GetData() == "auto" then
-    Catalog.Options.AutoLocale = true
+    Catalog.Options.Account.AutoLocale = true
   else
-    Catalog.Options.AutoLocale = false
-    Catalog.Options.Locale = control:GetData()
+    Catalog.Options.Account.AutoLocale = false
+    Catalog.Options.Account.Locale = control:GetData()
   end
   Catalog.Browser:Localize()
   Catalog.Settings:Localize()
@@ -97,13 +97,13 @@ function Catalog.Settings:OnScaleChanged(handler, control, scale)
   self.Window:FindChild("ScaleValueText"):SetText(tostring(scale))
   Catalog.Browser.Window:SetScale(scale)
   self.Window:SetScale(scale)
-  Catalog.Options.Scale = scale
+  Catalog.Options.Account.Scale = scale
   self:Position()
 end
 
 function Catalog.Settings:OnToggleLocked(handler, control)
-  Catalog.Options.Locked = control:IsChecked()
-  if not Catalog.Options.Locked then
+  Catalog.Options.Account.Locked = control:IsChecked()
+  if not Catalog.Options.Account.Locked then
     Catalog.Browser.Window:AddStyle("Moveable")
   else
     Catalog.Browser.Window:RemoveStyle("Moveable")
