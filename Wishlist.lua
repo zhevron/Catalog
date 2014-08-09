@@ -86,6 +86,7 @@ function Catalog.Wishlist:OnGroupLoot()
 end
 
 function Catalog.Wishlist:OnItemLooted(item, count)
+  local locale = Catalog:GetLocale()
   if item ~= nil and count > 0 then
     local info = item:GetDetailedInfo()
     local found = nil
@@ -98,6 +99,7 @@ function Catalog.Wishlist:OnItemLooted(item, count)
       local last = self.RecentAlerts[tostring(found["Id"])]
       if last ~= nil and (last + 300) < os.time() then
         -- local form = Apollo.LoadForm(self.Xml, "ItemDropAlert", nil, self)
+        -- form:FincChild("Header"):SetText(locale["dropWishlist"])
         -- form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
         -- form:FindChild("ItemName"):SetText(item:GetName())
         -- form:FindChild("ItemName"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
