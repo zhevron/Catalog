@@ -103,7 +103,6 @@ function Catalog.Wishlist:OnItemLooted(item, count)
         found = i
       end
     end
-    Print(found["Id"])
     if found ~= nil and found["Alert"] then
       local last = self.RecentAlerts[tostring(found["Id"])]
       if last == nil or (last ~= nil and (last + 300) < os.time()) then
