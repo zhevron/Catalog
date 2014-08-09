@@ -30,5 +30,6 @@
                 <Event Name="ButtonCheck" Function="OnChangeLocale"/>
             </Control>
         </Control>
+        <Control Class="Window" LAnchorPoint="0" LAnchorOffset="170" TAnchorPoint="0" TAnchorOffset="230" RAnchorPoint="1" RAnchorOffset="-160" BAnchorPoint="1" BAnchorOffset="-50" RelativeToClient="1" Font="CRB_InterfaceSmall_O" Text="" BGColor="UI_WindowBGDefault" TextColor="UI_WindowTextDefault" Template="Default" TooltipType="OnCursor" Name="VersionText" TooltipColor="" DT_VCENTER="1" DT_CENTER="1"/>
     </Form>
 </Forms>

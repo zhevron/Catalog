@@ -14,17 +14,19 @@ function Catalog.Settings:OnDocumentReady()
   end
   self.Window = Apollo.LoadForm(self.Xml, "CatalogSettings", nil, self)
   self:Close()
-  self:Localize()
   self.Window:FindChild("AutoButton"):SetData("auto")
   self.Window:FindChild("EnglishButton"):SetData("en")
   self.Window:FindChild("GermanButton"):SetData("de")
   self.Window:FindChild("FrenchButton"):SetData("fr")
+  local version = Catalog.Version.Major.."."..Catalog.Version.Minor.."."..Catalog.Version.Build
+  self.Window:FindChild("VersionText"):SetText(version)
 end
 
 function Catalog.Settings:Open()
   if self.Window and self.Window:IsValid() then
     Catalog.Wishlist:Close()
     self:Position()
+    self:Localize()
     self:ApplyCurrent()
     self.Window:Show(true)
   end
