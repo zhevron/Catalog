@@ -51,6 +51,7 @@ function Catalog.Wishlist:Position()
 end
 
 function Catalog.Wishlist:BuildItemList()
+  local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
   for _, i in pairs(Catalog.Options.Character.Wishlist) do
@@ -65,8 +66,20 @@ function Catalog.Wishlist:BuildItemList()
       tooltip = tooltip..drop["Boss"].."\n"..drop["Location"].."\n\n"
     end
     form:FindChild("InfoButton"):SetTooltip(tooltip)
+    form:FindChild("AlertButton"):SetTooltip(locale["alertWishlist"])
+    form:FindChild("AlertButton"):SetCheck(i["Alert"])
   end
   list:ArrangeChildrenVert()
+end
+
+function Catalog.Wishlist:OnToggleAlert(handler, control)
+  local item = control:GetParent():GetData()
+  local info = item:GetDetailedInfo()
+  for k, v in pairs(Catalog.Options.Character.Wishlist) do
+    if v["Id"] == info.tPrimary.nId then
+      Catalog.Options.Character.Wishlist[k]["Alert"] = control:IsChecked()
+    end
+  end
 end
 
 function Catalog.Wishlist:OnWishlistRemove(handler, control)

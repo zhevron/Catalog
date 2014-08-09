@@ -3,5 +3,6 @@ Catalog.Locale["en"] = {
   ["showHidden"] = "Show hidden",
   ["wishlist"] = "Wishlist",
   ["addWishlist"] = "Add to wishlist",
-  ["dropWishlist"] = "Wishlist item dropped!"
+  ["dropWishlist"] = "Wishlist item dropped!",
+  ["alertWishlist"] = "Click to toggle alert"
 }
