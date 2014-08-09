@@ -87,9 +87,6 @@ end
 
 function Catalog.Wishlist:OnItemLooted(item, count)
   if item ~= nil and count > 0 then
-    if item:GetItemQuality() >= Item.CodeEnumItemQuality.Good then
-      Print("Catalog: Looted "..item:GetName().." x"..count)
-    end
     local info = item:GetDetailedInfo()
     local found = nil
     for _, i in pairs(Catalog.Options.Character.Wishlist) do
