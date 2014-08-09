@@ -113,6 +113,7 @@ function Catalog.Wishlist:OnItemLooted(item, count)
         Catalog.Wishlist.AlertForm:FindChild("ItemName"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
         self.AlertTimer = ApolloTimer.Create(5.0, false, "OnAlertClose", self)
         self.RecentAlerts[tostring(found["Id"])] = os.time()
+        Sound.Play(Sound.PlayUIAlertPopUpMessageReceived)
       end
     end
   end
