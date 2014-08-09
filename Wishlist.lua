@@ -1,6 +1,8 @@
 Catalog.Wishlist = {}
 
 Catalog.Wishlist.RecentAlerts = {}
+Catalog.Wishlist.AlertForm = nil
+Catalog.Wishlist.AlertTimer = nil
 
 function Catalog.Wishlist:Init()
   self.Xml = XmlDoc.CreateFromFile("Forms/Wishlist.xml")
@@ -79,6 +81,12 @@ function Catalog.Wishlist:OnWishlistRemove(handler, control)
   Catalog.Browser:BuildItemList(Catalog.Browser.Window:FindChild("ItemList"):GetData())
 end
 
+function Catalog.Wishlist:OnAlertClose()
+  Catalog.Wishlist.AlertForm:Close()
+  Catalog.Wishlist.AlertForm:Destroy()
+  Catalog.Wishlist.AlertForm = nil
+end
+
 function Catalog.Wishlist:OnGroupLoot()
   for _, roll in pairs(GameLib.GetLootRolls()) do
     self:OnItemLooted(roll.itemDrop, 1)
@@ -87,7 +95,7 @@ end
 
 function Catalog.Wishlist:OnItemLooted(item, count)
   local locale = Catalog:GetLocale()
-  if item ~= nil and count > 0 then
+  if item ~= nil and count > 0 and Catalog.Wishlist.AlertForm == nil then
     local info = item:GetDetailedInfo()
     local found = nil
     for _, i in pairs(Catalog.Options.Character.Wishlist) do
@@ -95,15 +103,16 @@ function Catalog.Wishlist:OnItemLooted(item, count)
         found = i
       end
     end
+    Print(found["Id"])
     if found ~= nil and found["Alert"] then
       local last = self.RecentAlerts[tostring(found["Id"])]
-      if last ~= nil and (last + 300) < os.time() then
-        -- local form = Apollo.LoadForm(self.Xml, "ItemDropAlert", nil, self)
-        -- form:FincChild("Header"):SetText(locale["dropWishlist"])
-        -- form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
-        -- form:FindChild("ItemName"):SetText(item:GetName())
-        -- form:FindChild("ItemName"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
-        -- ApolloTimer.Create(5, false, "Close", form)
+      if last == nil or (last ~= nil and (last + 300) < os.time()) then
+        Catalog.Wishlist.AlertForm = Apollo.LoadForm(self.Xml, "ItemDropAlert", nil, self)
+        Catalog.Wishlist.AlertForm:FindChild("Header"):SetText(locale["dropWishlist"])
+        Catalog.Wishlist.AlertForm:FindChild("ItemIcon"):SetSprite(item:GetIcon())
+        Catalog.Wishlist.AlertForm:FindChild("ItemName"):SetText(item:GetName())
+        Catalog.Wishlist.AlertForm:FindChild("ItemName"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
+        self.AlertTimer = ApolloTimer.Create(5.0, false, "OnAlertClose", self)
         self.RecentAlerts[tostring(found["Id"])] = os.time()
       end
     end
