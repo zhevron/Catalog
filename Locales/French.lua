@@ -1,8 +1,8 @@
 Catalog.Locale["fr"] = {
   ["lock"] = "Verrouiller la fenêtre",
-  ["showHidden"] = "Show hidden",
-  ["wishlist"] = "Wishlist",
-  ["addWishlist"] = "Add to wishlist",
-  ["dropWishlist"] = "Wishlist item dropped!",
-  ["alertWishlist"] = "Click to toggle alert"
+  ["showHidden"] = "Montrer caché",
+  ["wishlist"] = "Liste de souhaits",
+  ["addWishlist"] = "Ajouter à la liste de souhaits",
+  ["dropWishlist"] = "Objet de la liste de souhaits obtenu!",
+  ["alertWishlist"] = "Cliquer pour basculer l'alerte"
 }
