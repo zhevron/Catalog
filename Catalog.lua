@@ -3,9 +3,9 @@ require "GameLib"
 Catalog = {}
 
 Catalog.Version = {
-  ["Major"] = 0,
+  ["Major"] = 1,
   ["Minor"] = 0,
-  ["Build"] = 7
+  ["Build"] = 0
 }
 
 Catalog.Defaults = {
