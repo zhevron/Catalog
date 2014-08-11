@@ -5,7 +5,7 @@ Catalog = {}
 Catalog.Version = {
   ["Major"] = 1,
   ["Minor"] = 0,
-  ["Build"] = 0
+  ["Build"] = 3
 }
 
 Catalog.Defaults = {
