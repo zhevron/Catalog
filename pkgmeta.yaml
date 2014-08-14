@@ -1,0 +1,9 @@
+package-as: Catalog-@project-version@
+enable-nolib-creation: no
+
+ignore:
+  - Data
+  - Scripts
+  - README.md
+
+license-output: LICENSE.txt

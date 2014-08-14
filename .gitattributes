@@ -7,3 +7,4 @@ Scripts export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
 README.md export-ignore
+pkgmeta.yaml export-ignore
