@@ -1,3 +1,4 @@
+local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
 -- [Adventure] Crimelords of Whitevale
 Catalog.Database["CrimelordsOfWhitevale"] = {
   ["name"] = {

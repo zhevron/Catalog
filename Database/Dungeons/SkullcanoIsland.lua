@@ -1,3 +1,4 @@
+local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
 -- [Dungeon] Skullcano Island
 Catalog.Database["SkullcanoIsland"] = {
   ["name"] = {

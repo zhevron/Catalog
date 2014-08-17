@@ -1,14 +1,11 @@
-if not Catalog then
-  Catalog = {}
-end
+local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Utility = Catalog:NewModule("Utility")
 
-Catalog.Utility = {}
-
-function Catalog.Utility:Capitalize(str)
+function Utility:Capitalize(str)
   return string.gsub(tostring(str), "^%l", string.upper)
 end
 
-function Catalog.Utility:TableSortPairs(tbl, key)
+function Utility:TableSortPairs(tbl, key)
   local keys = {}
   for _, v in pairs(tbl) do
     if v[key] ~= nil then
@@ -33,7 +30,7 @@ function Catalog.Utility:TableSortPairs(tbl, key)
   return iterator
 end
 
-function Catalog.Utility:TableCopyRecursive(source, destination)
+function Utility:TableCopyRecursive(source, destination)
   destination = destination or {}
   for k, v in pairs(source) do
     if type(k) ~= "table" then
@@ -47,7 +44,7 @@ function Catalog.Utility:TableCopyRecursive(source, destination)
   return destination
 end
 
-function Catalog.Utility:FindDropLocations(id)
+function Utility:FindDropLocations(id)
   local drops = {}
   for _, location in pairs(Catalog.Database) do
     for _, boss in pairs(location.bosses) do

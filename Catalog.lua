@@ -1,6 +1,4 @@
-require "GameLib"
-
-Catalog = {}
+local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:NewAddon("Catalog", true)
 
 Catalog.Version = {
   ["Major"] = 1,
@@ -30,27 +28,17 @@ Catalog.Locale = {}
 Catalog.Database = {}
 Catalog.Options = Catalog.Defaults
 
-function Catalog:new(o)
-  o = o or {}
-  setmetatable(o, self)
-  self.__index = self
-  return o
-end
-
-function Catalog:Init()
-  Apollo.RegisterAddon(self, true, "Catalog")
-end
-
-function Catalog:OnLoad()
-  self.Browser:Init()
-  self.Settings:Init()
-  self.Wishlist:Init()
-  Apollo.RegisterSlashCommand("catalog", "Open", self.Browser)
-  Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
+function Catalog:OnInitialize()
+  local GeminiLogging = Apollo.GetPackage("Gemini:Logging-1.2").tPackage
+  self.Log = GeminiLogging:GetLogger({
+    level = GeminiLogging.INFO,
+    pattern = "[%d %l %c:%n] %m",
+    appender = "GeminiConsole"
+  })
   Apollo.RegisterSlashCommand("catalogreset", "Reset", self)
-  Apollo.RegisterEventHandler("Catalog_ToggleBrowser", "Toggle", self.Browser)
-  Apollo.RegisterEventHandler("LootRollUpdate", "OnGroupLoot", self.Wishlist)
-  Apollo.RegisterEventHandler("LootedItem", "OnItemLooted", self.Wishlist)
+end
+
+function Catalog:OnEnable()
   Apollo.RegisterEventHandler("InterfaceMenuListHasLoaded", "OnInterfaceMenuListHasLoaded", self)
 end
 
@@ -63,34 +51,37 @@ function Catalog:OnInterfaceMenuListHasLoaded()
 end
 
 function Catalog:OnSave(type)
+  local Utility = self:GetModule("Utility")
   if type == GameLib.CodeEnumAddonSaveLevel.Character then
-    return Catalog.Utility:TableCopyRecursive(self.Options.Character)
+    return Utility:TableCopyRecursive(self.Options.Character)
   elseif type == GameLib.CodeEnumAddonSaveLevel.Account then
-    return Catalog.Utility:TableCopyRecursive(self.Options.Account)
+    return Utility:TableCopyRecursive(self.Options.Account)
   end
   return nil
 end
 
 function Catalog:OnRestore(type, table)
+  local Utility = self:GetModule("Utility")
   if type == GameLib.CodeEnumAddonSaveLevel.Character then
     for k, v in pairs(Catalog.Defaults.Character) do
       if table[k] == nil then
         table[k] = v
       end
     end
-    self.Options.Character = Catalog.Utility:TableCopyRecursive(table, self.Options.Character)
+    self.Options.Character = Utility:TableCopyRecursive(table, self.Options.Character)
   elseif type == GameLib.CodeEnumAddonSaveLevel.Account then
     for k, v in pairs(Catalog.Defaults.Account) do
       if table[k] == nil then
         table[k] = v
       end
     end
-    self.Options.Account = Catalog.Utility:TableCopyRecursive(table, self.Options.Account)
+    self.Options.Account = Utility:TableCopyRecursive(table, self.Options.Account)
   end
 end
 
 function Catalog:OnConfigure()
-  self.Browser:Open()
+  local Browser = self:GetModule("Browser")
+  Browser:Toggle()
 end
 
 function Catalog:GetLocale()
@@ -114,11 +105,9 @@ function Catalog:GetLocale()
 end
 
 function Catalog:Reset()
+  local Browser = self:GetModule("Browser")
   self.Options.Account.Position = self.Defaults.Account.Position
   self.Options.Account.Scale = self.Defaults.Account.Scale
-  self.Browser:Close()
-  self.Browser:Open()
+  Browser:Close()
+  Browser:Open()
 end
-
-local CatalogInst = Catalog:new()
-CatalogInst:Init()

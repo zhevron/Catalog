@@ -1,6 +1,17 @@
 package-as: Catalog-@project-version@
 enable-nolib-creation: no
 
+externals:
+  Libs/GeminiAddon:
+    url: https://github.com/wildstarnasa/GeminiAddon.git
+    tag: 1.1.5
+  Libs/GeminiLocale:
+    url: https://github.com/wildstarnasa/GeminiLocale.git
+    tag: latest
+  Libs/GeminiLogging:
+    url: https://github.com/wildstarnasa/GeminiLogging.git
+    tag: latest
+
 ignore:
   - Data
   - Scripts

@@ -1,3 +1,4 @@
+local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
 -- [Adventure] The Malgrave Trail
 Catalog.Database["MalgraveTrail"] = {
   ["name"] = {

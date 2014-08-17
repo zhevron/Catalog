@@ -1,19 +1,17 @@
-require "Window"
+local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Settings = Catalog:NewModule("Settings")
 
-Catalog.Settings = {}
-
-function Catalog.Settings:Init()
+function Settings:OnInitialize()
   self.Xml = XmlDoc.CreateFromFile("Forms/Settings.xml")
-  self.Xml:RegisterCallback("OnDocumentReady", self)
-end
-
-function Catalog.Settings:OnDocumentReady()
   if self.Xml == nil then
     Apollo.AddAddonErrorText(Catalog, "Could not load the Catalog settings window")
     return
   end
+  self.Xml:RegisterCallback("OnDocumentReady", self)
+end
+
+function Settings:OnDocumentReady()
   self.Window = Apollo.LoadForm(self.Xml, "CatalogSettings", nil, self)
-  self:Close()
   self.Window:FindChild("AutoButton"):SetData("auto")
   self.Window:FindChild("EnglishButton"):SetData("en")
   self.Window:FindChild("GermanButton"):SetData("de")
@@ -22,9 +20,10 @@ function Catalog.Settings:OnDocumentReady()
   self.Window:FindChild("VersionText"):SetText(version)
 end
 
-function Catalog.Settings:Open()
+function Settings:Open()
+  local Wishlist = Catalog:GetModule("Wishlist")
   if self.Window and self.Window:IsValid() then
-    Catalog.Wishlist:Close()
+    Wishlist:Close()
     self:Position()
     self:Localize()
     self:ApplyCurrent()
@@ -32,29 +31,31 @@ function Catalog.Settings:Open()
   end
 end
 
-function Catalog.Settings:Close()
+function Settings:Close()
+  local Browser = Catalog:GetModule("Browser")
   if self.Window and self.Window:IsValid() then
-    Catalog.Browser.Window:FindChild("SettingsButton"):SetCheck(false)
+    Browser.Window:FindChild("SettingsButton"):SetCheck(false)
     self.Window:Show(false)
   end
 end
 
-function Catalog.Settings:Localize()
+function Settings:Localize()
   local locale = Catalog:GetLocale()
   self.Window:FindChild("LockedButton"):SetText(locale["lock"])
 end
 
-function Catalog.Settings:Position()
-  local _, top, right = Catalog.Browser.Window:GetAnchorOffsets()
-  local offset = (right - 15) * (1 - Catalog.Browser.Window:GetScale())
+function Settings:Position()
+  local Browser = Catalog:GetModule("Browser")
+  local _, top, right = Browser.Window:GetAnchorOffsets()
+  local offset = (right - 15) * (1 - Browser.Window:GetScale())
   local form = Apollo.LoadForm(self.Xml, "CatalogSettings", nil, self)
   local _, _, width, height = form:GetAnchorOffsets()
   form:Destroy()
   self.Window:SetAnchorOffsets(right - 15 - offset, top + 5, right - 15 -offset + width, top + 5 + height)
-  self.Window:SetScale(Catalog.Browser.Window:GetScale())
+  self.Window:SetScale(Browser.Window:GetScale())
 end
 
-function Catalog.Settings:ApplyCurrent()
+function Settings:ApplyCurrent()
   if Catalog.Options.Account.AutoLocale then
     self.Window:FindChild("AutoButton"):SetCheck(true)
     self.Window:FindChild("EnglishButton"):SetCheck(false)
@@ -71,15 +72,17 @@ function Catalog.Settings:ApplyCurrent()
   self.Window:FindChild("LockedButton"):SetCheck(Catalog.Options.Account.Locked)
 end
 
-function Catalog.Settings:OnLocaleListOpen(handler, control)
+function Settings:OnLocaleListOpen(handler, control)
   self.Window:FindChild("LocaleList"):Show(true)
 end
 
-function Catalog.Settings:OnLocaleListClose(handler, control)
+function Settings:OnLocaleListClose(handler, control)
   self.Window:FindChild("LocaleList"):Show(false)
 end
 
-function Catalog.Settings:OnChangeLocale(handler, control)
+function Settings:OnChangeLocale(handler, control)
+  local Browser = Catalog:GetModule("Browser")
+  local Wishlist = Catalog:GetModule("Wishlist")
   self.Window:FindChild("LocaleButton"):SetText(control:GetText())
   self.Window:FindChild("LocaleButton"):SetCheck(false)
   self.Window:FindChild("LocaleList"):Show(false)
@@ -89,25 +92,27 @@ function Catalog.Settings:OnChangeLocale(handler, control)
     Catalog.Options.Account.AutoLocale = false
     Catalog.Options.Account.Locale = control:GetData()
   end
-  Catalog.Browser:Localize()
-  Catalog.Settings:Localize()
-  Catalog.Wishlist:Localize()
+  self:Localize()
+  Browser:Localize()
+  Wishlist:Localize()
 end
 
-function Catalog.Settings:OnScaleChanged(handler, control, scale)
+function Settings:OnScaleChanged(handler, control, scale)
+  local Browser = Catalog:GetModule("Browser")
   scale = math.floor(scale * math.pow(10, 1) + 0.5) / math.pow(10, 1)
   self.Window:FindChild("ScaleValueText"):SetText(tostring(scale))
-  Catalog.Browser.Window:SetScale(scale)
   self.Window:SetScale(scale)
+  Browser.Window:SetScale(scale)
   Catalog.Options.Account.Scale = scale
   self:Position()
 end
 
-function Catalog.Settings:OnToggleLocked(handler, control)
+function Settings:OnToggleLocked(handler, control)
+  local Browser = Catalog:GetModule("Browser")
   Catalog.Options.Account.Locked = control:IsChecked()
   if not Catalog.Options.Account.Locked then
-    Catalog.Browser.Window:AddStyle("Moveable")
+    Browser.Window:AddStyle("Moveable")
   else
-    Catalog.Browser.Window:RemoveStyle("Moveable")
+    Browser.Window:RemoveStyle("Moveable")
   end
 end

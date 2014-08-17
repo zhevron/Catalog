@@ -1,10 +1,7 @@
-require "GameLib"
-require "Item"
-require "Window"
+local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Browser = Catalog:NewModule("Browser")
 
-Catalog.Browser = {}
-
-Catalog.Browser.ItemColor = {
+Browser.ItemColor = {
   [Item.CodeEnumItemQuality.Inferior] = ApolloColor.new("ItemQuality_Inferior"),
   [Item.CodeEnumItemQuality.Average] = ApolloColor.new("ItemQuality_Average"),
   [Item.CodeEnumItemQuality.Good] = ApolloColor.new("ItemQuality_Good"),
@@ -14,25 +11,30 @@ Catalog.Browser.ItemColor = {
   [Item.CodeEnumItemQuality.Artifact] = ApolloColor.new("ItemQuality_Artifact")
 }
 
-function Catalog.Browser:Init()
+function Browser:OnInitialize()
   self.Xml = XmlDoc.CreateFromFile("Forms/Browser.xml")
-  self.Xml:RegisterCallback("OnDocumentReady", self)
-end
-
-function Catalog.Browser:OnDocumentReady()
   if self.Xml == nil then
     Apollo.AddAddonErrorText(Catalog, "Could not load the Catalog browser")
     return
   end
+  self.Xml:RegisterCallback("OnDocumentReady", self)
+  Apollo.RegisterSlashCommand("catalog", "Open", self.Browser)
+  Apollo.RegisterSlashCommand("loot", "Open", self.Browser)
+end
+
+function Browser:OnEnable()
+  Apollo.RegisterEventHandler("Catalog_ToggleBrowser", "Toggle", self)
+end
+
+function Browser:OnDocumentReady()
   self.Window = Apollo.LoadForm(self.Xml, "CatalogBrowser", nil, self)
   self.Window:FindChild("AdventureButton"):SetData("adventure")
   self.Window:FindChild("DungeonButton"):SetData("dungeon")
   self.Window:FindChild("RaidButton"):SetData("raid")
   self.Window:FindChild("NormalButton"):SetCheck(true)
-  self:Close()
 end
 
-function Catalog.Browser:Open()
+function Browser:Open()
   if self.Window and self.Window:IsValid() then
     local left = Catalog.Options.Account.Position.X
     local top = Catalog.Options.Account.Position.Y
@@ -50,15 +52,17 @@ function Catalog.Browser:Open()
   end
 end
 
-function Catalog.Browser:Close()
+function Browser:Close()
+  local Settings = Catalog:GetModule("Settings")
+  local Wishlist = Catalog:GetModule("Wishlist")
   if self.Window and self.Window:IsValid() then
-    Catalog.Settings:Close()
-    Catalog.Wishlist:Close()
+    Settings:Close()
+    Wishlist:Close()
     self.Window:Show(false)
   end
 end
 
-function Catalog.Browser:Toggle()
+function Browser:Toggle()
   if self.Window and self.Window:IsValid() then
     if self.Window:IsShown() then
       self:Close()
@@ -68,7 +72,7 @@ function Catalog.Browser:Toggle()
   end
 end
 
-function Catalog.Browser:Localize()
+function Browser:Localize()
   local locale = Catalog:GetLocale()
   self.Window:FindChild("ShowHiddenText"):SetText(locale["showHidden"])
   self.Window:FindChild("OpenWishlistButton"):SetText(locale["wishlist"])
@@ -77,18 +81,19 @@ function Catalog.Browser:Localize()
   self:BuildItemList(nil)
 end
 
-function Catalog.Browser:BuildSubcategoryList()
+function Browser:BuildSubcategoryList()
+  local Utility = Catalog:GetModule("Utility")
   local list = self.Window:FindChild("SubcategoryList")
   list:DestroyChildren()
   local entries = {}
   for _, entry in pairs(Catalog.Database) do
     if entry.type == self.Window:FindChild("CategoryButton"):GetData() then
-      local tbl = Catalog.Utility:TableCopyRecursive(entry)
+      local tbl = Utility:TableCopyRecursive(entry)
       tbl.name = entry.name[Catalog.Options.Account.Locale]
       table.insert(entries, tbl)
     end
   end
-  for name, entry in Catalog.Utility:TableSortPairs(entries, "name") do
+  for name, entry in Utility:TableSortPairs(entries, "name") do
     local form = Apollo.LoadForm(self.Xml, "Subcategory", list, self)
     form:SetText(name)
     form:SetData(entry)
@@ -97,7 +102,7 @@ function Catalog.Browser:BuildSubcategoryList()
   self:SizeToFit(list, 3)
 end
 
-function Catalog.Browser:BuildBossList(subcategory)
+function Browser:BuildBossList(subcategory)
   local list = self.Window:FindChild("BossList")
   list:DestroyChildren()
   if subcategory == nil then
@@ -111,7 +116,7 @@ function Catalog.Browser:BuildBossList(subcategory)
   list:ArrangeChildrenVert()
 end
 
-function Catalog.Browser:BuildItemList(boss)
+function Browser:BuildItemList(boss)
   local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
@@ -189,7 +194,7 @@ function Catalog.Browser:BuildItemList(boss)
   list:ArrangeChildrenVert()
 end
 
-function Catalog.Browser:SizeToFit(list, offset)
+function Browser:SizeToFit(list, offset)
   offset = offset or 0
   if #list:GetChildren() > 0 then
     local height = 0
@@ -202,19 +207,19 @@ function Catalog.Browser:SizeToFit(list, offset)
   end
 end
 
-function Catalog.Browser:Expand(list, sublist)
+function Browser:Expand(list, sublist)
   local left, top, right, bottom = list:GetAnchorOffsets()
   local _, _, _, height = sublist:GetAnchorOffsets()
   list:SetAnchorOffsets(left, top, right, bottom + height)
 end
 
-function Catalog.Browser:Collapse(list, sublist)
+function Browser:Collapse(list, sublist)
   local left, top, right, bottom = list:GetAnchorOffsets()
   local _, _, _, height = sublist:GetAnchorOffsets()
   list:SetAnchorOffsets(left, top, right, bottom - height)
 end
 
-function Catalog.Browser:OnToggleItemType(handler, control)
+function Browser:OnToggleItemType(handler, control)
   local status = not control:GetParent():FindChild("StatusIcon"):GetData()
   local type = tostring(control:GetParent():FindChild("ItemTypeButton"):GetData())
   control:GetParent():FindChild("StatusIcon"):SetData(status)
@@ -230,15 +235,18 @@ function Catalog.Browser:OnToggleItemType(handler, control)
   end
 end
 
-function Catalog.Browser:OnWishlistCheck(handler, control)
-  Catalog.Wishlist:Open()
+function Browser:OnWishlistCheck(handler, control)
+  local Wishlist = Catalog:GetModule("Wishlist")
+  Wishlist:Open()
 end
 
-function Catalog.Browser:OnWishlistUncheck(handler, control)
-  Catalog.Wishlist:Close()
+function Browser:OnWishlistUncheck(handler, control)
+  local Wishlist = Catalog:GetModule("Wishlist")
+  Wishlist:Close()
 end
 
-function Catalog.Browser:OnWishlistAdd(handler, control)
+function Browser:OnWishlistAdd(handler, control)
+  local Wishlist = Catalog:GetModule("Wishlist")
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
   table.insert(Catalog.Options.Character.Wishlist, {
@@ -250,7 +258,8 @@ function Catalog.Browser:OnWishlistAdd(handler, control)
   end
 end
 
-function Catalog.Browser:OnWishlistRemove(handler, control)
+function Browser:OnWishlistRemove(handler, control)
+  local Wishlist = Catalog:GetModule("Wishlist")
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
   for k, i in pairs(Catalog.Options.Character.Wishlist) do
@@ -258,20 +267,20 @@ function Catalog.Browser:OnWishlistRemove(handler, control)
       table.remove(Catalog.Options.Character.Wishlist, k)
     end
   end
-  if Catalog.Wishlist.Window:IsShown() then
-    Catalog.Wishlist:BuildItemList()
+  if Wishlist.Window:IsShown() then
+    Wishlist:BuildItemList()
   end
 end
 
-function Catalog.Browser:OnCategoryListOpen(handler, control)
+function Browser:OnCategoryListOpen(handler, control)
   self.Window:FindChild("CategoryList"):Show(true)
 end
 
-function Catalog.Browser:OnCategoryListClose(handler, control)
+function Browser:OnCategoryListClose(handler, control)
   self.Window:FindChild("CategoryList"):Show(false)
 end
 
-function Catalog.Browser:OnCategoryCheck(handler, control)
+function Browser:OnCategoryCheck(handler, control)
   self.Window:FindChild("CategoryButton"):SetText(control:GetText())
   self.Window:FindChild("CategoryButton"):SetData(control:GetData())
   self.Window:FindChild("CategoryButton"):SetCheck(false)
@@ -285,15 +294,15 @@ function Catalog.Browser:OnCategoryCheck(handler, control)
   self:BuildItemList(nil)
 end
 
-function Catalog.Browser:OnSubcategoryListOpen(handler, control)
+function Browser:OnSubcategoryListOpen(handler, control)
   self.Window:FindChild("SubcategoryList"):Show(true)
 end
 
-function Catalog.Browser:OnSubcategoryListClose(handler, control)
+function Browser:OnSubcategoryListClose(handler, control)
   self.Window:FindChild("SubcategoryList"):Show(false)
 end
 
-function Catalog.Browser:OnSubcategoryCheck(handler, control)
+function Browser:OnSubcategoryCheck(handler, control)
   self.Window:FindChild("SubcategoryButton"):SetText(control:GetText())
   self.Window:FindChild("SubcategoryButton"):SetData(control:GetData())
   self.Window:FindChild("SubcategoryButton"):SetCheck(false)
@@ -304,18 +313,18 @@ function Catalog.Browser:OnSubcategoryCheck(handler, control)
   self:BuildItemList(nil)
 end
 
-function Catalog.Browser:OnModeChange(handler, control)
+function Browser:OnModeChange(handler, control)
   self:BuildItemList(self.Window:FindChild("ItemList"):GetData())
 end
 
-function Catalog.Browser:OnBossSelect(handler, control)
+function Browser:OnBossSelect(handler, control)
   local boss = control:GetParent():GetData()
   self:BuildItemList(boss)
   self.Window:FindChild("ModeText"):Show(boss.veteran)
   self.Window:FindChild("ModeButton"):Show(boss.veteran)
 end
 
-function Catalog.Browser:OnMouseButtonDown(handler, control, button)
+function Browser:OnMouseButtonDown(handler, control, button)
   if button ~= GameLib.CodeEnumInputMouse.Right then
     return
   end
@@ -331,27 +340,29 @@ function Catalog.Browser:OnMouseButtonDown(handler, control, button)
   end
 end
 
-function Catalog.Browser:OnToggleHidden(handler, control)
+function Browser:OnToggleHidden(handler, control)
   self:BuildItemList(self.Window:FindChild("ItemList"):GetData())
   Catalog.Options.Character.ShowHidden = control:IsChecked()
 end
 
-function Catalog.Browser:OnToggleSettings(handler, control)
+function Browser:OnToggleSettings(handler, control)
+  local Settings = Catalog:GetModule("Settings")
   if control:IsChecked() then
-    Catalog.Settings:Open()
+    Settings:Open()
   else
-    Catalog.Settings:Close()
+    Settings:Close()
   end
 end
 
-function Catalog.Browser:OnWindowMove(handler, control)
+function Browser:OnWindowMove(handler, control)
+  local Settings = Catalog:GetModule("Settings")
   local left, top = self.Window:GetAnchorOffsets()
   Catalog.Options.Account.Position.X = left
   Catalog.Options.Account.Position.Y = top
-  Catalog.Settings:Position()
+  Settings:Position()
 end
 
-function Catalog.Browser:OnGenerateTooltip(handler, control)
+function Browser:OnGenerateTooltip(handler, control)
   local item = control:GetParent():GetData()
   local equipped = item:GetEquippedItemForItemType()
   Tooltip.GetItemTooltipForm(self, control, item, {

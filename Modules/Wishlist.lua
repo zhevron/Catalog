@@ -1,26 +1,32 @@
-Catalog.Wishlist = {}
+local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Wishlist = Catalog:NewModule("Wishlist")
 
-Catalog.Wishlist.RecentAlerts = {}
-Catalog.Wishlist.AlertForm = nil
-Catalog.Wishlist.AlertTimer = nil
+Wishlist.RecentAlerts = {}
+Wishlist.AlertForm = nil
+Wishlist.AlertTimer = nil
 
-function Catalog.Wishlist:Init()
+function Wishlist:OnInitialize()
   self.Xml = XmlDoc.CreateFromFile("Forms/Wishlist.xml")
-  self.Xml:RegisterCallback("OnDocumentReady", self)
-end
-
-function Catalog.Wishlist:OnDocumentReady()
   if self.Xml == nil then
     Apollo.AddAddonErrorText(Catalog, "Could not load the Catalog wishlist window")
     return
   end
-  self.Window = Apollo.LoadForm(self.Xml, "CatalogWishlist", nil, self)
-  self:Close()
+  self.Xml:RegisterCallback("OnDocumentReady", self)
 end
 
-function Catalog.Wishlist:Open()
+function Wishlist:OnEnable()
+  Apollo.RegisterEventHandler("LootRollUpdate", "OnGroupLoot", self)
+  Apollo.RegisterEventHandler("LootedItem", "OnItemLooted", self)
+end
+
+function Wishlist:OnDocumentReady()
+  self.Window = Apollo.LoadForm(self.Xml, "CatalogWishlist", nil, self)
+end
+
+function Wishlist:Open()
+  local Settings = Catalog:GetModule("Settings")
   if self.Window and self.Window:IsValid() then
-    Catalog.Settings:Close()
+    Settings:Close()
     self:Position()
     self:Localize()
     self:BuildItemList()
@@ -28,29 +34,33 @@ function Catalog.Wishlist:Open()
   end
 end
 
-function Catalog.Wishlist:Close()
+function Wishlist:Close()
+  local Browser = Catalog:GetModule("Browser")
   if self.Window and self.Window:IsValid() then
-    Catalog.Browser.Window:FindChild("OpenWishlistButton"):SetCheck(false)
+    Browser.Window:FindChild("OpenWishlistButton"):SetCheck(false)
     self.Window:Show(false)
   end
 end
 
-function Catalog.Wishlist:Localize()
+function Wishlist:Localize()
   local locale = Catalog:GetLocale()
   self.Window:FindChild("Header"):SetText(locale["wishlist"])
 end
 
-function Catalog.Wishlist:Position()
-  local _, top, right = Catalog.Browser.Window:GetAnchorOffsets()
-  local offset = (right - 15) * (1 - Catalog.Browser.Window:GetScale())
+function Wishlist:Position()
+  local Browser = Catalog:GetModule("Browser")
+  local _, top, right = Browser.Window:GetAnchorOffsets()
+  local offset = (right - 15) * (1 - Browser.Window:GetScale())
   local form = Apollo.LoadForm(self.Xml, "CatalogWishlist", nil, self)
   local _, _, width, height = form:GetAnchorOffsets()
   form:Destroy()
   self.Window:SetAnchorOffsets(right - 15 - offset, top, right - 15 - offset + width, top + height)
-  self.Window:SetScale(Catalog.Browser.Window:GetScale())
+  self.Window:SetScale(Browser.Window:GetScale())
 end
 
-function Catalog.Wishlist:BuildItemList()
+function Wishlist:BuildItemList()
+  local Browser = Catalog:GetModule("Browser")
+  local Utility = Catalog:GetModule("Utility")
   local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
@@ -60,9 +70,9 @@ function Catalog.Wishlist:BuildItemList()
     form:SetData(item)
     form:FindChild("ItemIcon"):SetSprite(item:GetIcon())
     form:FindChild("ItemText"):SetText(item:GetName())
-    form:FindChild("ItemText"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
+    form:FindChild("ItemText"):SetTextColor(Browser.ItemColor[item:GetItemQuality()])
     local tooltip = ""
-    for _, drop in pairs(Catalog.Utility:FindDropLocations(i["Id"])) do
+    for _, drop in pairs(Utility:FindDropLocations(i["Id"])) do
       tooltip = tooltip..drop["Boss"].."\n"..drop["Location"].."\n\n"
     end
     form:FindChild("InfoButton"):SetTooltip(tooltip)
@@ -72,7 +82,7 @@ function Catalog.Wishlist:BuildItemList()
   list:ArrangeChildrenVert()
 end
 
-function Catalog.Wishlist:OnToggleAlert(handler, control)
+function Wishlist:OnToggleAlert(handler, control)
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
   for k, v in pairs(Catalog.Options.Character.Wishlist) do
@@ -82,7 +92,8 @@ function Catalog.Wishlist:OnToggleAlert(handler, control)
   end
 end
 
-function Catalog.Wishlist:OnWishlistRemove(handler, control)
+function Wishlist:OnWishlistRemove(handler, control)
+  local Browser = Catalog:GetModule("Browser")
   local item = control:GetParent():GetData()
   local info = item:GetDetailedInfo()
   for k, i in ipairs(Catalog.Options.Character.Wishlist) do
@@ -91,24 +102,25 @@ function Catalog.Wishlist:OnWishlistRemove(handler, control)
     end
   end
   self:BuildItemList()
-  Catalog.Browser:BuildItemList(Catalog.Browser.Window:FindChild("ItemList"):GetData())
+  Browser:BuildItemList(Browser.Window:FindChild("ItemList"):GetData())
 end
 
-function Catalog.Wishlist:OnAlertClose()
-  Catalog.Wishlist.AlertForm:Close()
-  Catalog.Wishlist.AlertForm:Destroy()
-  Catalog.Wishlist.AlertForm = nil
+function Wishlist:OnAlertClose()
+  Wishlist.AlertForm:Close()
+  Wishlist.AlertForm:Destroy()
+  Wishlist.AlertForm = nil
 end
 
-function Catalog.Wishlist:OnGroupLoot()
+function Wishlist:OnGroupLoot()
   for _, roll in pairs(GameLib.GetLootRolls()) do
     self:OnItemLooted(roll.itemDrop, 1)
   end
 end
 
-function Catalog.Wishlist:OnItemLooted(item, count)
+function Wishlist:OnItemLooted(item, count)
+  local Browser = Catalog:GetModule("Browser")
   local locale = Catalog:GetLocale()
-  if item ~= nil and count > 0 and Catalog.Wishlist.AlertForm == nil then
+  if item ~= nil and count > 0 and Wishlist.AlertForm == nil then
     local info = item:GetDetailedInfo()
     local found = nil
     for _, i in pairs(Catalog.Options.Character.Wishlist) do
@@ -119,11 +131,11 @@ function Catalog.Wishlist:OnItemLooted(item, count)
     if found ~= nil and found["Alert"] then
       local last = self.RecentAlerts[tostring(found["Id"])]
       if last == nil or (last ~= nil and (last + 300) < os.time()) then
-        Catalog.Wishlist.AlertForm = Apollo.LoadForm(self.Xml, "ItemDropAlert", nil, self)
-        Catalog.Wishlist.AlertForm:FindChild("Header"):SetText(locale["dropWishlist"])
-        Catalog.Wishlist.AlertForm:FindChild("ItemIcon"):SetSprite(item:GetIcon())
-        Catalog.Wishlist.AlertForm:FindChild("ItemName"):SetText(item:GetName())
-        Catalog.Wishlist.AlertForm:FindChild("ItemName"):SetTextColor(Catalog.Browser.ItemColor[item:GetItemQuality()])
+        Wishlist.AlertForm = Apollo.LoadForm(self.Xml, "ItemDropAlert", nil, self)
+        Wishlist.AlertForm:FindChild("Header"):SetText(locale["dropWishlist"])
+        Wishlist.AlertForm:FindChild("ItemIcon"):SetSprite(item:GetIcon())
+        Wishlist.AlertForm:FindChild("ItemName"):SetText(item:GetName())
+        Wishlist.AlertForm:FindChild("ItemName"):SetTextColor(Browser.ItemColor[item:GetItemQuality()])
         self.AlertTimer = ApolloTimer.Create(5.0, false, "OnAlertClose", self)
         self.RecentAlerts[tostring(found["Id"])] = os.time()
         Sound.Play(Sound.PlayUIAlertPopUpMessageReceived)
@@ -132,6 +144,7 @@ function Catalog.Wishlist:OnItemLooted(item, count)
   end
 end
 
-function Catalog.Wishlist:OnGenerateTooltip(handler, control)
-  Catalog.Browser:OnGenerateTooltip(handler, control)
+function Wishlist:OnGenerateTooltip(handler, control)
+  local Browser = Catalog:GetModule("Browser")
+  Browser:OnGenerateTooltip(handler, control)
 end
