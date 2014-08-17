@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Dungeon] Sanctuary of the Swordmaiden
 Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
   ["name"] = {
-    ["fr"] = "Sanctuaire de la Valkyrie",
-    ["de"] = "Zuflucht der Schwertmaid",
-    ["en"] = "Sanctuary of the Swordmaiden",
+    ["frFR"] = "Sanctuaire de la Valkyrie",
+    ["deDE"] = "Zuflucht der Schwertmaid",
+    ["enUS"] = "Sanctuary of the Swordmaiden",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Sosie Shallaos",
-        ["de"] = "Doppelgängerin Shallaos",
-        ["en"] = "Deadringer Shallaos",
+        ["frFR"] = "Sosie Shallaos",
+        ["deDE"] = "Doppelgängerin Shallaos",
+        ["enUS"] = "Deadringer Shallaos",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -79,9 +79,9 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Rayna Languenoire",
-        ["de"] = "Rayna Düsterbotin",
-        ["en"] = "Rayna Darkspeaker",
+        ["frFR"] = "Rayna Languenoire",
+        ["deDE"] = "Rayna Düsterbotin",
+        ["enUS"] = "Rayna Darkspeaker",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -139,9 +139,9 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Ondu Tisse-âme",
-        ["de"] = "Ondu Lebensflechter",
-        ["en"] = "Ondu Lifeweaver",
+        ["frFR"] = "Ondu Tisse-âme",
+        ["deDE"] = "Ondu Lebensflechter",
+        ["enUS"] = "Ondu Lifeweaver",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -190,9 +190,9 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Seigneur de Putrebois Skash",
-        ["de"] = "Moderwald-Overlord Skash",
-        ["en"] = "Moldwood Overlord Skash",
+        ["frFR"] = "Seigneur de Putrebois Skash",
+        ["deDE"] = "Moderwald-Overlord Skash",
+        ["enUS"] = "Moldwood Overlord Skash",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -254,9 +254,9 @@ Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Mère spirituelle Sélène la Corrompue",
-        ["de"] = "Seelenmutter Selene",
-        ["en"] = "Spiritmother Selene the Corrupted",
+        ["frFR"] = "Mère spirituelle Sélène la Corrompue",
+        ["deDE"] = "Seelenmutter Selene",
+        ["enUS"] = "Spiritmother Selene the Corrupted",
       },
       ["veteran"] = true,
       ["drops"] = {

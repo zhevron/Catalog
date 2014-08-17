@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Dungeon] Skullcano Island
 Catalog.Database["SkullcanoIsland"] = {
   ["name"] = {
-    ["fr"] = "Volcrâno",
-    ["de"] = "Feuerschädel",
-    ["en"] = "Skullcano Island",
+    ["frFR"] = "Volcrâno",
+    ["deDE"] = "Feuerschädel",
+    ["enUS"] = "Skullcano Island",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Chamiam Tugga",
-        ["de"] = "Suppenschamane Tugga",
-        ["en"] = "Stew-Shaman Tugga",
+        ["frFR"] = "Chamiam Tugga",
+        ["deDE"] = "Suppenschamane Tugga",
+        ["enUS"] = "Stew-Shaman Tugga",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -52,9 +52,9 @@ Catalog.Database["SkullcanoIsland"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Fulguropied",
-        ["de"] = "Donnerhuf",
-        ["en"] = "Thunderfoot",
+        ["frFR"] = "Fulguropied",
+        ["deDE"] = "Donnerhuf",
+        ["enUS"] = "Thunderfoot",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -104,9 +104,9 @@ Catalog.Database["SkullcanoIsland"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Bosco Octog",
-        ["de"] = "Deckoffizier Octog",
-        ["en"] = "Bosun Octog",
+        ["frFR"] = "Bosco Octog",
+        ["deDE"] = "Deckoffizier Octog",
+        ["enUS"] = "Bosun Octog",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -140,9 +140,9 @@ Catalog.Database["SkullcanoIsland"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Mordechai Rougelune",
-        ["de"] = "Mordechai Rotmond",
-        ["en"] = "Mordechai Redmoon",
+        ["frFR"] = "Mordechai Rougelune",
+        ["deDE"] = "Mordechai Rotmond",
+        ["enUS"] = "Mordechai Redmoon",
       },
       ["veteran"] = true,
       ["drops"] = {

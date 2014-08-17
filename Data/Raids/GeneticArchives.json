@@ -1,135 +1,135 @@
 {
   "name": {
-    "en": "Genetic Archives",
-    "de": "Genarchive",
-    "fr": "Les Archives Génétiques"
+    "enUS": "Genetic Archives",
+    "deDE": "Genarchive",
+    "frFR": "Les Archives Génétiques"
   },
   "bosses": [
     {
       "name": {
-        "en": "Genetic Monstrosity",
-        "de": "Genetische Monstrosität",
-        "fr": "Monstruosité Génétique"
+        "enUS": "Genetic Monstrosity",
+        "deDE": "Genetische Monstrosität",
+        "frFR": "Monstruosité Génétique"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Hideously Malformed Mutant",
-        "de": "Entsetzlich missgebildeter Mutant",
-        "fr": "Mutant horriblement déformé"
+        "enUS": "Hideously Malformed Mutant",
+        "deDE": "Entsetzlich missgebildeter Mutant",
+        "frFR": "Mutant horriblement déformé"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Gravitron Operator",
-        "de": "Gravitionssingularität",
-        "fr": "Opérateur gravitron"
+        "enUS": "Gravitron Operator",
+        "deDE": "Gravitionssingularität",
+        "frFR": "Opérateur gravitron"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Experiment X-89",
-        "de": "Experiment X-89",
-        "fr": "Expérience X-89"
+        "enUS": "Experiment X-89",
+        "deDE": "Experiment X-89",
+        "frFR": "Expérience X-89"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Kuralak the Defiler",
-        "de": "Kuralak die Schänderin",
-        "fr": "Kuralak le Profanateur"
+        "enUS": "Kuralak the Defiler",
+        "deDE": "Kuralak die Schänderin",
+        "frFR": "Kuralak le Profanateur"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Fetid Miscreation",
-        "de": "Stinkende Missgeburt",
-        "fr": "Malformation fétide"
+        "enUS": "Fetid Miscreation",
+        "deDE": "Stinkende Missgeburt",
+        "frFR": "Malformation fétide"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Phagetech Guardian C-148",
-        "de": "Phagentech-Wächter C-148",
-        "fr": "Gardien de phagetech C-148"
+        "enUS": "Phagetech Guardian C-148",
+        "deDE": "Phagentech-Wächter C-148",
+        "frFR": "Gardien de phagetech C-148"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Phagetech Guardian C-432",
-        "de": "Phagentech-Wächter C-432",
-        "fr": "Gardien de phagetech C-432"
+        "enUS": "Phagetech Guardian C-432",
+        "deDE": "Phagentech-Wächter C-432",
+        "frFR": "Gardien de phagetech C-432"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Phage Maw",
-        "de": "Phagenschlund",
-        "fr": "Phagegueule"
+        "enUS": "Phage Maw",
+        "deDE": "Phagenschlund",
+        "frFR": "Phagegueule"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Phagetech Prototypes",
-        "de": "Phagentech-Prototypen",
-        "fr": "Prototypes phagetech"
+        "enUS": "Phagetech Prototypes",
+        "deDE": "Phagentech-Prototypen",
+        "frFR": "Prototypes phagetech"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Phageborn Convergence",
-        "de": "Phageborn Konvergenz",
-        "fr": "Convergence néophage"
+        "enUS": "Phageborn Convergence",
+        "deDE": "Phageborn Konvergenz",
+        "frFR": "Convergence néophage"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Malfunctioning Gear",
-        "de": "Defekte Ausrüstung",
-        "fr": "Engrenage défectueux"
+        "enUS": "Malfunctioning Gear",
+        "deDE": "Defekte Ausrüstung",
+        "frFR": "Engrenage défectueux"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Malfunctioning Dynamo",
-        "de": "Defekter Dynamo",
-        "fr": "Dynamo défectueuse"
+        "enUS": "Malfunctioning Dynamo",
+        "deDE": "Defekter Dynamo",
+        "frFR": "Dynamo défectueuse"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Malfunctioning Piston",
-        "de": "Defekter Kolben",
-        "fr": "Piston défectueux"
+        "enUS": "Malfunctioning Piston",
+        "deDE": "Defekter Kolben",
+        "frFR": "Piston défectueux"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Malfunctioning Battery",
-        "de": "Defekte Batterie",
-        "fr": "Batterie défaillante"
+        "enUS": "Malfunctioning Battery",
+        "deDE": "Defekte Batterie",
+        "frFR": "Batterie défaillante"
       },
       "veteran": false
     },
     {
       "name": {
-        "en": "Dreadphage Ohmna",
-        "de": "Schreckensphage Ohmna",
-        "fr": "Ohmna la Terriphage"
+        "enUS": "Dreadphage Ohmna",
+        "deDE": "Schreckensphage Ohmna",
+        "frFR": "Ohmna la Terriphage"
       },
       "veteran": false
     }

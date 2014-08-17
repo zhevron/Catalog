@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Adventure] War of the Wilds
 Catalog.Database["WarOfTheWilds"] = {
   ["name"] = {
-    ["fr"] = "Guerre sauvage",
-    ["de"] = "Krieg der Wildnis",
-    ["en"] = "War of the Wilds",
+    ["frFR"] = "Guerre sauvage",
+    ["deDE"] = "Krieg der Wildnis",
+    ["enUS"] = "War of the Wilds",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Récompenses",
-        ["de"] = "Belohnungen",
-        ["en"] = "Rewards",
+        ["frFR"] = "Récompenses",
+        ["deDE"] = "Belohnungen",
+        ["enUS"] = "Rewards",
       },
       ["veteran"] = true,
       ["drops"] = {

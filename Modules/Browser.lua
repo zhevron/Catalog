@@ -73,9 +73,9 @@ function Browser:Toggle()
 end
 
 function Browser:Localize()
-  local locale = Catalog:GetLocale()
-  self.Window:FindChild("ShowHiddenText"):SetText(locale["showHidden"])
-  self.Window:FindChild("OpenWishlistButton"):SetText(locale["wishlist"])
+  local GeminiLocale = Apollo.GetPackage("Gemini:Locale-1.0").tPackage
+  local L = GeminiLocale:GetLocale("Catalog", true)
+  GeminiLocale:TranslateWindow(L, self.Window)
   self:BuildSubcategoryList()
   self:BuildBossList(self.Window:FindChild("SubcategoryButton"):GetData())
   self:BuildItemList(nil)
@@ -83,13 +83,14 @@ end
 
 function Browser:BuildSubcategoryList()
   local Utility = Catalog:GetModule("Utility")
+  local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("SubcategoryList")
   list:DestroyChildren()
   local entries = {}
   for _, entry in pairs(Catalog.Database) do
     if entry.type == self.Window:FindChild("CategoryButton"):GetData() then
       local tbl = Utility:TableCopyRecursive(entry)
-      tbl.name = entry.name[Catalog.Options.Account.Locale]
+      tbl.name = entry.name[locale]
       table.insert(entries, tbl)
     end
   end
@@ -103,6 +104,7 @@ function Browser:BuildSubcategoryList()
 end
 
 function Browser:BuildBossList(subcategory)
+  local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("BossList")
   list:DestroyChildren()
   if subcategory == nil then
@@ -111,13 +113,13 @@ function Browser:BuildBossList(subcategory)
   for _, boss in ipairs(subcategory.bosses) do
     local form = Apollo.LoadForm(self.Xml, "Boss", list, self)
     form:SetData(boss)
-    form:FindChild("BossText"):SetText(boss.name[Catalog.Options.Account.Locale])
+    form:FindChild("BossText"):SetText(boss.name[locale])
   end
   list:ArrangeChildrenVert()
 end
 
 function Browser:BuildItemList(boss)
-  local locale = Catalog:GetLocale()
+  local L = Apollo.GetPackage("Gemini:Locale-1.0").tPackage:GetLocale("Catalog", true)
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
   if boss == nil then
@@ -168,7 +170,7 @@ function Browser:BuildItemList(boss)
               found = true
             end
           end
-          form:FindChild("Item"..i):FindChild("WishlistButton"):SetText(locale["addWishlist"])
+          form:FindChild("Item"..i):FindChild("WishlistButton"):SetTooltip(L["addWishlist"])
           form:FindChild("Item"..i):FindChild("WishlistButton"):SetCheck(found)
           form:FindChild("Item"..i):Show(true)
         else

@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Dungeon] Stormtalon's Lair
 Catalog.Database["StormtalonsLair"] = {
   ["name"] = {
-    ["fr"] = "Antre d'Ouragriffe",
-    ["de"] = "Sturmklaues Unterschlupf",
-    ["en"] = "Stormtalon's Lair",
+    ["frFR"] = "Antre d'Ouragriffe",
+    ["deDE"] = "Sturmklaues Unterschlupf",
+    ["enUS"] = "Stormtalon's Lair",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Lamevent l'Invocateur",
-        ["de"] = "Klingenwind der Beschwörer",
-        ["en"] = "Blade-Wind the Invoker",
+        ["frFR"] = "Lamevent l'Invocateur",
+        ["deDE"] = "Klingenwind der Beschwörer",
+        ["enUS"] = "Blade-Wind the Invoker",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -64,9 +64,9 @@ Catalog.Database["StormtalonsLair"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Aethros",
-        ["de"] = "Ätheros",
-        ["en"] = "Aethros",
+        ["frFR"] = "Aethros",
+        ["deDE"] = "Ätheros",
+        ["enUS"] = "Aethros",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -120,9 +120,9 @@ Catalog.Database["StormtalonsLair"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Ouragriffe",
-        ["de"] = "Sturmklaue",
-        ["en"] = "Stormtalon",
+        ["frFR"] = "Ouragriffe",
+        ["deDE"] = "Sturmklaue",
+        ["enUS"] = "Stormtalon",
       },
       ["veteran"] = true,
       ["drops"] = {

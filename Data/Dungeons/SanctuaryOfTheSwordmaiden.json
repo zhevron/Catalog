@@ -1,47 +1,47 @@
 {
   "name": {
-    "en": "Sanctuary of the Swordmaiden",
-    "de": "Zuflucht der Schwertmaid",
-    "fr": "Sanctuaire de la Valkyrie"
+    "enUS": "Sanctuary of the Swordmaiden",
+    "deDE": "Zuflucht der Schwertmaid",
+    "frFR": "Sanctuaire de la Valkyrie"
   },
   "bosses": [
     {
       "name": {
-        "en": "Deadringer Shallaos",
-        "de": "Doppelgängerin Shallaos",
-        "fr": "Sosie Shallaos"
+        "enUS": "Deadringer Shallaos",
+        "deDE": "Doppelgängerin Shallaos",
+        "frFR": "Sosie Shallaos"
       },
       "veteran": true
     },
     {
       "name": {
-        "en": "Rayna Darkspeaker",
-        "de": "Rayna Düsterbotin",
-        "fr": "Rayna Languenoire"
+        "enUS": "Rayna Darkspeaker",
+        "deDE": "Rayna Düsterbotin",
+        "frFR": "Rayna Languenoire"
       },
       "veteran": true
     },
     {
       "name": {
-        "en": "Ondu Lifeweaver",
-        "de": "Ondu Lebensflechter",
-        "fr": "Ondu Tisse-âme"
+        "enUS": "Ondu Lifeweaver",
+        "deDE": "Ondu Lebensflechter",
+        "frFR": "Ondu Tisse-âme"
       },
       "veteran": true
     },
     {
       "name": {
-        "en": "Moldwood Overlord Skash",
-        "de": "Moderwald-Overlord Skash",
-        "fr": "Seigneur de Putrebois Skash"
+        "enUS": "Moldwood Overlord Skash",
+        "deDE": "Moderwald-Overlord Skash",
+        "frFR": "Seigneur de Putrebois Skash"
       },
       "veteran": true
     },
     {
       "name": {
-        "en": "Spiritmother Selene the Corrupted",
-        "de": "Seelenmutter Selene",
-        "fr": "Mère spirituelle Sélène la Corrompue"
+        "enUS": "Spiritmother Selene the Corrupted",
+        "deDE": "Seelenmutter Selene",
+        "frFR": "Mère spirituelle Sélène la Corrompue"
       },
       "veteran": true
     }

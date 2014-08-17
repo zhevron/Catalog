@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Adventure] Hycrest Insurrection
 Catalog.Database["HycrestInsurrection"] = {
   ["name"] = {
-    ["fr"] = "L'Insurrection de Hautecrête",
-    ["de"] = "Kronfelder Aufstand",
-    ["en"] = "Hycrest Insurrection",
+    ["frFR"] = "L'Insurrection de Hautecrête",
+    ["deDE"] = "Kronfelder Aufstand",
+    ["enUS"] = "Hycrest Insurrection",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Récompenses",
-        ["de"] = "Belohnungen",
-        ["en"] = "Rewards",
+        ["frFR"] = "Récompenses",
+        ["deDE"] = "Belohnungen",
+        ["enUS"] = "Rewards",
       },
       ["veteran"] = true,
       ["drops"] = {

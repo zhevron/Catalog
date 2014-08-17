@@ -13,7 +13,7 @@ exporters["jabbithole"] = JabbitholeExporter(data_path)
 exporters["wildheap"] = WildheapExporter()
 
 def parse_data(name, data, folder, type):
-  print "Parsing " + type + ": " + data["name"]["en"]
+  print "Parsing " + type + ": " + data["name"]["enUS"]
   for k, v in enumerate(data["bosses"]):
     data["bosses"][k]["drops"] = []
   parsed = copy.deepcopy(data)
@@ -35,7 +35,7 @@ def parse_data(name, data, folder, type):
 # Check if a given boss table already contains an item
 def boss_has_item(data, boss, item):
   for k, v in enumerate(data["bosses"]):
-    if v["name"]["en"] == boss["name"]["en"]:
+    if v["name"]["enUS"] == boss["name"]["enUS"]:
       for k2, v2 in enumerate(v["drops"]):
         if int(v2) == int(item):
           return True
@@ -45,7 +45,7 @@ def boss_has_item(data, boss, item):
 def boss_add_item(data, boss, item):
   if not boss_has_item(data, boss, item):
     for k, v in enumerate(data["bosses"]):
-      if v["name"]["en"] == boss["name"]["en"]:
+      if v["name"]["enUS"] == boss["name"]["enUS"]:
         data["bosses"][k]["drops"].append(item)
   return data
 
@@ -60,7 +60,7 @@ def merge_data(dst, src):
 def write_database_file(path, data, type):
   name = os.path.splitext(os.path.basename(path))[0]
   with open(path, "w") as file:
-    file.write("-- [{}] {}\n".format(type.capitalize(), data["name"]["en"]))
+    file.write("-- [{}] {}\n".format(type.capitalize(), data["name"]["enUS"]))
     file.write("Catalog.Database[\"{}\"] = {}\n".format(name, "{"))
     file.write("  [\"name\"] = {\n")
     for k, v in data["name"].iteritems():

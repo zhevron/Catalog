@@ -1,9 +1,11 @@
-local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
-Catalog.Locale["de"] = {
-  ["lock"] = "Fenster sperren",
-  ["showHidden"] = "Zeige versteckte",
-  ["wishlist"] = "Wunschliste",
-  ["addWishlist"] = "Auf die Wunschliste",
-  ["dropWishlist"] = "Wunschlisten Gegenstand gefallen!",
-  ["alertWishlist"] = "Klicken um Alarm abzuschalten"
-}
+local L = Apollo.GetPackage("Gemini:Locale-1.0").tPackage:NewLocale("Catalog", "deDE")
+if not L then
+  return
+end
+
+L["lock"] = "Fenster sperren"
+L["showHidden"] = "Zeige versteckte"
+L["wishlist"] = "Wunschliste"
+L["addWishlist"] = "Auf die Wunschliste"
+L["dropWishlist"] = "Wunschlisten Gegenstand gefallen!"
+L["alertWishlist"] = "Klicken um Alarm abzuschalten"

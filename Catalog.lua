@@ -8,8 +8,6 @@ Catalog.Version = {
 
 Catalog.Defaults = {
   ["Account"] = {
-    ["Locale"] = "en",
-    ["AutoLocale"] = true,
     ["Locked"] = false,
     ["Position"] = {
       ["X"] = 100,
@@ -24,7 +22,12 @@ Catalog.Defaults = {
   }
 }
 
-Catalog.Locale = {}
+Catalog.Locales = {
+  [1] = "enUS",
+  [2] = "deDE",
+  [3] = "frFR"
+}
+
 Catalog.Database = {}
 Catalog.Options = Catalog.Defaults
 
@@ -85,23 +88,8 @@ function Catalog:OnConfigure()
 end
 
 function Catalog:GetLocale()
-  if self.Options.Account.AutoLocale then
-    local locale = Apollo.GetConsoleVariable("locale.languageId")
-    if locale == 1 then
-      return self.Locale["en"]
-    elseif locale == 2 then
-      return self.Locale["de"]
-    elseif locale == 3 then
-      return self.Locale["fr"]
-    else
-      return self.Locale["en"]
-    end
-  end
-  if self.Locale[self.Options.Account.Locale] then
-    return self.Locale[self.Options.Account.Locale]
-  else
-    return self.Locale["en"]
-  end
+  local localeId = Apollo.GetConsoleVariable("locale.languageId") or 1
+  return self.Locales[localeId]
 end
 
 function Catalog:Reset()

@@ -43,8 +43,9 @@ function Wishlist:Close()
 end
 
 function Wishlist:Localize()
-  local locale = Catalog:GetLocale()
-  self.Window:FindChild("Header"):SetText(locale["wishlist"])
+  local GeminiLocale = Apollo.GetPackage("Gemini:Locale-1.0").tPackage
+  local L = GeminiLocale:GetLocale("Catalog", true)
+  GeminiLocale:TranslateWindow(L, self.Window)
 end
 
 function Wishlist:Position()
@@ -61,7 +62,7 @@ end
 function Wishlist:BuildItemList()
   local Browser = Catalog:GetModule("Browser")
   local Utility = Catalog:GetModule("Utility")
-  local locale = Catalog:GetLocale()
+  local L = Apollo.GetPackage("Gemini:Locale-1.0").tPackage:GetLocale("Catalog", true)
   local list = self.Window:FindChild("ItemList")
   list:DestroyChildren()
   for _, i in pairs(Catalog.Options.Character.Wishlist) do
@@ -76,7 +77,7 @@ function Wishlist:BuildItemList()
       tooltip = tooltip..drop["Boss"].."\n"..drop["Location"].."\n\n"
     end
     form:FindChild("InfoButton"):SetTooltip(tooltip)
-    form:FindChild("AlertButton"):SetTooltip(locale["alertWishlist"])
+    form:FindChild("AlertButton"):SetTooltip(L["alertWishlist"])
     form:FindChild("AlertButton"):SetCheck(i["Alert"])
   end
   list:ArrangeChildrenVert()
@@ -106,9 +107,9 @@ function Wishlist:OnWishlistRemove(handler, control)
 end
 
 function Wishlist:OnAlertClose()
-  Wishlist.AlertForm:Close()
-  Wishlist.AlertForm:Destroy()
-  Wishlist.AlertForm = nil
+  self.AlertForm:Close()
+  self.AlertForm:Destroy()
+  self.AlertForm = nil
 end
 
 function Wishlist:OnGroupLoot()
@@ -119,8 +120,9 @@ end
 
 function Wishlist:OnItemLooted(item, count)
   local Browser = Catalog:GetModule("Browser")
-  local locale = Catalog:GetLocale()
-  if item ~= nil and count > 0 and Wishlist.AlertForm == nil then
+  local GeminiLocale = Apollo.GetPackage("Gemini:Locale-1.0").tPackage
+  local L = GeminiLocale:GetLocale("Catalog", true)
+  if item ~= nil and count > 0 and self.AlertForm == nil then
     local info = item:GetDetailedInfo()
     local found = nil
     for _, i in pairs(Catalog.Options.Character.Wishlist) do
@@ -131,11 +133,11 @@ function Wishlist:OnItemLooted(item, count)
     if found ~= nil and found["Alert"] then
       local last = self.RecentAlerts[tostring(found["Id"])]
       if last == nil or (last ~= nil and (last + 300) < os.time()) then
-        Wishlist.AlertForm = Apollo.LoadForm(self.Xml, "ItemDropAlert", nil, self)
-        Wishlist.AlertForm:FindChild("Header"):SetText(locale["dropWishlist"])
-        Wishlist.AlertForm:FindChild("ItemIcon"):SetSprite(item:GetIcon())
-        Wishlist.AlertForm:FindChild("ItemName"):SetText(item:GetName())
-        Wishlist.AlertForm:FindChild("ItemName"):SetTextColor(Browser.ItemColor[item:GetItemQuality()])
+        self.AlertForm = Apollo.LoadForm(self.Xml, "ItemDropAlert", nil, self)
+        self.AlertForm:FindChild("ItemIcon"):SetSprite(item:GetIcon())
+        self.AlertForm:FindChild("ItemName"):SetText(item:GetName())
+        self.AlertForm:FindChild("ItemName"):SetTextColor(Browser.ItemColor[item:GetItemQuality()])
+        GeminiLocale:TranslateWindow(L, self.AlertForm)
         self.AlertTimer = ApolloTimer.Create(5.0, false, "OnAlertClose", self)
         self.RecentAlerts[tostring(found["Id"])] = os.time()
         Sound.Play(Sound.PlayUIAlertPopUpMessageReceived)

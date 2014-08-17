@@ -7,7 +7,7 @@ class Exporter:
 
   def adventure(self, data):
     try:
-      zone = self.get_zone_data("Adventures", data["name"]["en"])
+      zone = self.get_zone_data("Adventures", data["name"]["enUS"])
       data["bosses"][0]["drops"] = []
       for k, v in zone.iteritems():
         data["bosses"][0]["drops"].append(int(k))
@@ -18,11 +18,11 @@ class Exporter:
 
   def dungeon(self, data):
     try:
-      zone = self.get_zone_data("Dungeons", data["name"]["en"])
+      zone = self.get_zone_data("Dungeons", data["name"]["enUS"])
       for k, v in enumerate(data["bosses"]):
         data["bosses"][k]["drops"] = []
         for k2, v2 in zone.iteritems():
-          if v["name"]["en"] in v2:
+          if v["name"]["enUS"] in v2:
             data["bosses"][k]["drops"].append(int(k2))
       return data
     except KeyError:
@@ -31,11 +31,11 @@ class Exporter:
 
   def raid(self, data):
     try:
-      zone = self.get_zone_data("Raids", data["name"]["en"])
+      zone = self.get_zone_data("Raids", data["name"]["enUS"])
       for k, v in enumerate(data["bosses"]):
         data["bosses"][k]["drops"] = []
         for k2, v2 in zone.iteritems():
-          if v["name"]["en"] in v2:
+          if v["name"]["enUS"] in v2:
             data["bosses"][k]["drops"].append(int(k2))
       return data
     except KeyError:

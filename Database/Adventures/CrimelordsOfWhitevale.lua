@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Adventure] Crimelords of Whitevale
 Catalog.Database["CrimelordsOfWhitevale"] = {
   ["name"] = {
-    ["fr"] = "Seigneurs du crime de Valblanc",
-    ["de"] = "Banden vom Weißtal",
-    ["en"] = "Crimelords of Whitevale",
+    ["frFR"] = "Seigneurs du crime de Valblanc",
+    ["deDE"] = "Banden vom Weißtal",
+    ["enUS"] = "Crimelords of Whitevale",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Récompenses",
-        ["de"] = "Belohnungen",
-        ["en"] = "Rewards",
+        ["frFR"] = "Récompenses",
+        ["deDE"] = "Belohnungen",
+        ["enUS"] = "Rewards",
       },
       ["veteran"] = true,
       ["drops"] = {

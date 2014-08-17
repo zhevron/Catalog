@@ -1,31 +1,31 @@
 {
   "name": {
-    "en": "Stormtalon's Lair",
-    "de": "Sturmklaues Unterschlupf",
-    "fr": "Antre d'Ouragriffe"
+    "enUS": "Stormtalon's Lair",
+    "deDE": "Sturmklaues Unterschlupf",
+    "frFR": "Antre d'Ouragriffe"
   },
   "bosses": [
     {
       "name": {
-        "en": "Blade-Wind the Invoker",
-        "de": "Klingenwind der Beschwörer",
-        "fr": "Lamevent l'Invocateur"
+        "enUS": "Blade-Wind the Invoker",
+        "deDE": "Klingenwind der Beschwörer",
+        "frFR": "Lamevent l'Invocateur"
       },
       "veteran": true
     },
     {
       "name": {
-        "en": "Aethros",
-        "de": "Ätheros",
-        "fr": "Aethros"
+        "enUS": "Aethros",
+        "deDE": "Ätheros",
+        "frFR": "Aethros"
       },
       "veteran": true
     },
     {
       "name": {
-        "en": "Stormtalon",
-        "de": "Sturmklaue",
-        "fr": "Ouragriffe"
+        "enUS": "Stormtalon",
+        "deDE": "Sturmklaue",
+        "frFR": "Ouragriffe"
       },
       "veteran": true
     }

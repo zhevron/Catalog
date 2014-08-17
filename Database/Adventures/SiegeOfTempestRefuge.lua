@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Adventure] The Siege of Tempest Refuge
 Catalog.Database["SiegeOfTempestRefuge"] = {
   ["name"] = {
-    ["fr"] = "Le siège du Refuge de la tempête",
-    ["de"] = "Die Belagerung der Sturmzuflucht",
-    ["en"] = "The Siege of Tempest Refuge",
+    ["frFR"] = "Le siège du Refuge de la tempête",
+    ["deDE"] = "Die Belagerung der Sturmzuflucht",
+    ["enUS"] = "The Siege of Tempest Refuge",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Récompenses",
-        ["de"] = "Belohnungen",
-        ["en"] = "Rewards",
+        ["frFR"] = "Récompenses",
+        ["deDE"] = "Belohnungen",
+        ["enUS"] = "Rewards",
       },
       ["veteran"] = true,
       ["drops"] = {

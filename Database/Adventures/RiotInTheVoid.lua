@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Adventure] Riot in the Void
 Catalog.Database["RiotInTheVoid"] = {
   ["name"] = {
-    ["fr"] = "L'Émeute sidérale",
-    ["de"] = "Viel Lärm im Nichts",
-    ["en"] = "Riot in the Void",
+    ["frFR"] = "L'Émeute sidérale",
+    ["deDE"] = "Viel Lärm im Nichts",
+    ["enUS"] = "Riot in the Void",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Récompenses",
-        ["de"] = "Belohnungen",
-        ["en"] = "Rewards",
+        ["frFR"] = "Récompenses",
+        ["deDE"] = "Belohnungen",
+        ["enUS"] = "Rewards",
       },
       ["veteran"] = true,
       ["drops"] = {

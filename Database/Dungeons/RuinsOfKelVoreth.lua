@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Dungeon] Ruins of Kel Voreth
 Catalog.Database["RuinsOfKelVoreth"] = {
   ["name"] = {
-    ["fr"] = "Ruines de Kel Voreth",
-    ["de"] = "Ruinen von Kel'Voreth",
-    ["en"] = "Ruins of Kel Voreth",
+    ["frFR"] = "Ruines de Kel Voreth",
+    ["deDE"] = "Ruinen von Kel'Voreth",
+    ["enUS"] = "Ruins of Kel Voreth",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Grond le Boucher",
-        ["de"] = "Grond der Leichenmacher",
-        ["en"] = "Grond the Corpsemaker",
+        ["frFR"] = "Grond le Boucher",
+        ["deDE"] = "Grond der Leichenmacher",
+        ["enUS"] = "Grond the Corpsemaker",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -46,9 +46,9 @@ Catalog.Database["RuinsOfKelVoreth"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Sorcîère ténébreuse Gurka",
-        ["de"] = "Dämmerhexe Gurka",
-        ["en"] = "Darkwitch Gurka",
+        ["frFR"] = "Sorcîère ténébreuse Gurka",
+        ["deDE"] = "Dämmerhexe Gurka",
+        ["enUS"] = "Darkwitch Gurka",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -93,9 +93,9 @@ Catalog.Database["RuinsOfKelVoreth"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Maître d'esclaves Drokk",
-        ["de"] = "Sklavenmeister Drokk",
-        ["en"] = "Slavemaster Drokk",
+        ["frFR"] = "Maître d'esclaves Drokk",
+        ["deDE"] = "Sklavenmeister Drokk",
+        ["enUS"] = "Slavemaster Drokk",
       },
       ["veteran"] = true,
       ["drops"] = {
@@ -134,9 +134,9 @@ Catalog.Database["RuinsOfKelVoreth"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Maître-forgeron Trogun",
-        ["de"] = "Schmiedemeister Trogun",
-        ["en"] = "Forgemaster Trogun",
+        ["frFR"] = "Maître-forgeron Trogun",
+        ["deDE"] = "Schmiedemeister Trogun",
+        ["enUS"] = "Forgemaster Trogun",
       },
       ["veteran"] = true,
       ["drops"] = {

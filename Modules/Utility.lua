@@ -45,6 +45,7 @@ function Utility:TableCopyRecursive(source, destination)
 end
 
 function Utility:FindDropLocations(id)
+  local locale = Catalog:GetLocale()
   local drops = {}
   for _, location in pairs(Catalog.Database) do
     for _, boss in pairs(location.bosses) do
@@ -56,8 +57,8 @@ function Utility:FindDropLocations(id)
       end
       if found then
         table.insert(drops, {
-          ["Location"] = location.name[Catalog.Options.Account.Locale],
-          ["Boss"] = boss.name[Catalog.Options.Account.Locale]
+          ["Location"] = location.name[locale],
+          ["Boss"] = boss.name[locale]
         })
       end
     end

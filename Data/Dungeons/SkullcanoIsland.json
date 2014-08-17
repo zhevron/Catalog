@@ -1,39 +1,39 @@
 {
   "name": {
-    "en": "Skullcano Island",
-    "de": "Feuerschädel",
-    "fr": "Volcrâno"
+    "enUS": "Skullcano Island",
+    "deDE": "Feuerschädel",
+    "frFR": "Volcrâno"
   },
   "bosses": [
     {
       "name": {
-        "en": "Stew-Shaman Tugga",
-        "de": "Suppenschamane Tugga",
-        "fr": "Chamiam Tugga"
+        "enUS": "Stew-Shaman Tugga",
+        "deDE": "Suppenschamane Tugga",
+        "frFR": "Chamiam Tugga"
       },
       "veteran": true
     },
     {
       "name": {
-        "en": "Thunderfoot",
-        "de": "Donnerhuf",
-        "fr": "Fulguropied"
+        "enUS": "Thunderfoot",
+        "deDE": "Donnerhuf",
+        "frFR": "Fulguropied"
       },
       "veteran": true
     },
     {
       "name": {
-        "en": "Bosun Octog",
-        "de": "Deckoffizier Octog",
-        "fr": "Bosco Octog"
+        "enUS": "Bosun Octog",
+        "deDE": "Deckoffizier Octog",
+        "frFR": "Bosco Octog"
       },
       "veteran": true
     },
     {
       "name": {
-        "en": "Mordechai Redmoon",
-        "de": "Mordechai Rotmond",
-        "fr": "Mordechai Rougelune"
+        "enUS": "Mordechai Redmoon",
+        "deDE": "Mordechai Rotmond",
+        "frFR": "Mordechai Rougelune"
       },
       "veteran": true
     }

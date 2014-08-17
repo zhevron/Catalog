@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Raid] Genetic Archives
 Catalog.Database["GeneticArchives"] = {
   ["name"] = {
-    ["fr"] = "Les Archives Génétiques",
-    ["de"] = "Genarchive",
-    ["en"] = "Genetic Archives",
+    ["frFR"] = "Les Archives Génétiques",
+    ["deDE"] = "Genarchive",
+    ["enUS"] = "Genetic Archives",
   },
   ["type"] = "raid",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Monstruosité Génétique",
-        ["de"] = "Genetische Monstrosität",
-        ["en"] = "Genetic Monstrosity",
+        ["frFR"] = "Monstruosité Génétique",
+        ["deDE"] = "Genetische Monstrosität",
+        ["enUS"] = "Genetic Monstrosity",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -29,9 +29,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Mutant horriblement déformé",
-        ["de"] = "Entsetzlich missgebildeter Mutant",
-        ["en"] = "Hideously Malformed Mutant",
+        ["frFR"] = "Mutant horriblement déformé",
+        ["deDE"] = "Entsetzlich missgebildeter Mutant",
+        ["enUS"] = "Hideously Malformed Mutant",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -49,9 +49,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Opérateur gravitron",
-        ["de"] = "Gravitionssingularität",
-        ["en"] = "Gravitron Operator",
+        ["frFR"] = "Opérateur gravitron",
+        ["deDE"] = "Gravitionssingularität",
+        ["enUS"] = "Gravitron Operator",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -64,9 +64,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Expérience X-89",
-        ["de"] = "Experiment X-89",
-        ["en"] = "Experiment X-89",
+        ["frFR"] = "Expérience X-89",
+        ["deDE"] = "Experiment X-89",
+        ["enUS"] = "Experiment X-89",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -99,9 +99,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Kuralak le Profanateur",
-        ["de"] = "Kuralak die Schänderin",
-        ["en"] = "Kuralak the Defiler",
+        ["frFR"] = "Kuralak le Profanateur",
+        ["deDE"] = "Kuralak die Schänderin",
+        ["enUS"] = "Kuralak the Defiler",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -131,9 +131,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Malformation fétide",
-        ["de"] = "Stinkende Missgeburt",
-        ["en"] = "Fetid Miscreation",
+        ["frFR"] = "Malformation fétide",
+        ["deDE"] = "Stinkende Missgeburt",
+        ["enUS"] = "Fetid Miscreation",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -147,9 +147,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Gardien de phagetech C-148",
-        ["de"] = "Phagentech-Wächter C-148",
-        ["en"] = "Phagetech Guardian C-148",
+        ["frFR"] = "Gardien de phagetech C-148",
+        ["deDE"] = "Phagentech-Wächter C-148",
+        ["enUS"] = "Phagetech Guardian C-148",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -163,9 +163,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Gardien de phagetech C-432",
-        ["de"] = "Phagentech-Wächter C-432",
-        ["en"] = "Phagetech Guardian C-432",
+        ["frFR"] = "Gardien de phagetech C-432",
+        ["deDE"] = "Phagentech-Wächter C-432",
+        ["enUS"] = "Phagetech Guardian C-432",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -181,9 +181,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Phagegueule",
-        ["de"] = "Phagenschlund",
-        ["en"] = "Phage Maw",
+        ["frFR"] = "Phagegueule",
+        ["deDE"] = "Phagenschlund",
+        ["enUS"] = "Phage Maw",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -213,9 +213,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Prototypes phagetech",
-        ["de"] = "Phagentech-Prototypen",
-        ["en"] = "Phagetech Prototypes",
+        ["frFR"] = "Prototypes phagetech",
+        ["deDE"] = "Phagentech-Prototypen",
+        ["enUS"] = "Phagetech Prototypes",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -223,9 +223,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Convergence néophage",
-        ["de"] = "Phageborn Konvergenz",
-        ["en"] = "Phageborn Convergence",
+        ["frFR"] = "Convergence néophage",
+        ["deDE"] = "Phageborn Konvergenz",
+        ["enUS"] = "Phageborn Convergence",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -233,9 +233,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Engrenage défectueux",
-        ["de"] = "Defekte Ausrüstung",
-        ["en"] = "Malfunctioning Gear",
+        ["frFR"] = "Engrenage défectueux",
+        ["deDE"] = "Defekte Ausrüstung",
+        ["enUS"] = "Malfunctioning Gear",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -249,9 +249,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Dynamo défectueuse",
-        ["de"] = "Defekter Dynamo",
-        ["en"] = "Malfunctioning Dynamo",
+        ["frFR"] = "Dynamo défectueuse",
+        ["deDE"] = "Defekter Dynamo",
+        ["enUS"] = "Malfunctioning Dynamo",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -265,9 +265,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Piston défectueux",
-        ["de"] = "Defekter Kolben",
-        ["en"] = "Malfunctioning Piston",
+        ["frFR"] = "Piston défectueux",
+        ["deDE"] = "Defekter Kolben",
+        ["enUS"] = "Malfunctioning Piston",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -281,9 +281,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Batterie défaillante",
-        ["de"] = "Defekte Batterie",
-        ["en"] = "Malfunctioning Battery",
+        ["frFR"] = "Batterie défaillante",
+        ["deDE"] = "Defekte Batterie",
+        ["enUS"] = "Malfunctioning Battery",
       },
       ["veteran"] = false,
       ["drops"] = {
@@ -297,9 +297,9 @@ Catalog.Database["GeneticArchives"] = {
     },
     {
       ["name"] = {
-        ["fr"] = "Ohmna la Terriphage",
-        ["de"] = "Schreckensphage Ohmna",
-        ["en"] = "Dreadphage Ohmna",
+        ["frFR"] = "Ohmna la Terriphage",
+        ["deDE"] = "Schreckensphage Ohmna",
+        ["enUS"] = "Dreadphage Ohmna",
       },
       ["veteran"] = false,
       ["drops"] = {

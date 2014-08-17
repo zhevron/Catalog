@@ -1,15 +1,15 @@
 {
   "name": {
-    "en": "Riot in the Void",
-    "de": "Viel Lärm im Nichts",
-    "fr": "L'Émeute sidérale"
+    "enUS": "Riot in the Void",
+    "deDE": "Viel Lärm im Nichts",
+    "frFR": "L'Émeute sidérale"
   },
   "bosses": [
     {
       "name": {
-        "en": "Rewards",
-        "de": "Belohnungen",
-        "fr": "Récompenses"
+        "enUS": "Rewards",
+        "deDE": "Belohnungen",
+        "frFR": "Récompenses"
       },
       "veteran": true
     }

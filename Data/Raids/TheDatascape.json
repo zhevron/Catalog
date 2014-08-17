@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "The Datascape",
-    "de": "Datenzone",
-    "fr": "L'Infosphère"
+    "enUS": "The Datascape",
+    "deDE": "Datenzone",
+    "frFR": "L'Infosphère"
   },
   "bosses": [
   ]

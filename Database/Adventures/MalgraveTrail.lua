@@ -2,17 +2,17 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog
 -- [Adventure] The Malgrave Trail
 Catalog.Database["MalgraveTrail"] = {
   ["name"] = {
-    ["fr"] = "La Piste de Maltombe",
-    ["de"] = "Treck durch Jochgrab",
-    ["en"] = "The Malgrave Trail",
+    ["frFR"] = "La Piste de Maltombe",
+    ["deDE"] = "Treck durch Jochgrab",
+    ["enUS"] = "The Malgrave Trail",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["fr"] = "Récompenses",
-        ["de"] = "Belohnungen",
-        ["en"] = "Rewards",
+        ["frFR"] = "Récompenses",
+        ["deDE"] = "Belohnungen",
+        ["enUS"] = "Rewards",
       },
       ["veteran"] = true,
       ["drops"] = {
