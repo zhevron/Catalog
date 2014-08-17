@@ -31,7 +31,7 @@ function Browser:OnDocumentReady()
   self.Window:FindChild("AdventureButton"):SetData("adventure")
   self.Window:FindChild("DungeonButton"):SetData("dungeon")
   self.Window:FindChild("RaidButton"):SetData("raid")
-  self.Window:FindChild("NormalButton"):SetCheck(true)
+  self:OnCategoryCheck(self, self.Window:FindChild("AdventureButton"))
 end
 
 function Browser:Open()
@@ -102,6 +102,7 @@ function Browser:BuildSubcategoryList()
   end
   list:ArrangeChildrenVert()
   self:SizeToFit(list, 3)
+  self:OnSubcategoryCheck(self, list:GetChildren()[1])
 end
 
 function Browser:BuildBossList(subcategory)
@@ -293,8 +294,6 @@ function Browser:OnCategoryCheck(handler, control)
   self.Window:FindChild("ModeText"):Show(false)
   self.Window:FindChild("ModeButton"):Show(false)
   self:BuildSubcategoryList()
-  self:BuildBossList(nil)
-  self:BuildItemList(nil)
 end
 
 function Browser:OnSubcategoryListOpen(handler, control)
