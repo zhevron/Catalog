@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Dungeon] Stormtalon's Lair
-Catalog.Database["StormtalonsLair"] = {
+Database.tEntries["StormtalonsLair"] = {
   ["name"] = {
     ["frFR"] = "Antre d'Ouragriffe",
     ["deDE"] = "Sturmklaues Unterschlupf",

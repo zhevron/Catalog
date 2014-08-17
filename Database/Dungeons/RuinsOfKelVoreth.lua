@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Dungeon] Ruins of Kel Voreth
-Catalog.Database["RuinsOfKelVoreth"] = {
+Database.tEntries["RuinsOfKelVoreth"] = {
   ["name"] = {
     ["frFR"] = "Ruines de Kel Voreth",
     ["deDE"] = "Ruinen von Kel'Voreth",

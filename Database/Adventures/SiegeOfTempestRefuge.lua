@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Adventure] The Siege of Tempest Refuge
-Catalog.Database["SiegeOfTempestRefuge"] = {
+Database.tEntries["SiegeOfTempestRefuge"] = {
   ["name"] = {
     ["frFR"] = "Le siège du Refuge de la tempête",
     ["deDE"] = "Die Belagerung der Sturmzuflucht",

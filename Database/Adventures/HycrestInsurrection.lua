@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Adventure] Hycrest Insurrection
-Catalog.Database["HycrestInsurrection"] = {
+Database.tEntries["HycrestInsurrection"] = {
   ["name"] = {
     ["frFR"] = "L'Insurrection de Hautecrête",
     ["deDE"] = "Kronfelder Aufstand",

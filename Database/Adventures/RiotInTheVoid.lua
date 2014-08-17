@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Adventure] Riot in the Void
-Catalog.Database["RiotInTheVoid"] = {
+Database.tEntries["RiotInTheVoid"] = {
   ["name"] = {
     ["frFR"] = "L'Émeute sidérale",
     ["deDE"] = "Viel Lärm im Nichts",

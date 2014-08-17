@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Dungeon] Sanctuary of the Swordmaiden
-Catalog.Database["SanctuaryOfTheSwordmaiden"] = {
+Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
   ["name"] = {
     ["frFR"] = "Sanctuaire de la Valkyrie",
     ["deDE"] = "Zuflucht der Schwertmaid",

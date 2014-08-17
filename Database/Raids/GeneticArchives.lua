@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Raid] Genetic Archives
-Catalog.Database["GeneticArchives"] = {
+Database.tEntries["GeneticArchives"] = {
   ["name"] = {
     ["frFR"] = "Les Archives Génétiques",
     ["deDE"] = "Genarchive",

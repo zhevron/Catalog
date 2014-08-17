@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Adventure] War of the Wilds
-Catalog.Database["WarOfTheWilds"] = {
+Database.tEntries["WarOfTheWilds"] = {
   ["name"] = {
     ["frFR"] = "Guerre sauvage",
     ["deDE"] = "Krieg der Wildnis",

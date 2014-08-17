@@ -28,8 +28,10 @@ Catalog.Locales = {
   [3] = "frFR"
 }
 
-Catalog.Database = {}
 Catalog.Options = Catalog.Defaults
+
+local Database = Catalog:NewModule("Database")
+Database.tEntries = {}
 
 function Catalog:OnInitialize()
   local GeminiLogging = Apollo.GetPackage("Gemini:Logging-1.2").tPackage

@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Adventure] The Malgrave Trail
-Catalog.Database["MalgraveTrail"] = {
+Database.tEntries["MalgraveTrail"] = {
   ["name"] = {
     ["frFR"] = "La Piste de Maltombe",
     ["deDE"] = "Treck durch Jochgrab",

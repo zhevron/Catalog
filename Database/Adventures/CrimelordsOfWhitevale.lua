@@ -1,6 +1,8 @@
 local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:GetAddon("Catalog")
+local Database = Catalog:GetModule("Database")
+
 -- [Adventure] Crimelords of Whitevale
-Catalog.Database["CrimelordsOfWhitevale"] = {
+Database.tEntries["CrimelordsOfWhitevale"] = {
   ["name"] = {
     ["frFR"] = "Seigneurs du crime de Valblanc",
     ["deDE"] = "Banden vom Weißtal",

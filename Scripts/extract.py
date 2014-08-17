@@ -60,8 +60,10 @@ def merge_data(dst, src):
 def write_database_file(path, data, type):
   name = os.path.splitext(os.path.basename(path))[0]
   with open(path, "w") as file:
+    file.write("local Catalog = Apollo.GetPackage(\"Gemini:Addon-1.1\").tPackage:GetAddon(\"Catalog\")\n")
+    file.write("local Database = Catalog:GetModule(\"Database\")\n\n")
     file.write("-- [{}] {}\n".format(type.capitalize(), data["name"]["enUS"]))
-    file.write("Catalog.Database[\"{}\"] = {}\n".format(name, "{"))
+    file.write("Database.tEntries[\"{}\"] = {}\n".format(name, "{"))
     file.write("  [\"name\"] = {\n")
     for k, v in data["name"].iteritems():
       file.write("    [\"{}\"] = \"{}\",\n".format(k, v.encode("utf8")))

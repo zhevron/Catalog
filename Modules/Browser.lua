@@ -82,12 +82,13 @@ function Browser:Localize()
 end
 
 function Browser:BuildSubcategoryList()
+  local Database = Catalog:GetModule("Database")
   local Utility = Catalog:GetModule("Utility")
   local locale = Catalog:GetLocale()
   local list = self.Window:FindChild("SubcategoryList")
   list:DestroyChildren()
   local entries = {}
-  for _, entry in pairs(Catalog.Database) do
+  for _, entry in pairs(Database.tEntries) do
     if entry.type == self.Window:FindChild("CategoryButton"):GetData() then
       local tbl = Utility:TableCopyRecursive(entry)
       tbl.name = entry.name[locale]

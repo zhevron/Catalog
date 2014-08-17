@@ -45,9 +45,10 @@ function Utility:TableCopyRecursive(source, destination)
 end
 
 function Utility:FindDropLocations(id)
+  local Database = Catalog:GetModule("Database")
   local locale = Catalog:GetLocale()
   local drops = {}
-  for _, location in pairs(Catalog.Database) do
+  for _, location in pairs(Database.tEntries) do
     for _, boss in pairs(location.bosses) do
       local found = false
       for _, item in pairs(boss.drops) do
