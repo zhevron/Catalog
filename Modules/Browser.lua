@@ -78,7 +78,6 @@ function Browser:Localize()
   GeminiLocale:TranslateWindow(L, self.Window)
   self:BuildSubcategoryList()
   self:BuildBossList(self.Window:FindChild("SubcategoryButton"):GetData())
-  self:BuildItemList(nil)
 end
 
 function Browser:BuildSubcategoryList()
@@ -118,6 +117,9 @@ function Browser:BuildBossList(subcategory)
     form:FindChild("BossText"):SetText(boss.name[locale])
   end
   list:ArrangeChildrenVert()
+  local wndButton = list:GetChildren()[1]:FindChild("BossButton")
+  wndButton:SetCheck(true)
+  self:OnBossSelect(self, wndButton)
 end
 
 function Browser:BuildItemList(boss)
@@ -312,7 +314,6 @@ function Browser:OnSubcategoryCheck(handler, control)
   self.Window:FindChild("ModeText"):Show(false)
   self.Window:FindChild("ModeButton"):Show(false)
   self:BuildBossList(control:GetData())
-  self:BuildItemList(nil)
 end
 
 function Browser:OnModeChange(handler, control)
