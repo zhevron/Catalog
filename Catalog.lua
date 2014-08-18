@@ -3,7 +3,7 @@ local Catalog = Apollo.GetPackage("Gemini:Addon-1.1").tPackage:NewAddon("Catalog
 Catalog.Version = {
   ["Major"] = 1,
   ["Minor"] = 1,
-  ["Build"] = 1
+  ["Build"] = 0
 }
 
 Catalog.Defaults = {

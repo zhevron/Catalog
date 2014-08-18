@@ -1,4 +1,4 @@
-package-as: Catalog-@project-version@
+package-as: Catalog
 enable-nolib-creation: no
 
 externals:
