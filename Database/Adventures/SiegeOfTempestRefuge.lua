@@ -4,20 +4,21 @@ local Database = Catalog:GetModule("Database")
 -- [Adventure] The Siege of Tempest Refuge
 Database.tEntries["SiegeOfTempestRefuge"] = {
   ["name"] = {
-    ["frFR"] = "Le siège du Refuge de la tempête",
     ["deDE"] = "Die Belagerung der Sturmzuflucht",
+    ["frFR"] = "Le siège du Refuge de la tempête",
     ["enUS"] = "The Siege of Tempest Refuge",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Récompenses",
         ["deDE"] = "Belohnungen",
+        ["frFR"] = "Récompenses",
         ["enUS"] = "Rewards",
       },
       ["veteran"] = true,
       ["drops"] = {
+        36620,
         36624,
         36625,
         36626,
@@ -84,7 +85,9 @@ Database.tEntries["SiegeOfTempestRefuge"] = {
         36700,
         36702,
         36705,
+        36707,
         36709,
+        36711,
         36713,
         36715,
         36716,
@@ -128,6 +131,7 @@ Database.tEntries["SiegeOfTempestRefuge"] = {
         36758,
         37324,
         37326,
+        37327,
         37328,
         37333,
         37335,

@@ -4,16 +4,16 @@ local Database = Catalog:GetModule("Database")
 -- [Dungeon] Ruins of Kel Voreth
 Database.tEntries["RuinsOfKelVoreth"] = {
   ["name"] = {
-    ["frFR"] = "Ruines de Kel Voreth",
     ["deDE"] = "Ruinen von Kel'Voreth",
+    ["frFR"] = "Ruines de Kel Voreth",
     ["enUS"] = "Ruins of Kel Voreth",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Grond le Boucher",
         ["deDE"] = "Grond der Leichenmacher",
+        ["frFR"] = "Grond le Boucher",
         ["enUS"] = "Grond the Corpsemaker",
       },
       ["veteran"] = true,
@@ -48,8 +48,8 @@ Database.tEntries["RuinsOfKelVoreth"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Sorcîère ténébreuse Gurka",
         ["deDE"] = "Dämmerhexe Gurka",
+        ["frFR"] = "Sorcîère ténébreuse Gurka",
         ["enUS"] = "Darkwitch Gurka",
       },
       ["veteran"] = true,
@@ -95,8 +95,8 @@ Database.tEntries["RuinsOfKelVoreth"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Maître d'esclaves Drokk",
         ["deDE"] = "Sklavenmeister Drokk",
+        ["frFR"] = "Maître d'esclaves Drokk",
         ["enUS"] = "Slavemaster Drokk",
       },
       ["veteran"] = true,
@@ -136,8 +136,8 @@ Database.tEntries["RuinsOfKelVoreth"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Maître-forgeron Trogun",
         ["deDE"] = "Schmiedemeister Trogun",
+        ["frFR"] = "Maître-forgeron Trogun",
         ["enUS"] = "Forgemaster Trogun",
       },
       ["veteran"] = true,
@@ -164,6 +164,7 @@ Database.tEntries["RuinsOfKelVoreth"] = {
         34535,
         34536,
         34539,
+        34541,
         34542,
         34543,
         34544,

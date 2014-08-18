@@ -4,16 +4,16 @@ local Database = Catalog:GetModule("Database")
 -- [Adventure] The Malgrave Trail
 Database.tEntries["MalgraveTrail"] = {
   ["name"] = {
-    ["frFR"] = "La Piste de Maltombe",
     ["deDE"] = "Treck durch Jochgrab",
+    ["frFR"] = "La Piste de Maltombe",
     ["enUS"] = "The Malgrave Trail",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Récompenses",
         ["deDE"] = "Belohnungen",
+        ["frFR"] = "Récompenses",
         ["enUS"] = "Rewards",
       },
       ["veteran"] = true,

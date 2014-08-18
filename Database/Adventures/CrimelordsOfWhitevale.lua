@@ -4,16 +4,16 @@ local Database = Catalog:GetModule("Database")
 -- [Adventure] Crimelords of Whitevale
 Database.tEntries["CrimelordsOfWhitevale"] = {
   ["name"] = {
-    ["frFR"] = "Seigneurs du crime de Valblanc",
     ["deDE"] = "Banden vom Weißtal",
+    ["frFR"] = "Seigneurs du crime de Valblanc",
     ["enUS"] = "Crimelords of Whitevale",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Récompenses",
         ["deDE"] = "Belohnungen",
+        ["frFR"] = "Récompenses",
         ["enUS"] = "Rewards",
       },
       ["veteran"] = true,
@@ -43,6 +43,7 @@ Database.tEntries["CrimelordsOfWhitevale"] = {
         36886,
         36887,
         36888,
+        36889,
         36890,
         36891,
         36892,
@@ -57,6 +58,7 @@ Database.tEntries["CrimelordsOfWhitevale"] = {
         36902,
         36903,
         36905,
+        36906,
         36907,
         36908,
         36909,
@@ -65,6 +67,8 @@ Database.tEntries["CrimelordsOfWhitevale"] = {
         36913,
         36915,
         36917,
+        36918,
+        36920,
         36922,
         36928,
         37352,
@@ -83,6 +87,7 @@ Database.tEntries["CrimelordsOfWhitevale"] = {
         37370,
         37373,
         37374,
+        37375,
         37376,
         37377,
         38262,

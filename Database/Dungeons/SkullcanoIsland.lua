@@ -4,16 +4,16 @@ local Database = Catalog:GetModule("Database")
 -- [Dungeon] Skullcano Island
 Database.tEntries["SkullcanoIsland"] = {
   ["name"] = {
-    ["frFR"] = "Volcrâno",
     ["deDE"] = "Feuerschädel",
+    ["frFR"] = "Volcrâno",
     ["enUS"] = "Skullcano Island",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Chamiam Tugga",
         ["deDE"] = "Suppenschamane Tugga",
+        ["frFR"] = "Chamiam Tugga",
         ["enUS"] = "Stew-Shaman Tugga",
       },
       ["veteran"] = true,
@@ -54,8 +54,8 @@ Database.tEntries["SkullcanoIsland"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Fulguropied",
         ["deDE"] = "Donnerhuf",
+        ["frFR"] = "Fulguropied",
         ["enUS"] = "Thunderfoot",
       },
       ["veteran"] = true,
@@ -106,8 +106,8 @@ Database.tEntries["SkullcanoIsland"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Bosco Octog",
         ["deDE"] = "Deckoffizier Octog",
+        ["frFR"] = "Bosco Octog",
         ["enUS"] = "Bosun Octog",
       },
       ["veteran"] = true,
@@ -142,8 +142,8 @@ Database.tEntries["SkullcanoIsland"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Mordechai Rougelune",
         ["deDE"] = "Mordechai Rotmond",
+        ["frFR"] = "Mordechai Rougelune",
         ["enUS"] = "Mordechai Redmoon",
       },
       ["veteran"] = true,
@@ -171,6 +171,7 @@ Database.tEntries["SkullcanoIsland"] = {
         36815,
         36817,
         36818,
+        36820,
         36823,
         36824,
         36826,

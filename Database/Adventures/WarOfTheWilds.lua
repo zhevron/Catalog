@@ -4,22 +4,23 @@ local Database = Catalog:GetModule("Database")
 -- [Adventure] War of the Wilds
 Database.tEntries["WarOfTheWilds"] = {
   ["name"] = {
-    ["frFR"] = "Guerre sauvage",
     ["deDE"] = "Krieg der Wildnis",
+    ["frFR"] = "Guerre sauvage",
     ["enUS"] = "War of the Wilds",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Récompenses",
         ["deDE"] = "Belohnungen",
+        ["frFR"] = "Récompenses",
         ["enUS"] = "Rewards",
       },
       ["veteran"] = true,
       ["drops"] = {
         36234,
         36241,
+        36243,
         36246,
         36250,
         36251,
@@ -34,9 +35,11 @@ Database.tEntries["WarOfTheWilds"] = {
         36264,
         36265,
         36266,
+        36267,
         36268,
         36269,
         36270,
+        36271,
         36272,
         36273,
         36274,
@@ -66,10 +69,14 @@ Database.tEntries["WarOfTheWilds"] = {
         36302,
         36304,
         36305,
+        36307,
+        36308,
         36309,
+        36310,
         36311,
         36313,
         36314,
+        36316,
         36317,
         36318,
         36320,

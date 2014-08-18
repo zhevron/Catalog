@@ -4,22 +4,23 @@ local Database = Catalog:GetModule("Database")
 -- [Adventure] Riot in the Void
 Database.tEntries["RiotInTheVoid"] = {
   ["name"] = {
-    ["frFR"] = "L'Émeute sidérale",
     ["deDE"] = "Viel Lärm im Nichts",
+    ["frFR"] = "L'Émeute sidérale",
     ["enUS"] = "Riot in the Void",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Récompenses",
         ["deDE"] = "Belohnungen",
+        ["frFR"] = "Récompenses",
         ["enUS"] = "Rewards",
       },
-      ["veteran"] = true,
+      ["veteran"] = false,
       ["drops"] = {
         34615,
         34616,
+        34617,
         34618,
         34619,
         34620,
@@ -44,6 +45,7 @@ Database.tEntries["RiotInTheVoid"] = {
         34641,
         34642,
         34643,
+        34644,
         34645,
         34646,
         34647,

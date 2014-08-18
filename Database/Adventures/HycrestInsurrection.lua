@@ -4,19 +4,19 @@ local Database = Catalog:GetModule("Database")
 -- [Adventure] Hycrest Insurrection
 Database.tEntries["HycrestInsurrection"] = {
   ["name"] = {
-    ["frFR"] = "L'Insurrection de Hautecrête",
     ["deDE"] = "Kronfelder Aufstand",
+    ["frFR"] = "L'Insurrection de Hautecrête",
     ["enUS"] = "Hycrest Insurrection",
   },
   ["type"] = "adventure",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Récompenses",
         ["deDE"] = "Belohnungen",
+        ["frFR"] = "Récompenses",
         ["enUS"] = "Rewards",
       },
-      ["veteran"] = true,
+      ["veteran"] = false,
       ["drops"] = {
         34563,
         34564,

@@ -4,16 +4,16 @@ local Database = Catalog:GetModule("Database")
 -- [Dungeon] Sanctuary of the Swordmaiden
 Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
   ["name"] = {
-    ["frFR"] = "Sanctuaire de la Valkyrie",
     ["deDE"] = "Zuflucht der Schwertmaid",
+    ["frFR"] = "Sanctuaire de la Valkyrie",
     ["enUS"] = "Sanctuary of the Swordmaiden",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Sosie Shallaos",
         ["deDE"] = "Doppelgängerin Shallaos",
+        ["frFR"] = "Sosie Shallaos",
         ["enUS"] = "Deadringer Shallaos",
       },
       ["veteran"] = true,
@@ -81,8 +81,8 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Rayna Languenoire",
         ["deDE"] = "Rayna Düsterbotin",
+        ["frFR"] = "Rayna Languenoire",
         ["enUS"] = "Rayna Darkspeaker",
       },
       ["veteran"] = true,
@@ -141,8 +141,8 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Ondu Tisse-âme",
         ["deDE"] = "Ondu Lebensflechter",
+        ["frFR"] = "Ondu Tisse-âme",
         ["enUS"] = "Ondu Lifeweaver",
       },
       ["veteran"] = true,
@@ -176,6 +176,7 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
         42698,
         42874,
         42875,
+        42876,
         42878,
         42879,
         42880,
@@ -192,8 +193,8 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Seigneur de Putrebois Skash",
         ["deDE"] = "Moderwald-Overlord Skash",
+        ["frFR"] = "Seigneur de Putrebois Skash",
         ["enUS"] = "Moldwood Overlord Skash",
       },
       ["veteran"] = true,
@@ -236,6 +237,7 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
         42875,
         42876,
         42877,
+        42878,
         42879,
         42881,
         42883,
@@ -256,8 +258,8 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Mère spirituelle Sélène la Corrompue",
         ["deDE"] = "Seelenmutter Selene",
+        ["frFR"] = "Mère spirituelle Sélène la Corrompue",
         ["enUS"] = "Spiritmother Selene the Corrupted",
       },
       ["veteran"] = true,
@@ -279,6 +281,7 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
         38769,
         40436,
         41855,
+        41857,
         41864,
         41866,
         41868,
@@ -309,9 +312,11 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
         42733,
         42734,
         42735,
+        42736,
         42737,
         42738,
         42744,
+        42747,
         42749,
         42754,
         42874,
@@ -350,10 +355,12 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
         42953,
         42954,
         42955,
+        42956,
         42957,
         42958,
         42959,
         42960,
+        42961,
         42962,
         42963,
         42964,

@@ -4,16 +4,16 @@ local Database = Catalog:GetModule("Database")
 -- [Dungeon] Stormtalon's Lair
 Database.tEntries["StormtalonsLair"] = {
   ["name"] = {
-    ["frFR"] = "Antre d'Ouragriffe",
     ["deDE"] = "Sturmklaues Unterschlupf",
+    ["frFR"] = "Antre d'Ouragriffe",
     ["enUS"] = "Stormtalon's Lair",
   },
   ["type"] = "dungeon",
   ["bosses"] = {
     {
       ["name"] = {
-        ["frFR"] = "Lamevent l'Invocateur",
         ["deDE"] = "Klingenwind der Beschwörer",
+        ["frFR"] = "Lamevent l'Invocateur",
         ["enUS"] = "Blade-Wind the Invoker",
       },
       ["veteran"] = true,
@@ -66,8 +66,8 @@ Database.tEntries["StormtalonsLair"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Aethros",
         ["deDE"] = "Ätheros",
+        ["frFR"] = "Aethros",
         ["enUS"] = "Aethros",
       },
       ["veteran"] = true,
@@ -122,8 +122,8 @@ Database.tEntries["StormtalonsLair"] = {
     },
     {
       ["name"] = {
-        ["frFR"] = "Ouragriffe",
         ["deDE"] = "Sturmklaue",
+        ["frFR"] = "Ouragriffe",
         ["enUS"] = "Stormtalon",
       },
       ["veteran"] = true,

@@ -4,8 +4,8 @@ local Database = Catalog:GetModule("Database")
 -- [Raid] The Datascape
 Database.tEntries["TheDatascape"] = {
   ["name"] = {
-    ["frFR"] = "L'Infosphère",
     ["deDE"] = "Datenzone",
+    ["frFR"] = "L'Infosphère",
     ["enUS"] = "The Datascape",
   },
   ["type"] = "raid",
