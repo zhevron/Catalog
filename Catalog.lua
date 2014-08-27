@@ -34,6 +34,8 @@ local Database = Catalog:NewModule("Database")
 Database.tEntries = {}
 
 function Catalog:OnInitialize()
+  Apollo.RegisterSlashCommand("catalog", "Toggle", self:GetModule("Browser"))
+  Apollo.RegisterSlashCommand("loot", "Toggle", self:GetModule("Browser"))
   Apollo.RegisterSlashCommand("catalogreset", "Reset", self)
 end
 
