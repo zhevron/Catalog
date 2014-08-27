@@ -3,11 +3,10 @@
   <!-- Libs -->
   <Script Name="Libs/GeminiAddon/GeminiAddon.lua"/>
   <Script Name="Libs/GeminiLocale/GeminiLocale.lua"/>
-  <Script Name="Libs/GeminiLogging/GeminiLogging.lua"/>
 
   <!-- Main -->
   <Script Name="Catalog.lua"/>
-  
+
   <!-- Modules -->
   <Script Name="Modules/Browser.lua"/>
   <Script Name="Modules/Settings.lua"/>

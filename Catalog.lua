@@ -34,12 +34,6 @@ local Database = Catalog:NewModule("Database")
 Database.tEntries = {}
 
 function Catalog:OnInitialize()
-  local GeminiLogging = Apollo.GetPackage("Gemini:Logging-1.2").tPackage
-  self.Log = GeminiLogging:GetLogger({
-    level = GeminiLogging.INFO,
-    pattern = "[%d %l %c:%n] %m",
-    appender = "GeminiConsole"
-  })
   Apollo.RegisterSlashCommand("catalogreset", "Reset", self)
 end
 
