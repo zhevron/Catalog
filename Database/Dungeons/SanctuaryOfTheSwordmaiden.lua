@@ -315,6 +315,7 @@ Database.tEntries["SanctuaryOfTheSwordmaiden"] = {
         42736,
         42737,
         42738,
+        42743,
         42744,
         42747,
         42749,

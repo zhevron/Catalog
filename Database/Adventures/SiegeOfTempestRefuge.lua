@@ -133,6 +133,7 @@ Database.tEntries["SiegeOfTempestRefuge"] = {
         37326,
         37327,
         37328,
+        37330,
         37333,
         37335,
         37337,
