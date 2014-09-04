@@ -20,6 +20,7 @@ Database.tEntries["WarOfTheWilds"] = {
       ["drops"] = {
         15812,
         36234,
+        36235,
         36239,
         36241,
         36243,
@@ -70,6 +71,7 @@ Database.tEntries["WarOfTheWilds"] = {
         36297,
         36298,
         36299,
+        36300,
         36301,
         36302,
         36304,
